@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model 
+    href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1C00.sch" 
+	  schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model 
+	  href="https://pds.nasa.gov/pds4/mission/lro/v1/PDS4_LRO_1C00_1000.sch" 
+	  schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model 
+    href="https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1900.sch" 
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model 
+    href="https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1B00_1610.sch" 
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Product_Observational
+    xmlns="http://pds.nasa.gov/pds4/pds/v1"
+    xmlns:lro="http://pds.nasa.gov/pds4/mission/lro/v1"
+    xmlns:disp="http://pds.nasa.gov/pds4/disp/v1" 
+    xmlns:img="http://pds.nasa.gov/pds4/img/v1" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1     
+                        https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1C00.xsd
+                        http://pds.nasa.gov/pds4/mission/lro/v1 
+                        https://pds.nasa.gov/pds4/mission/lro/v1/PDS4_LRO_1C00_1000.xsd
+                        http://pds.nasa.gov/pds4/disp/v1 
+                        https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1900.xsd
+                        http://pds.nasa.gov/pds4/img/v1 
+                        https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1B00_1610.xsd">
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:lro-lroc:data-edr:m1300863896ce</logical_identifier>
+    <version_id>0.1</version_id>
+    <title>LRO LROC EDR m1300863896ce</title>
+    <information_model_version>1.12.0.0</information_model_version>
+    <product_class>Product_Observational</product_class>
+    <Modification_History>
+      <Modification_Detail>
+        <modification_date>2019-11-06</modification_date>
+        <version_id>0.1</version_id>
+        <description>First draft</description>
+      </Modification_Detail>
+    </Modification_History>
+  </Identification_Area>
+  
+  <Observation_Area>
+    <Time_Coordinates>
+      <start_date_time>2018-12-31T02:50:28.584Z</start_date_time>
+      <stop_date_time>2018-12-31T02:55:34.959Z</stop_date_time>
+    </Time_Coordinates>
+    <Investigation_Area>
+      <name>LRO</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:investigation:mission.lro</lid_reference>
+        <reference_type>data_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>LRO</name>
+        <type>Spacecraft</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.lro</lid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+        <name>LROC</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument:lro.lroc</lid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>Moon</name>
+      <type>Satellite</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:target:satellite.earth.moon</lid_reference>
+        <reference_type>data_to_target</reference_type> 
+      </Internal_Reference>
+    </Target_Identification>
+    <Mission_Area>
+      <lro:LRO_Parameters>
+        <!-- parameters for all LRO products -->
+        <lro:product_type>EDR</lro:product_type>
+        <lro:product_version_id>v1.8</lro:product_version_id>  <!-- or is this the PDS4 VID -->
+        <lro:orbit_number>42875</lro:orbit_number>
+        <lro:mission_phase_name>THIRD EXTENDED SCIENCE MISSION</lro:mission_phase_name>
+        <lro:spacecraft_clock_start_count>1/567917428:35953</lro:spacecraft_clock_start_count>
+        <lro:spacecraft_clock_stop_count>1/567917734:60529</lro:spacecraft_clock_stop_count>
+        <lro:producer_institution_name>Arizona State University</lro:producer_institution_name>
+
+        <lro:LROC_Parameters>
+          <!-- Parameters specific to LROC (based on a random example PDS3 label for an LROC EDR) -->
+          <lro:upload_id>SC_2018364_1600_A_V01.txt</lro:upload_id>
+          <lro:rationale_desc>GlOBAL COVERAGE</lro:rationale_desc>
+          <lro:data_quality_id>0</lro:data_quality_id>
+          <lro:data_quality_desc>
+            The DATA_QUALITY_ID is set to an 8-bit value that encodes the following data quality information 
+            for the observation. For each bit  a value of 0 means FALSE and a value of 1 means TRUE. More 
+            information about the data quality ID can be found in the LROC EDR/CDR SIS, section 3.3 'Label 
+            and Header Descriptions'. Bit 1: Temperature of focal plane array is out of bounds. Bit 2: 
+            Threshold for saturated pixels is reached. Bit 3: Threshold for under-saturated pixels is 
+            reached. Bit 4: Observation is missing telemetry packets. Bit 5: SPICE information is bad or 
+            missing. Bit 6: Observation or housekeeping information is bad or missing. Bit 7: Spare. 
+            Bit 8: Spare.
+          </lro:data_quality_desc>
+          <lro:begin_temperature_scs unit="degC">14.55</lro:begin_temperature_scs>
+          <lro:middle_temperature_scs unit="degC">14.74</lro:middle_temperature_scs>
+          <lro:end_temperature_scs unit="degC">14.93</lro:end_temperature_scs>
+          <lro:begin_temperature_fpa unit="degC">-17.54</lro:begin_temperature_fpa>
+          <lro:middle_temperature_fpa unit="degC">-16.95</lro:middle_temperature_fpa>
+          <lro:end_temperature_fpa unit="degC">-16.18</lro:end_temperature_fpa>
+          <lro:begin_temperature_scs_raw>2265</lro:begin_temperature_scs_raw>
+          <lro:middle_temperature_scs_raw>2257</lro:middle_temperature_scs_raw>
+          <lro:end_temperature_scs_raw>2247</lro:end_temperature_scs_raw>
+          <lro:begin_temperature_fpa_raw>3577</lro:begin_temperature_fpa_raw>
+          <lro:middle_temperature_fpa_raw>3562</lro:middle_temperature_fpa_raw>
+          <lro:end_temperature_fpa_raw>3538</lro:end_temperature_fpa_raw>
+        </lro:LROC_Parameters>
+      </lro:LRO_Parameters>
+    </Mission_Area>
+    
+    <Discipline_Area>
+      <disp:Display_Settings>
+        <Local_Internal_Reference>
+          <local_identifier_reference>m1300863896ce</local_identifier_reference>
+          <local_reference_type>display_settings_to_array</local_reference_type>
+        </Local_Internal_Reference>
+        <disp:Display_Direction>
+          <disp:horizontal_display_axis>Sample</disp:horizontal_display_axis>
+          <disp:horizontal_display_direction>Left to Right</disp:horizontal_display_direction>
+          <disp:vertical_display_axis>Line</disp:vertical_display_axis>
+          <disp:vertical_display_direction>Top to Bottom</disp:vertical_display_direction>
+        </disp:Display_Direction>
+      </disp:Display_Settings>
+
+      <!-- These keywords in the IMAGING PARAMETERS section of the PDS3 label
+           probably map to PDS4 attributes in the IMG discipline dictionary
+           but I don't understand that dictionary well enough to make a guess.
+           Imaging Node will need to advise where to put this information
+           and whether any of these will need to 
+           be added to the LRO Mission Dictionary. 
+      
+           EXPOSURE_DURATION = 27.1 <MS>
+           LRO:EXPOSURE_CODE = 271
+           INTERFRAME_DELAY = 890.625 <MS>
+           INSTRUMENT_MODE_ID = "COLOR"
+           FILTER_NUMBER = ("1", "2", "3", "4", "5", "6", "7")
+           CENTER_FILTER_WAVELENGTH = (321 <nm>, 360 <nm>, 415 <nm>, 566 <nm>, 604 <nm>, 643 <nm>, 689 <nm>)           
+           BANDWIDTH = (32 <nm>, 15 <nm>, 36 <nm>, 20 <nm>, 20 <nm>, 23 <nm>, 39 <nm>)
+           LRO:LOOKUP_TABLE_TYPE = STORED
+           LRO:LOOKUP_CONVERSION_TABLE = ((0,1),(2,2),(3,3),(-9998,-9998),(4,4),(5,5),(-9998,-9998),(6,6),(7,7),(8,8),(9,9),(10,10),(11,11),(12,13),(14,14),(15,15),(16,17),(18,18),(19,19),(20,21),(22,23),(24,24),(25,26),(27,28),(29,30),(31,32),(33,33),(34,36),(37,38),(39,40),(41,42),(43,44),(45,47),(48,49),(50,51),(52,54),(55,56),(57,59),(60,62),(63,64),(65,67),(68,70),(71,73),(74,76),(77,79),(80,82),(83,85),(86,88),(89,92),(93,95),(96,98),(99,102),(103,105),(106,109),(110,113),(114,116),(117,120),(121,124),(125,128),(129,132),(133,136),(137,140),(141,144),(145,148),(149,152),(153,156),(157,161),(162,165),(166,170),(171,174),(175,179),(180,183),(184,188),(189,193),(194,198),(199,203),(204,208),(209,213),(214,218),(219,223),(224,228),(229,233),(234,238),(239,244),(245,249),(250,255),(256,260),(261,266),(267,271),(272,277),(278,283),(284,289),(290,295),(296,301),(302,307),(308,313),(314,319),(320,325),(326,331),(332,337),(338,344),(345,350),(351,357),(358,363),(364,370),(371,376),(377,383),(384,390),(391,397),(398,404),(405,411),(412,418),(419,425),(426,432),(433,439),(440,446),(447,454),(455,461),(462,468),(469,476),(477,483),(484,491),(492,499),(500,506),(507,514),(515,522),(523,530),(531,538),(539,546),(547,554),(555,562),(563,570),(571,579),(580,587),(588,595),(596,604),(605,612),(613,621),(622,630),(631,638),(639,647),(648,656),(657,665),(666,674),(675,683),(684,692),(693,701),(702,710),(711,719),(720,728),(729,738),(739,747),(748,756),(757,766),(767,776),(777,785),(786,795),(796,805),(806,814),(815,824),(825,834),(835,844),(845,854),(855,864),(865,874),(875,885),(886,895),(896,905),(906,916),(917,926),(927,937),(938,947),(948,958),(959,969),(970,979),(980,990),(991,1001),(1002,1012),(1013,1023),(1024,1034),(1035,1045),(1046,1056),(1057,1068),(1069,1079),(1080,1090),(1091,1102),(1103,1113),(1114,1125),(1126,1136),(1137,1148),(1149,1160),(1161,1171),(1172,1183),(1184,1195),(1196,1207),(1208,1219),(1220,1231),(1232,1243),(1244,1255),(1256,1268),(1269,1280),(1281,1292),(1293,1305),(1306,1317),(1318,1330),(1331,1342),(1343,1355),(1356,1368),(1369,1380),(1381,1393),(1394,1406),(1407,1419),(1420,1432),(1433,1445),(1446,1458),(1459,1472),(1473,1485),(1486,1498),(1499,1512),(1513,1525),(1526,1538),(1539,1552),(1553,1566),(1567,1579),(1580,1593),(1594,1607),(1608,1621),(1622,1635),(1636,1648),(1649,1663),(1664,1677),(1678,1691),(1692,1705),(1706,1719),(1720,1734),(1735,1748),(1749,1762),(1763,1777),(1778,1791),(1792,1806),(1807,1821),(1822,1835),(1836,1850),(1851,1865),(1866,1880),(1881,1895),(1896,1910),(1911,1925),(1926,1940),(1941,1955),(1956,1971),(1972,1986),(1987,2001),(2002,2017),(2018,2032),(2033,2047))
+           LRO:COMPRESSION_FLAG = 0
+           LRO:MODE = 0
+           LRO:NFRAMES = 344
+           LRO:BAND_CODE = 127
+           LRO:INTERFRAME_GAP_CODE = 32
+           LRO:COMPAND_CODE = 0
+           LRO:BACKGROUND_OFFSET = 56
+           
+           By the way, I expected to find definitions of the keywords with the
+           LRO: prefix in the current PDS3 data dictionary, but I don't see them there.
+      -->
+      <img:Imaging>
+        <Local_Internal_Reference>
+          <local_identifier_reference>m1300863896ce</local_identifier_reference>
+          <local_reference_type>imaging_parameters_to_image_object</local_reference_type>
+        </Local_Internal_Reference>
+        <!-- These keywords in the IMAGING PARAMETERS section of the PDS3 label
+           probably map to PDS4 attributes in the IMG discipline dictionary
+           but I don't understand that dictionary well enough to make a guess.
+           Imaging Node will need to advise where to put this information
+           and whether any of these will need to 
+           be added to the LRO Mission Dictionary. 
+      
+           EXPOSURE_DURATION = 27.1 <MS>
+           LRO:EXPOSURE_CODE = 271
+           INTERFRAME_DELAY = 890.625 <MS>
+           INSTRUMENT_MODE_ID = "COLOR"
+           FILTER_NUMBER = ("1", "2", "3", "4", "5", "6", "7")
+           CENTER_FILTER_WAVELENGTH = (321 <nm>, 360 <nm>, 415 <nm>, 566 <nm>, 604 <nm>, 643 <nm>, 689 <nm>)           
+           BANDWIDTH = (32 <nm>, 15 <nm>, 36 <nm>, 20 <nm>, 20 <nm>, 23 <nm>, 39 <nm>)
+           LRO:LOOKUP_TABLE_TYPE = STORED
+           LRO:LOOKUP_CONVERSION_TABLE = ((0,1),(2,2),(3,3),(-9998,-9998),(4,4),(5,5),(-9998,-9998),(6,6),(7,7),(8,8),(9,9),(10,10),(11,11),(12,13),(14,14),(15,15),(16,17),(18,18),(19,19),(20,21),(22,23),(24,24),(25,26),(27,28),(29,30),(31,32),(33,33),(34,36),(37,38),(39,40),(41,42),(43,44),(45,47),(48,49),(50,51),(52,54),(55,56),(57,59),(60,62),(63,64),(65,67),(68,70),(71,73),(74,76),(77,79),(80,82),(83,85),(86,88),(89,92),(93,95),(96,98),(99,102),(103,105),(106,109),(110,113),(114,116),(117,120),(121,124),(125,128),(129,132),(133,136),(137,140),(141,144),(145,148),(149,152),(153,156),(157,161),(162,165),(166,170),(171,174),(175,179),(180,183),(184,188),(189,193),(194,198),(199,203),(204,208),(209,213),(214,218),(219,223),(224,228),(229,233),(234,238),(239,244),(245,249),(250,255),(256,260),(261,266),(267,271),(272,277),(278,283),(284,289),(290,295),(296,301),(302,307),(308,313),(314,319),(320,325),(326,331),(332,337),(338,344),(345,350),(351,357),(358,363),(364,370),(371,376),(377,383),(384,390),(391,397),(398,404),(405,411),(412,418),(419,425),(426,432),(433,439),(440,446),(447,454),(455,461),(462,468),(469,476),(477,483),(484,491),(492,499),(500,506),(507,514),(515,522),(523,530),(531,538),(539,546),(547,554),(555,562),(563,570),(571,579),(580,587),(588,595),(596,604),(605,612),(613,621),(622,630),(631,638),(639,647),(648,656),(657,665),(666,674),(675,683),(684,692),(693,701),(702,710),(711,719),(720,728),(729,738),(739,747),(748,756),(757,766),(767,776),(777,785),(786,795),(796,805),(806,814),(815,824),(825,834),(835,844),(845,854),(855,864),(865,874),(875,885),(886,895),(896,905),(906,916),(917,926),(927,937),(938,947),(948,958),(959,969),(970,979),(980,990),(991,1001),(1002,1012),(1013,1023),(1024,1034),(1035,1045),(1046,1056),(1057,1068),(1069,1079),(1080,1090),(1091,1102),(1103,1113),(1114,1125),(1126,1136),(1137,1148),(1149,1160),(1161,1171),(1172,1183),(1184,1195),(1196,1207),(1208,1219),(1220,1231),(1232,1243),(1244,1255),(1256,1268),(1269,1280),(1281,1292),(1293,1305),(1306,1317),(1318,1330),(1331,1342),(1343,1355),(1356,1368),(1369,1380),(1381,1393),(1394,1406),(1407,1419),(1420,1432),(1433,1445),(1446,1458),(1459,1472),(1473,1485),(1486,1498),(1499,1512),(1513,1525),(1526,1538),(1539,1552),(1553,1566),(1567,1579),(1580,1593),(1594,1607),(1608,1621),(1622,1635),(1636,1648),(1649,1663),(1664,1677),(1678,1691),(1692,1705),(1706,1719),(1720,1734),(1735,1748),(1749,1762),(1763,1777),(1778,1791),(1792,1806),(1807,1821),(1822,1835),(1836,1850),(1851,1865),(1866,1880),(1881,1895),(1896,1910),(1911,1925),(1926,1940),(1941,1955),(1956,1971),(1972,1986),(1987,2001),(2002,2017),(2018,2032),(2033,2047))
+           LRO:COMPRESSION_FLAG = 0
+           LRO:MODE = 0
+           LRO:NFRAMES = 344
+           LRO:BAND_CODE = 127
+           LRO:INTERFRAME_GAP_CODE = 32
+           LRO:COMPAND_CODE = 0
+           LRO:BACKGROUND_OFFSET = 56
+           
+           By the way, I expected to find definitions of the keywords with the
+           LRO: prefix in the current PDS3 data dictionary, but I don't see them there.
+        -->
+      </img:Imaging>
+      
+      <!-- Other discipline dictionaries that might be used here:
+        Processing information (proc LDD)
+        Cartography information, maybe not for EDRs (cart LDD)
+        Geometry information (geom LDD)        
+      -->
+    </Discipline_Area>  	
+  </Observation_Area>
+
+  <Reference_List>
+    <!-- assuming there will be an LRO documents collection -->
+    <Internal_Reference>
+      <lid_reference>urn:nasa:pds:lro_documents:document_mission</lid_reference>
+      <reference_type>data_to_document</reference_type>
+    </Internal_Reference>
+    <!-- possible reference to published paper
+    <External_Reference>
+      <doi>doi goes here</doi>
+      <reference_text>citation text goes here</reference_text>
+    </External_Reference>
+     -->
+  </Reference_List>
+
+  <File_Area_Observational>
+    <File>
+      <file_name>m1300863896ce.img</file_name>
+      <creation_date_time>2019-01-03T18:18:05</creation_date_time>
+    </File>
+    <Array_2D_Image>
+      <name>LROC EDRWAC m1300863896ce</name>
+      <local_identifier>m1300863896ce</local_identifier>
+      <md5_checksum>c4f511422d1b2416cd972d9e973cc139</md5_checksum>
+      <offset unit="byte">0</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>UnsignedByte</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>26832</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>704</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+  </File_Area_Observational>  
+</Product_Observational>

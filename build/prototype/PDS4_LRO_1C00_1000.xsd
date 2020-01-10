@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 XML/Schema for Name Space Id:lro  Version:1.0.0.0 - Tue Nov 12 16:57:52 CST 2019 -->
+  <!-- Generated from the PDS4 Information Model Version 1.12.0.0 - System Build 9b -->
+  <!-- *** This PDS4 product schema is an operational deliverable. *** -->
+  <!--                                                                           -->
+  <!--               Dictionary Stack                                            -->
+  <!-- 1.12.0.0 - pds: - Common Dictionary - N/A                                 -->
+  <!-- 1.0.0.0 - lro: - LRO - ldd-lro-1c00.xml                                   -->
+  <!--                                                                           -->
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://pds.nasa.gov/pds4/mission/lro/v1"
+    xmlns:lro="http://pds.nasa.gov/pds4/mission/lro/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.0.0.0">
+ 
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1C00.xsd"/>
+ 
+  <xs:annotation>
+    <xs:documentation>
+
+        The LRO dictionary contains classes that describe aspects of the 
+        Lunar Reconnaissance Orbiter mission and related instruments.
+        
+        LRO version 1.0.0.0
+        PDS Build 1.12.0.0 (1C00)
+        LDDTool version 9.1.0
+        
+        Created with lddtool -plMs ldd-lro-1c00.xml
+    
+    </xs:documentation>
+  </xs:annotation>
+ 
+  <xs:element name="LRO_Parameters" type="lro:LRO_Parameters"> </xs:element>
+
+  <xs:complexType name="LROC_Parameters">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="upload_id" type="lro:upload_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="rationale_desc" type="lro:rationale_desc" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="data_quality_id" type="lro:data_quality_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="data_quality_desc" type="lro:data_quality_desc" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="begin_temperature_scs" type="lro:begin_temperature_scs" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="middle_temperature_scs" type="lro:middle_temperature_scs" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="end_temperature_scs" type="lro:end_temperature_scs" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="begin_temperature_fpa" type="lro:begin_temperature_fpa" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="middle_temperature_fpa" type="lro:middle_temperature_fpa" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="end_temperature_fpa" type="lro:end_temperature_fpa" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="begin_temperature_scs_raw" type="lro:begin_temperature_scs_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="middle_temperature_scs_raw" type="lro:middle_temperature_scs_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="end_temperature_scs_raw" type="lro:end_temperature_scs_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="begin_temperature_fpa_raw" type="lro:begin_temperature_fpa_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="middle_temperature_fpa_raw" type="lro:middle_temperature_fpa_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="end_temperature_fpa_raw" type="lro:end_temperature_fpa_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LRO_Parameters">
+    <xs:annotation>
+      <xs:documentation>The LRO_Parameters class is the container for
+        mission-specific metadata elements.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="product_type" type="lro:product_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="product_version_id" type="lro:product_version_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="orbit_number" type="lro:orbit_number" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mission_phase_name" type="lro:mission_phase_name" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_count_partition" type="lro:spacecraft_clock_count_partition" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_start_count" type="lro:spacecraft_clock_start_count" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_stop_count" type="lro:spacecraft_clock_stop_count" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="producer_institution_name" type="lro:producer_institution_name" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="LROC_Parameters" type="lro:LROC_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="lro:product_type = ('CDR', 'EDR', 'RDR')"/> -->
+    <!-- <xs:assert test="lro:mission_phase_name = ('COMMISSIONING', 'CRUISE', 'EXTENDED SCIENCE MISSION', 'LAUNCH', 'LUNAR ORBIT ACQUISITION', 'NOMINAL MISSION', 'SCIENCE MISSION', 'SECOND EXTENDED SCIENCE MISSION', 'THIRD EXTENDED SCIENCE MISSION')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+    <xs:annotation>
+      <xs:documentation>This section contains the simpleTypes that provide more constraints
+        than those at the base data type level. The simpleTypes defined here build on the base data
+        types. This is another component of the common dictionary and therefore falls within the
+        common namespace.
+      </xs:documentation>
+    </xs:annotation>
+
+  <xs:simpleType name="begin_temperature_fpa_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="begin_temperature_fpa">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:begin_temperature_fpa_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="begin_temperature_fpa_raw">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="begin_temperature_scs_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="begin_temperature_scs">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:begin_temperature_scs_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="begin_temperature_scs_raw">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="data_quality_desc">
+    <xs:annotation>
+      <xs:documentation>The data_quality_desc attribute describes the
+        data qualities associated with a data_quality_id attribute.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Text_Collapsed">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="data_quality_id">
+    <xs:annotation>
+      <xs:documentation>The data_quality_id attribute provides a numeric
+        key which identifies the quality of data available for a
+        particular time period. The data_quality_id scheme is unique to
+        a given instrument and is described by the associated
+        data_quality_desc attribute. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="end_temperature_fpa_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="end_temperature_fpa">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:end_temperature_fpa_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="end_temperature_fpa_raw">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="end_temperature_scs_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="end_temperature_scs">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:end_temperature_scs_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="end_temperature_scs_raw">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="middle_temperature_fpa_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="middle_temperature_fpa">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:middle_temperature_fpa_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="middle_temperature_fpa_raw">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="middle_temperature_scs_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="middle_temperature_scs">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:middle_temperature_scs_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="middle_temperature_scs_raw">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mission_phase_name">
+    <xs:annotation>
+      <xs:documentation> The mission_phase_name attribute provides the
+        mission-defined name of a time period within the mission.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="orbit_number">
+    <xs:annotation>
+      <xs:documentation>The orbit_number attribute identifies the number
+        of the orbital revolution around a target body.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="producer_institution_name">
+    <xs:annotation>
+      <xs:documentation>The producer_institution_name attribute
+        identifies a university, research center, NASA center, or other
+        institution associated with the production of a data product.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="product_type">
+    <xs:annotation>
+<xs:documentation>TBD</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="product_version_id">
+    <xs:annotation>
+      <xs:documentation>The product_version_id attribute identifies the
+        version of an individual data product. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="rationale_desc">
+    <xs:annotation>
+      <xs:documentation>The rationale_desc attribute describes the
+        rationale for performing a particular
+        observation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_count_partition">
+    <xs:annotation>
+      <xs:documentation>The spacecraft_clock_count_partition attribute
+        indicates the clock partition active for the
+        spacecraft_clock_start_count and spacecraft_clock_stop_count
+        attributes. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_start_count">
+    <xs:annotation>
+      <xs:documentation>The spacecraft_clock_start_count attribute
+        provides the value of the spacecraft clock at the beginning of a
+        time period of interest. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    	<xs:pattern value='([0-9]{1,2}/)?[0-9]{1,10}(:[0-9]{5})?'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_stop_count">
+    <xs:annotation>
+      <xs:documentation>The spacecraft_clock_stop_count attribute
+        provides the value of the spacecraft clock at the beginning of a
+        time period of interest. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    	<xs:pattern value='([0-9]{1,2}/)?[0-9]{1,10}(:[0-9]{5})?'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="upload_id">
+    <xs:annotation>
+      <xs:documentation>The upload_id attribute describes a spacecraft
+        command set that is associated with the given data
+        product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
