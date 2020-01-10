@@ -16,7 +16,7 @@ This LDD has been built for the following versions of the PDS4 information model
 
 [prototype](build/prototype)
 <!-- - [1.12.0.0](build/1.12.0.0) -->
-	
+
 ## Notes
 
 Each build is generating using the [lddtool](https://pds.nasa.gov/pds4/software/ldd/) specific to a version of the [PDS4 Information Model](https://pds.nasa.gov/pds4/doc/im/). The build command used is:
