@@ -3,7 +3,8 @@
     href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1C00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
-<!-- 11/6/2019 GEO/SHS Initial version
+<!-- 11/06/2019 GEO/SHS Initial version
+     01/09/2020 GEO/SHS Added elements identified by Paul Geissler
     -->
 
 <Ingest_LDD 
@@ -24,9 +25,11 @@
         PDS Build 1.12.0.0 (1C00)
         LDDTool version 9.1.0
         
-        Created with lddtool -plMs ldd-lro-1c00.xml
+        Created with lddtool -plMs ldd-lro-1d00.xml
     </comment>
-    <last_modification_date_time>2019-11-12T21:55Z</last_modification_date_time>
+    <last_modification_date_time>2020-01-10T18:00Z</last_modification_date_time>
+	
+	<!-- PGeissler changed mterm1 to mterm5 to ASCII_Real; added units to NAC temperatures, line_exposure_time, interframe_delay -->
 
     <!-- LRO Mission Dictionary Attributes -->
     <!-- Definitions of attributes of these LRO-specific classes: 
@@ -35,31 +38,100 @@
                
 	    In alphabetical order, the attributes are:
 	    
+	    background_offset
+	    band_code
 	    begin_temperature_fpa
 	    begin_temperature_fpa_raw
 	    begin_temperature_scs
 	    begin_temperature_scs_raw
+	    bterm1
+	    bterm2
+	    bterm3
+	    bterm4
+	    bterm5
+	    channel_a_offset
+	    channel_b_offset
+	    compand_code
+	    compression_flag
+	    dac_reset_level
 	    data_quality_desc
 	    data_quality_id
 	    end_temperature_fpa
 	    end_temperature_fpa_raw
 	    end_temperature_scs
 	    end_temperature_scs_raw
+	    exposure_code
+	    frame_id
+	    instrument_mode_id
+	    interframe_delay
+	    interframe_gap_code
+	    line_code
+	    line_exposure_code
+	    line_exposure_duration
+	    lookup_table_type
 	    middle_temperature_fpa
 	    middle_temperature_fpa_raw
 	    middle_temperature_scs
 	    middle_temperature_scs_raw
 	    mission_phase_name
+	    mode
+	    mterm1
+	    mterm2
+	    mterm3
+	    mterm4
+	    mterm5
+	    nframes
 	    orbit_number
+	    preroll_time
 	    producer_institution_name
 	    product_type
 	    product_version_id
 	    rationale_desc
 	    spacecraft_clock_count_partition
+	    spacecraft_clock_preroll_count
 	    spacecraft_clock_start_count
 	    spacecraft_clock_stop_count
+	    temperature_fpa
+	    temperature_fpa_raw
+	    temperature_fpga
+	    temperature_fpga_raw
+	    temperature_scs
+	    temperature_scs_raw
+	    temperature_telescope
+	    temperature_telescope_raw
 	    upload_id
+	    xterm1
+	    xterm2
+	    xterm3
+	    xterm4
+	    xterm5
     --> 
+
+    <DD_Attribute> <!-- background_offset -->
+        <name>background_offset</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.background_offset</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>TBD</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- band_code -->
+        <name>band_code</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.band_code</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The band_code records the commanded band code for a WAC observation.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
 
     <DD_Attribute> <!-- begin_temperature_fpa --> 
         <name>begin_temperature_fpa</name>
@@ -109,6 +181,140 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>GEO</submitter_name>
         <definition>TBD</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- bterm1 -->
+        <name>bterm1</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.bterm1</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding bterm 1</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- bterm2 -->
+        <name>bterm2</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.bterm2</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding bterm 2</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- bterm3 -->
+        <name>bterm3</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.bterm3</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding bterm 3</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- bterm4 -->
+        <name>bterm4</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.bterm4</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding bterm 4</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- bterm5 -->
+        <name>bterm5</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.bterm5</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding bterm 5</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- channel_a_offset -->
+        <name>channel_a_offset</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.channel_a_offset</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded NAC channel A offset for either the NAC LEFT or NAC RIGHT.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- channel_b_offset -->
+        <name>channel_b_offset</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.channel_b_offset</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded NAC channel B offset for either the NAC LEFT or NAC RIGHT.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- compand_code -->
+        <name>compand_code</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.compand_code</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Indicates which stored companding table was used (0-7)</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>7</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- compression_flag -->
+        <name>compression_flag</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.compression_flag</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Indicates if lossless compression was commanded (0=no, 1=yes)</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>1</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- dac_reset_level -->
+        <name>dac_reset_level</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.dac_reset_level</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded DAC reset level for either the NAC LEFT or NAC RIGHT.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -198,6 +404,161 @@
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- exposure_code --> 
+        <name>exposure_code</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.exposure_code</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded exposure code for a WAC observation.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- frame_id --> 
+        <name>frame_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.frame_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>For NAC, records if the image was acquired from the "LEFT" or "RIGHT" NAC.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>LEFT</value>
+                <value_meaning>The image was acquired from the LEFT NAC.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>RIGHT</value>
+                <value_meaning>The image was acquired from the RIGHT NAC.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- instrument_mode_id --> 
+        <name>instrument_mode_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.instrument_mode_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded WAC mode: BW, COLOR, VIS or UV.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>BW</value>
+                <value_meaning>The commanded WAC instrument mode was BW.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>COLOR</value>
+                <value_meaning>The commanded WAC instrument mode was COLOR.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>VIS</value>
+                <value_meaning>The commanded WAC instrument mode was VIS.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>UV</value>
+                <value_meaning>The commanded WAC instrument mode was UV.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- interframe_delay --> 
+        <name>interframe_delay</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.interframe_delay</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the value of the interframe delay between WAC framelets. Keyword can have
+            values between 25/64 and 280/64 seconds, in 1/64 seconds increments.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- interframe_gap_code --> 
+        <name>interframe_gap_code</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.interframe_gap_code</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded interframe gap code for a WAC observation.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- line_code --> 
+        <name>line_code</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.line_code</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded value for the number of NAC lines to acquire,
+            in 1024 increments. (LINES = LINES_CODE * 1024)</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- line_exposure_code --> 
+        <name>line_exposure_code</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.line_exposure_code</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Index range from 0 to 4095 each corresponding to one LINE_EXPOSURE_DURATION increment.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>4095</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- line_exposure_duration --> 
+        <name>line_exposure_duration</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.line_exposure_duration</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>
+            For NAC products, LINE_EXPOSURE_DURATION can have values between 337.6 and 
+            35,281.6 microseconds, in 128/15 microsecond increments
+            (LINE_EXPOSURE_DURATION = [LINE_EXPOSURE_CODE * 128/15] + 337.6)
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- lookup_table_type --> 
+        <name>lookup_table_type</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.lookup_table_type</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Always set to STORED.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>STORED</value>
+                <value_meaning>TBD</value_meaning>
+            </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -307,6 +668,97 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
+    <DD_Attribute> <!-- mode --> 
+        <name>mode</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mode</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the mode value as commanded for both NAC and WAC observations.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- mterm1 -->
+        <name>mterm1</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mterm1</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding mterm 1</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- mterm2 -->
+        <name>mterm2</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mterm2</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding mterm 2</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- mterm3 -->
+        <name>mterm3</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mterm3</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding mterm 3</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- mterm4 -->
+        <name>mterm4</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mterm4</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding mterm 4</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- mterm5 -->
+        <name>mterm5</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mterm5</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding mterm 5</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- nframes -->
+        <name>nframes</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.nframes</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded number of frames for a WAC observation.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
     <DD_Attribute> <!-- orbit_number -->
         <name>orbit_number</name>
         <version_id>1.0</version_id>
@@ -319,6 +771,22 @@
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- preroll_time -->
+        <name>preroll_time</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.preroll_time</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The UTC time and date at the start of the image acquisition command, 
+            corresponding to the acquisition of 1024 lines at the given exposure prior to the 
+            actual image acquisition.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Date_Time_YMD</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -406,7 +874,21 @@
             <value_data_type>ASCII_NonNegative_Integer</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-        
+    
+    <DD_Attribute> <!-- spacecraft_clock_preroll_count -->
+        <name>spacecraft_clock_preroll_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.spacecraft_clock_preroll_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the sclk string for the start of an observation preroll acquisition.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <pattern>([0-9]{1,2}/)?[0-9]{1,10}(:[0-9]{5})?</pattern>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
     <DD_Attribute> <!-- spacecraft_clock_start_count -->
         <name>spacecraft_clock_start_count</name>
         <version_id>1.0</version_id>
@@ -439,6 +921,114 @@
             <pattern>([0-9]{1,2}/)?[0-9]{1,10}(:[0-9]{5})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
+
+    <DD_Attribute> <!-- temperature_fpa -->
+        <name>temperature_fpa</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_fpa</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>TBD</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_fpa_raw -->
+        <name>temperature_fpa_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_fpa_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>TBD</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_fpga -->
+        <name>temperature_fpga</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_fpga</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>TBD</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_fpga_raw -->
+        <name>temperature_fpga_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_fpga_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>TBD</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_scs -->
+        <name>temperature_scs</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_scs</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>TBD</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_scs_raw -->
+        <name>temperature_scs_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_scs_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>TBD</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_telescope -->
+        <name>temperature_telescope</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_telescope</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>TBD</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_telescope_raw -->
+        <name>temperature_telescope_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_telescope_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>TBD</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
     
     <DD_Attribute> <!-- upload_id -->
         <name>upload_id</name>
@@ -453,12 +1043,77 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
-<!-- End of attribute definitions -->
+    <DD_Attribute> <!-- xterm1 -->
+        <name>xterm1</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.xterm1</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding xterm 1</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- xterm2 -->
+        <name>xterm2</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.xterm2</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding xterm 2</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- xterm3 -->
+        <name>xterm3</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.xterm3</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding xterm 3</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- xterm4 -->
+        <name>xterm4</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.xterm4</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding xterm 4</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- xterm5 -->
+        <name>xterm5</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.xterm5</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding xterm 5</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <!-- End of attribute definitions -->
 
 <!-- Beginning of class definitions in order from innermost to outermost -->
 
     <!-- Beginning of LROC_Parameters Class definition with attributes in the order as they appear in the label -->
-    <DD_Class>
+    <DD_Class> <!-- LROC_Parameters -->
         <name>LROC_Parameters</name>
         <version_id>1.0</version_id>
         <local_identifier>lro.LROC_Parameters</local_identifier>
@@ -488,6 +1143,8 @@
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+
+        <!-- WAC specific attributes -->
         <DD_Association>
             <identifier_reference>lro.begin_temperature_scs</identifier_reference>
             <reference_type>attribute_of</reference_type>
@@ -560,11 +1217,275 @@
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+ 
+        <!-- NAC specific attributes -->
+        <DD_Association>
+            <identifier_reference>lro.preroll_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.spacecraft_clock_preroll_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.frame_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        
+        <!-- NAC environment attributes -->
+        <DD_Association>
+            <identifier_reference>lro.temperature_scs</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_fpa</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_fpga</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_telescope</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_scs_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_fpa_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_fpga_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_telescope_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+                
+        <!-- WAC and NAC imaging attributes -->
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.exposure_code</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.interframe_delay</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.instrument_mode_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.lookup_table_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.line_exposure_duration</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.line_exposure_code</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.dac_reset_level</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.channel_a_offset</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.channel_b_offset</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC and NAC -->
+            <identifier_reference>lro.compand_code</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.line_code</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.bterm1</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.bterm2</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.bterm3</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.bterm4</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.bterm5</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.mterm1</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.mterm2</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.mterm3</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.mterm4</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.mterm5</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.xterm1</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.xterm2</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.xterm3</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.xterm4</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.xterm5</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC and NAC -->
+            <identifier_reference>lro.compression_flag</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC and NAC -->
+            <identifier_reference>lro.mode</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.nframes</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.band_code</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.interframe_gap_code</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.background_offset</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
     </DD_Class>
     <!-- End of LROC_Parameters Class definition -->
     
     <!-- Beginning of LRO_Parameters Class definition with attributes in the order as they appear in the label -->
-    <DD_Class>
+    <DD_Class> <!-- LRO_Parameters -->
         <name>LRO_Parameters</name>
         <version_id>1.0</version_id>
         <local_identifier>lro.LRO_Parameters</local_identifier>
