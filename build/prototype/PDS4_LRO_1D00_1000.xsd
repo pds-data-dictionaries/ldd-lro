@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:lro  Version:1.0.0.0 - Thu Jan 09 12:28:44 CST 2020 -->
-  <!-- Generated from the PDS4 Information Model Version 1.12.0.0 - System Build 9b -->
+  <!-- PDS4 XML/Schema for Name Space Id:lro  Version:1.0.0.0 - Mon May 11 18:36:30 MST 2020 -->
+  <!-- Generated from the PDS4 Information Model Version 1.13.0.0 - System Build 10a -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
-  <!-- 1.12.0.0 - pds: - Common Dictionary - N/A                                 -->
-  <!-- 1.0.0.0 - lro: - LRO - ldd-lro-1c00.xml                                   -->
+  <!-- 1.13.0.0 - pds: - Common Dictionary - N/A                                 -->
+  <!-- 1.0.0.0 - lro: - LRO - ldd-lro-1d00.xml                                   -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://pds.nasa.gov/pds4/mission/lro/v1"
@@ -15,7 +15,7 @@
     attributeFormDefault="unqualified"
     version="1.0.0.0">
  
-    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1C00.xsd"/>
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
@@ -24,7 +24,7 @@
         Lunar Reconnaissance Orbiter mission and related instruments.
         
         LRO version 1.0.0.0
-        PDS Build 1.12.0.0 (1C00)
+        PDS Build 1.13.0.0 (1D00)
         LDDTool version 9.1.0
         
         Created with lddtool -plMs ldd-lro-1d00.xml
@@ -115,7 +115,7 @@
       <xs:element name="product_type" type="lro:product_type" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="product_version_id" type="lro:product_version_id" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="orbit_number" type="lro:orbit_number" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="mission_phase_name" type="lro:mission_phase_name" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mission_phase_name" type="lro:mission_phase_name" minOccurs="0" maxOccurs="unbounded"> </xs:element>
       <xs:element name="spacecraft_clock_count_partition" type="lro:spacecraft_clock_count_partition" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="spacecraft_clock_start_count" type="lro:spacecraft_clock_start_count" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="spacecraft_clock_stop_count" type="lro:spacecraft_clock_stop_count" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -433,11 +433,6 @@
   </xs:simpleType>
 
   <xs:simpleType name="interframe_delay_WO_Units">
-    <xs:annotation>
-      <xs:documentation>Set to the value of the interframe delay between
-        WAC framelets. Keyword can have values between 25/64 and 280/64
-        seconds, in 1/64 seconds increments.</xs:documentation>
-    </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
@@ -446,7 +441,9 @@
 
   <xs:complexType name="interframe_delay">
     <xs:annotation>
-<xs:documentation>TBD</xs:documentation>
+      <xs:documentation>Set to the value of the interframe delay between
+        WAC framelets. Keyword can have values between 25/64 and 280/64
+        seconds, in 1/64 seconds increments.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="lro:interframe_delay_WO_Units">
@@ -490,12 +487,6 @@
   </xs:simpleType>
 
   <xs:simpleType name="line_exposure_duration_WO_Units">
-    <xs:annotation>
-      <xs:documentation> For NAC products, LINE_EXPOSURE_DURATION can
-        have values between 337.6 and 35,281.6 microseconds, in 128/15
-        microsecond increments (LINE_EXPOSURE_DURATION =
-        [LINE_EXPOSURE_CODE * 128/15] + 337.6) </xs:documentation>
-    </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
@@ -504,7 +495,10 @@
 
   <xs:complexType name="line_exposure_duration">
     <xs:annotation>
-<xs:documentation>TBD</xs:documentation>
+      <xs:documentation> For NAC products, LINE_EXPOSURE_DURATION can
+        have values between 337.6 and 35,281.6 microseconds, in 128/15
+        microsecond increments (LINE_EXPOSURE_DURATION =
+        [LINE_EXPOSURE_CODE * 128/15] + 337.6) </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="lro:line_exposure_duration_WO_Units">
@@ -607,8 +601,8 @@
 <xs:documentation>NAC companding mterm 1</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="-9223372036854775808"/>
-     <xs:maxInclusive value="9223372036854775807"/>
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -617,8 +611,8 @@
 <xs:documentation>NAC companding mterm 2</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="-9223372036854775808"/>
-     <xs:maxInclusive value="9223372036854775807"/>
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -627,8 +621,8 @@
 <xs:documentation>NAC companding mterm 3</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="-9223372036854775808"/>
-     <xs:maxInclusive value="9223372036854775807"/>
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -637,8 +631,8 @@
 <xs:documentation>NAC companding mterm 4</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="-9223372036854775808"/>
-     <xs:maxInclusive value="9223372036854775807"/>
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -647,8 +641,8 @@
 <xs:documentation>NAC companding mterm 5</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="-9223372036854775808"/>
-     <xs:maxInclusive value="9223372036854775807"/>
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -787,9 +781,6 @@
   </xs:simpleType>
 
   <xs:simpleType name="temperature_fpa_WO_Units">
-    <xs:annotation>
-<xs:documentation>TBD</xs:documentation>
-    </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
@@ -818,9 +809,6 @@
   </xs:simpleType>
 
   <xs:simpleType name="temperature_fpga_WO_Units">
-    <xs:annotation>
-<xs:documentation>TBD</xs:documentation>
-    </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
@@ -849,9 +837,6 @@
   </xs:simpleType>
 
   <xs:simpleType name="temperature_scs_WO_Units">
-    <xs:annotation>
-<xs:documentation>TBD</xs:documentation>
-    </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>
@@ -880,9 +865,6 @@
   </xs:simpleType>
 
   <xs:simpleType name="temperature_telescope_WO_Units">
-    <xs:annotation>
-<xs:documentation>TBD</xs:documentation>
-    </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
      <xs:maxInclusive value="1.7976931348623157e308"/>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:lro  Version:1.0.0.0 - Tue Nov 12 16:57:52 CST 2019 -->
-  <!-- Generated from the PDS4 Information Model Version 1.12.0.0 - System Build 9b -->
+  <!-- PDS4 Schematron for Name Space Id:lro  Version:1.0.0.0 - Mon May 11 18:36:30 MST 2020 -->
+  <!-- Generated from the PDS4 Information Model Version 1.13.0.0 - System Build 10a -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
   <sch:title>Schematron using XPath 2.0</sch:title>
 
+  <sch:ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
   <sch:ns uri="http://pds.nasa.gov/pds4/pds/v1" prefix="pds"/>
   <sch:ns uri="http://pds.nasa.gov/pds4/mission/lro/v1" prefix="lro"/>
 
@@ -65,6 +66,36 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:rule context="lro:LROC_Parameters/lro:frame_id">
+      <sch:assert test=". = ('LEFT', 'RIGHT')">
+        The attribute lro:frame_id must be equal to one of the following values 'LEFT', 'RIGHT'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:LROC_Parameters/lro:instrument_mode_id">
+      <sch:assert test=". = ('BW', 'COLOR', 'UV', 'VIS')">
+        The attribute lro:instrument_mode_id must be equal to one of the following values 'BW', 'COLOR', 'UV', 'VIS'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:LROC_Parameters/lro:interframe_delay">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:LROC_Parameters/lro:line_exposure_duration">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:LROC_Parameters/lro:lookup_table_type">
+      <sch:assert test=". = ('STORED')">
+        The attribute lro:lookup_table_type must be equal to the value 'STORED'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="lro:LROC_Parameters/lro:middle_temperature_fpa">
       <sch:assert test="@unit = ('K', 'degC')">
         The attribute @unit must be equal to one of the following values 'K', 'degC'.</sch:assert>
@@ -72,6 +103,30 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="lro:LROC_Parameters/lro:middle_temperature_scs">
+      <sch:assert test="@unit = ('K', 'degC')">
+        The attribute @unit must be equal to one of the following values 'K', 'degC'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:LROC_Parameters/lro:temperature_fpa">
+      <sch:assert test="@unit = ('K', 'degC')">
+        The attribute @unit must be equal to one of the following values 'K', 'degC'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:LROC_Parameters/lro:temperature_fpga">
+      <sch:assert test="@unit = ('K', 'degC')">
+        The attribute @unit must be equal to one of the following values 'K', 'degC'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:LROC_Parameters/lro:temperature_scs">
+      <sch:assert test="@unit = ('K', 'degC')">
+        The attribute @unit must be equal to one of the following values 'K', 'degC'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:LROC_Parameters/lro:temperature_telescope">
       <sch:assert test="@unit = ('K', 'degC')">
         The attribute @unit must be equal to one of the following values 'K', 'degC'.</sch:assert>
     </sch:rule>
