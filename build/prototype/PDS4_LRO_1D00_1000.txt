@@ -1,0 +1,781 @@
+PDS4 Local Data Dictionary Processing Report
+
+Configuration:
+   LDDTool Version        10.1.2
+   LDD Version Id:        1.0.0.0
+   LDD Label Version Id:  1.0
+   LDD Discipline (T/F):  false
+   LDD Namespace URL:     http://pds.nasa.gov/pds4/
+   LDD URN Prefix:        urn:nasa:pds:
+   Time                   Mon May 11 18:36:30 MST 2020
+   Common Schema          [PDS4_PDS_1D00.xsd]
+   Common Schematron      [PDS4_PDS_1D00.sch]
+   IM Version Id:         1.13.0.0
+   IM Namespace Id:       pds
+   IM Label Version Id:   1.19
+   IM Object Model        [UpperModel.pont]
+   IM Data Dictionary     [dd11179.pins]
+   IM Configuration File  [MDPTNConfigClassDisp.xml]
+   IM Glossary            [Glossary.pins]
+   IM Document Spec       [DMDocument.pins]
+
+Parameters:
+   Input File             [ldd-lro-1d00.xml]
+   PDS Processing         true
+   LDD Processing         true
+   Discipline LDD         false
+   Mission LDD            true
+   Write Attr Elements    false
+   Merge with Master      false
+
+Summary:
+   Classes                2
+   Attributes             67
+   Associations           68
+   Error messages         0
+   Warning messages       2
+   Information messages   6
+
+Detailed validation messages
+   WARNING  Header:  - New steward has been specified:geo
+   WARNING  Header:  - New namespace id has been specified:lro
+   INFO     Attribute: <compand_code> - The default minimum value provided by the attribute's data type is being overridden with 0
+   INFO     Attribute: <compand_code> - The default maximum value provided by the attribute's data type is being overridden with 7
+   INFO     Attribute: <compression_flag> - The default minimum value provided by the attribute's data type is being overridden with 0
+   INFO     Attribute: <compression_flag> - The default maximum value provided by the attribute's data type is being overridden with 1
+   INFO     Attribute: <line_exposure_code> - The default minimum value provided by the attribute's data type is being overridden with 0
+   INFO     Attribute: <line_exposure_code> - The default maximum value provided by the attribute's data type is being overridden with 4095
+
+Parsed Input - Header:
+   LDD Name               LRO
+   LDD Version            1.0.0.0
+   Full Name              Susan Slavney
+   Steward                geo
+   Namespace Id           lro
+   Comment                
+        The LRO dictionary contains classes that describe aspects of the 
+        Lunar Reconnaissance Orbiter mission and related instruments.
+        
+        LRO version 1.0.0.0
+        PDS Build 1.13.0.0 (1D00)
+        LDDTool version 9.1.0
+        
+        Created with lddtool -plMs ldd-lro-1d00.xml
+    
+   Last Modification Time 2020-01-10T18:00Z
+   PDS4 Merge Flag        false
+
+Parsed Input - Attributes:
+
+   name                   background_offset
+   version                1.13
+   value data type        ASCII_Integer
+   description            TBD
+
+   name                   band_code
+   version                1.13
+   value data type        ASCII_Integer
+   description            The band_code records the commanded band code for a WAC observation.
+
+   name                   begin_temperature_fpa
+   version                1.13
+   value data type        ASCII_Real
+   description            TBD
+   unit of measure type   Units_of_Temperature
+
+   name                   begin_temperature_fpa_raw
+   version                1.13
+   value data type        ASCII_Integer
+   description            TBD
+
+   name                   begin_temperature_scs
+   version                1.13
+   value data type        ASCII_Real
+   description            TBD
+   unit of measure type   Units_of_Temperature
+
+   name                   begin_temperature_scs_raw
+   version                1.13
+   value data type        ASCII_Integer
+   description            TBD
+
+   name                   bterm1
+   version                1.13
+   value data type        ASCII_Integer
+   description            NAC companding bterm 1
+
+   name                   bterm2
+   version                1.13
+   value data type        ASCII_Integer
+   description            NAC companding bterm 2
+
+   name                   bterm3
+   version                1.13
+   value data type        ASCII_Integer
+   description            NAC companding bterm 3
+
+   name                   bterm4
+   version                1.13
+   value data type        ASCII_Integer
+   description            NAC companding bterm 4
+
+   name                   bterm5
+   version                1.13
+   value data type        ASCII_Integer
+   description            NAC companding bterm 5
+
+   name                   channel_a_offset
+   version                1.13
+   value data type        ASCII_Integer
+   description            Records the commanded NAC channel A offset for either the NAC LEFT or NAC RIGHT.
+
+   name                   channel_b_offset
+   version                1.13
+   value data type        ASCII_Integer
+   description            Records the commanded NAC channel B offset for either the NAC LEFT or NAC RIGHT.
+
+   name                   compand_code
+   version                1.13
+   value data type        ASCII_Integer
+   description            Indicates which stored companding table was used (0-7)
+   minimum value          0
+   maximum value          7
+
+   name                   compression_flag
+   version                1.13
+   value data type        ASCII_Integer
+   description            Indicates if lossless compression was commanded (0=no, 1=yes)
+   minimum value          0
+   maximum value          1
+
+   name                   dac_reset_level
+   version                1.13
+   value data type        ASCII_Integer
+   description            Records the commanded DAC reset level for either the NAC LEFT or NAC RIGHT.
+
+   name                   data_quality_desc
+   version                1.13
+   value data type        ASCII_Text_Collapsed
+   description            The data_quality_desc attribute describes the data qualities associated with a data_quality_id attribute. 
+
+   name                   data_quality_id
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description            The data_quality_id attribute provides a numeric key which identifies the quality of data available for a particular time period. The data_quality_id scheme is unique to a given instrument and is described by the associated data_quality_desc attribute. 
+
+   name                   end_temperature_fpa
+   version                1.13
+   value data type        ASCII_Real
+   description            TBD
+   unit of measure type   Units_of_Temperature
+
+   name                   end_temperature_fpa_raw
+   version                1.13
+   value data type        ASCII_Integer
+   description            TBD
+
+   name                   end_temperature_scs
+   version                1.13
+   value data type        ASCII_Real
+   description            TBD
+   unit of measure type   Units_of_Temperature
+
+   name                   end_temperature_scs_raw
+   version                1.13
+   value data type        ASCII_Integer
+   description            TBD
+
+   name                   exposure_code
+   version                1.13
+   value data type        ASCII_Integer
+   description            Records the commanded exposure code for a WAC observation.
+
+   name                   frame_id
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description            For NAC, records if the image was acquired from the "LEFT" or "RIGHT" NAC.
+
+   name                   instrument_mode_id
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description            Records the commanded WAC mode: BW, COLOR, VIS or UV.
+
+   name                   interframe_delay
+   version                1.13
+   value data type        ASCII_Real
+   description            Set to the value of the interframe delay between WAC framelets. Keyword can have values between 25/64 and 280/64 seconds, in 1/64 seconds increments.
+   unit of measure type   Units_of_Time
+
+   name                   interframe_gap_code
+   version                1.13
+   value data type        ASCII_Integer
+   description            Records the commanded interframe gap code for a WAC observation.
+
+   name                   line_code
+   version                1.13
+   value data type        ASCII_Integer
+   description            Records the commanded value for the number of NAC lines to acquire, in 1024 increments. (LINES = LINES_CODE * 1024)
+
+   name                   line_exposure_code
+   version                1.13
+   value data type        ASCII_Integer
+   description            Index range from 0 to 4095 each corresponding to one LINE_EXPOSURE_DURATION increment.
+   minimum value          0
+   maximum value          4095
+
+   name                   line_exposure_duration
+   version                1.13
+   value data type        ASCII_Real
+   description             For NAC products, LINE_EXPOSURE_DURATION can have values between 337.6 and 35,281.6 microseconds, in 128/15 microsecond increments (LINE_EXPOSURE_DURATION = [LINE_EXPOSURE_CODE * 128/15] + 337.6) 
+   unit of measure type   Units_of_Time
+
+   name                   lookup_table_type
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description            Always set to STORED.
+
+   name                   middle_temperature_fpa
+   version                1.13
+   value data type        ASCII_Real
+   description            TBD
+   unit of measure type   Units_of_Temperature
+
+   name                   middle_temperature_fpa_raw
+   version                1.13
+   value data type        ASCII_Integer
+   description            TBD
+
+   name                   middle_temperature_scs
+   version                1.13
+   value data type        ASCII_Real
+   description            TBD
+   unit of measure type   Units_of_Temperature
+
+   name                   middle_temperature_scs_raw
+   version                1.13
+   value data type        ASCII_Integer
+   description            TBD
+
+   name                   mission_phase_name
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description             The mission_phase_name attribute provides the mission-defined name of a time period within the mission. 
+
+   name                   mode
+   version                1.13
+   value data type        ASCII_Integer
+   description            Set to the mode value as commanded for both NAC and WAC observations.
+
+   name                   mterm1
+   version                1.13
+   value data type        ASCII_Real
+   description            NAC companding mterm 1
+
+   name                   mterm2
+   version                1.13
+   value data type        ASCII_Real
+   description            NAC companding mterm 2
+
+   name                   mterm3
+   version                1.13
+   value data type        ASCII_Real
+   description            NAC companding mterm 3
+
+   name                   mterm4
+   version                1.13
+   value data type        ASCII_Real
+   description            NAC companding mterm 4
+
+   name                   mterm5
+   version                1.13
+   value data type        ASCII_Real
+   description            NAC companding mterm 5
+
+   name                   nframes
+   version                1.13
+   value data type        ASCII_Integer
+   description            Records the commanded number of frames for a WAC observation.
+
+   name                   orbit_number
+   version                1.13
+   value data type        ASCII_NonNegative_Integer
+   description            The orbit_number attribute identifies the number of the orbital revolution around a target body. 
+
+   name                   preroll_time
+   version                1.13
+   value data type        ASCII_Date_Time_YMD
+   description            The UTC time and date at the start of the image acquisition command, corresponding to the acquisition of 1024 lines at the given exposure prior to the actual image acquisition. 
+
+   name                   producer_institution_name
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description            The producer_institution_name attribute identifies a university, research center, NASA center, or other institution associated with the production of a data product. 
+
+   name                   product_type
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description            TBD
+
+   name                   product_version_id
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description            The product_version_id attribute identifies the version of an individual data product. 
+
+   name                   rationale_desc
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description            The rationale_desc attribute describes the rationale for performing a particular observation.
+
+   name                   spacecraft_clock_count_partition
+   version                1.13
+   value data type        ASCII_NonNegative_Integer
+   description            The spacecraft_clock_count_partition attribute indicates the clock partition active for the spacecraft_clock_start_count and spacecraft_clock_stop_count attributes. 
+
+   name                   spacecraft_clock_preroll_count
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description            Set to the sclk string for the start of an observation preroll acquisition.
+
+   name                   spacecraft_clock_start_count
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description            The spacecraft_clock_start_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
+
+   name                   spacecraft_clock_stop_count
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description            The spacecraft_clock_stop_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
+
+   name                   temperature_fpa
+   version                1.13
+   value data type        ASCII_Real
+   description            TBD
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_fpa_raw
+   version                1.13
+   value data type        ASCII_Integer
+   description            TBD
+
+   name                   temperature_fpga
+   version                1.13
+   value data type        ASCII_Real
+   description            TBD
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_fpga_raw
+   version                1.13
+   value data type        ASCII_Integer
+   description            TBD
+
+   name                   temperature_scs
+   version                1.13
+   value data type        ASCII_Real
+   description            TBD
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_scs_raw
+   version                1.13
+   value data type        ASCII_Integer
+   description            TBD
+
+   name                   temperature_telescope
+   version                1.13
+   value data type        ASCII_Real
+   description            TBD
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_telescope_raw
+   version                1.13
+   value data type        ASCII_Integer
+   description            TBD
+
+   name                   upload_id
+   version                1.13
+   value data type        ASCII_Short_String_Collapsed
+   description            The upload_id attribute describes a spacecraft command set that is associated with the given data product.
+
+   name                   xterm1
+   version                1.13
+   value data type        ASCII_Integer
+   description            NAC companding xterm 1
+
+   name                   xterm2
+   version                1.13
+   value data type        ASCII_Integer
+   description            NAC companding xterm 2
+
+   name                   xterm3
+   version                1.13
+   value data type        ASCII_Integer
+   description            NAC companding xterm 3
+
+   name                   xterm4
+   version                1.13
+   value data type        ASCII_Integer
+   description            NAC companding xterm 4
+
+   name                   xterm5
+   version                1.13
+   value data type        ASCII_Integer
+   description            NAC companding xterm 5
+
+Parsed Input - Classes:
+
+   name                   LROC_Parameters
+   description            TBD
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lro.upload_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.rationale_desc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.data_quality_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.data_quality_desc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.begin_temperature_scs
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.middle_temperature_scs
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.end_temperature_scs
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.begin_temperature_fpa
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.middle_temperature_fpa
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.end_temperature_fpa
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.begin_temperature_scs_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.middle_temperature_scs_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.end_temperature_scs_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.begin_temperature_fpa_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.middle_temperature_fpa_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.end_temperature_fpa_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.preroll_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.spacecraft_clock_preroll_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.frame_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_scs
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_fpa
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_fpga
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_telescope
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_scs_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_fpa_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_fpga_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_telescope_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.exposure_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.interframe_delay
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.instrument_mode_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.lookup_table_type
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.line_exposure_duration
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.line_exposure_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.dac_reset_level
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.channel_a_offset
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.channel_b_offset
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.compand_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.line_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.bterm1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.bterm2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.bterm3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.bterm4
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.bterm5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mterm1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mterm2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mterm3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mterm4
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mterm5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.xterm1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.xterm2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.xterm3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.xterm4
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.xterm5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.compression_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mode
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.nframes
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.band_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.interframe_gap_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.background_offset
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   LRO_Parameters
+   description            The LRO_Parameters class is the container for mission-specific metadata elements.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lro.product_type
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.product_version_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.orbit_number
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mission_phase_name
+      minimum occurrences   0
+      maximum occurrences   unbounded
+      reference type        attribute_of
+
+      local identifier      lro.spacecraft_clock_count_partition
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.spacecraft_clock_start_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.spacecraft_clock_stop_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.producer_institution_name
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.LROC_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+End of Report

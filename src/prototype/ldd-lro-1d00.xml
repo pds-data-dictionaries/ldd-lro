@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model 
-    href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1C00.sch"
+    href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <!-- 11/06/2019 GEO/SHS Initial version
@@ -11,7 +11,7 @@
     xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1
-                        http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1C00.xsd">
+                        http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.xsd">
     <name>LRO</name>
     <ldd_version_id>1.0.0.0</ldd_version_id>
     <full_name>Susan Slavney</full_name>
@@ -22,7 +22,7 @@
         Lunar Reconnaissance Orbiter mission and related instruments.
         
         LRO version 1.0.0.0
-        PDS Build 1.12.0.0 (1C00)
+        PDS Build 1.13.0.0 (1D00)
         LDDTool version 9.1.0
         
         Created with lddtool -plMs ldd-lro-1d00.xml
@@ -30,6 +30,8 @@
     <last_modification_date_time>2020-01-10T18:00Z</last_modification_date_time>
 	
 	<!-- PGeissler changed mterm1 to mterm5 to ASCII_Real; added units to NAC temperatures, line_exposure_time, interframe_delay -->
+
+        <!-- PGeissler 5-08-2020 ldd-lro-1d00.xml changed mission_phase_name to allow multiple mission phases -->
 
     <!-- LRO Mission Dictionary Attributes -->
     <!-- Definitions of attributes of these LRO-specific classes: 
@@ -1515,7 +1517,7 @@
             <identifier_reference>lro.mission_phase_name</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
+            <maximum_occurrences>unbounded</maximum_occurrences>
         </DD_Association>
         <DD_Association>
             <identifier_reference>lro.spacecraft_clock_count_partition</identifier_reference>
