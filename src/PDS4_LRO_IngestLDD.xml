@@ -1,0 +1,3282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model 
+    href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.sch"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<!-- 11/06/2019 GEO/SHS Initial version
+     01/09/2020 GEO/SHS Added elements identified by Paul Geissler
+     04/27/2021 GEO/JGW Added Diviner, LOLA, and Mini-RF elements
+     07/26/2021 GEO/JGW Added LOLA_INSTRUMENT_MODE_ID
+     07/29/2021 GEO/JGW Rebuilt with 1G00 IM
+     10/11/2021 GEO/JGW Added permissible values for product_type
+     10/22/2021 GEO/JGW Added Geodetic_Model class
+    -->
+
+<Ingest_LDD 
+    xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1
+                        http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
+    <name>LRO</name>
+    <ldd_version_id>1.0.0.0</ldd_version_id>
+    <dictionary_type>Mission</dictionary_type>
+    <full_name>Susan Slavney</full_name>
+    <steward_id>geo</steward_id>
+    <namespace_id>lro</namespace_id>
+    <comment>
+        The LRO dictionary contains classes that describe aspects of the 
+        Lunar Reconnaissance Orbiter mission and related instruments.
+        
+        LRO version 1.0.0.0
+        PDS Build 1.16.0.0 (1G00)
+        LDDTool version 13.0.2
+        
+        Created with lddtool -plJ PDS4_LRO_IngestLDD.xml
+    </comment>
+    <last_modification_date_time>2021-10-22T00:00Z</last_modification_date_time>
+	
+	<!-- PGeissler changed mterm1 to mterm5 to ASCII_Real; added units to NAC temperatures, line_exposure_time, interframe_delay -->
+
+        <!-- PGeissler 5-08-2020 ldd-lro-1d00.xml changed mission_phase_name to allow multiple mission phases -->
+
+    <!-- LRO Mission Dictionary Attributes -->
+    <!-- Definitions of attributes of these LRO-specific classes: 
+           LRO_Parameters superclass
+               LROC_Parameters class
+               Diviner_Parameters class
+                   Parameter_Range subclass
+                   Channel_Range subclass
+               MiniRF_Parameters class
+               LOLA_Parameters class
+               Geodetic_Model class           
+               
+	    In alphabetical order, the attributes are:
+	    
+	    a_axis_radius
+	    azimuth_resolution
+	    b_axis_radius
+	    background_offset
+	    band_code
+	    begin_temperature_fpa
+	    begin_temperature_fpa_raw
+	    begin_temperature_scs
+	    begin_temperature_scs_raw
+	    bterm1
+	    bterm2
+	    bterm3
+	    bterm4
+	    bterm5
+	    c_axis_radius
+	    calibration_software_ver_id
+	    channel
+	    channel_a_offset
+	    channel_b_offset
+	    coordinate_system_name
+	    coordinate_system_type
+	    compand_code
+	    complete_lines
+	    compression_flag
+	    dac_reset_level
+	    data_quality_desc
+	    data_quality_id
+	    dlre_date_min
+	    dlre_date_max
+	    dlre_geom_version_id
+	    dlre_instrument_mode_id
+	    dlre_orientation
+	    dlre_utc_min
+	    dlre_utc_max
+	    dreb_flight_software_ver_id
+	    end_temperature_fpa
+	    end_temperature_fpa_raw
+	    end_temperature_scs
+	    end_temperature_scs_raw
+	    exposure_code
+	    file_state
+	    flight_software_version_id
+	    frame_id
+	    instrument_mode_id
+	    interframe_delay
+	    interframe_gap_code
+	    latitude_type
+	    line_code
+	    line_exposure_code
+	    line_exposure_duration
+	    lola_dem_vers
+	    lola_instrument_mode_id
+	    longitude_direction
+	    look_azimuth_angle
+	    lookup_table_type
+	    middle_temperature_fpa
+	    middle_temperature_fpa_raw
+	    middle_temperature_scs
+	    middle_temperature_scs_raw
+	    mission_phase_name
+	    missing_lines
+	    mode
+	    mterm1
+	    mterm2
+	    mterm3
+	    mterm4
+	    mterm5
+	    nframes
+	    observation_type
+	    orbit_number
+	    parameter_max
+	    parameter_min
+	    parameter_name
+	    partial_lines
+	    preroll_time
+	    producer_institution_name
+	    product_type
+	    product_version_id
+	    radiance_min
+	    radiance_max
+	    range_resolution
+	    rationale_desc	    
+	    software_version_id
+	    spacecraft_clock_count_partition
+	    spacecraft_clock_preroll_count
+	    spacecraft_clock_start_count
+	    spacecraft_clock_stop_count
+	    start_orbit_number
+	    start_solar_longitude
+	    stcf_file_name
+	    stop_orbit_number
+	    stop_solar_longitude
+	    sub_spacecraft_ground_azimuth
+	    tb_max
+	    tb_min
+	    temperature_fpa
+	    temperature_fpa_raw
+	    temperature_fpga
+	    temperature_fpga_raw
+	    temperature_scs
+	    temperature_scs_raw
+	    temperature_telescope
+	    temperature_telescope_raw
+	    total_lines
+	    upload_id
+	    xterm1
+	    xterm2
+	    xterm3
+	    xterm4
+	    xterm5
+    --> 
+
+    <DD_Attribute> <!-- a_axis_radius -->
+        <name>a_axis_radius</name> 
+        <version_id>1.0</version_id>
+        <local_identifier>lro.a_axis_radius</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The a_axis_radius attribute provides the radius of the equatorial
+            axis of the ellipsoid. The IAU calls this "Subplanetary equatorial radius" and
+            mapping applications generally call this "semi_major_axis".
+        </definition>
+        <comment>In PDS3 this was named A_AXIS_RADIUS.</comment>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0.0</minimum_value>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>m</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- azimuth_resolution -->
+        <name>azimuth_resolution</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.azimuth_resolution</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The true resolution of the radar image in the 
+            azimuth (along track) direction, evaluated at the center 
+            of the image for the transmit, receive, and processing 
+            parameters used for the sequence.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>450</maximum_value>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>kilometer</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- b_axis_radius -->
+        <name>b_axis_radius</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.b_axis_radius</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The b_axis_radius attribute provides the value of the
+            intermediate axis of the ellipsoid that defines the approximate shape
+            of a target body. The b_axis_radius is usually in the equatorial
+            plane. The IAU calls this axis "along orbit equatorial radius". Mapping
+            applications, which generally only define a sphere or an ellipse, do not
+            support this radius parameter.</definition>
+        <comment>In PDS3 this was named B_AXIS_RADIUS.</comment>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0.0</minimum_value>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>m</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- background_offset -->
+        <name>background_offset</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.background_offset</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>TBD</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- band_code -->
+        <name>band_code</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.band_code</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The band_code records the commanded band code for a WAC observation.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- begin_temperature_fpa --> 
+        <name>begin_temperature_fpa</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.begin_temperature_fpa</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Set to the temperature of the LROC FPA in degrees Celsius, as converted from the raw
+            engineering counts, at the beginning of a series of WAC frames.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- begin_temperature_fpa_raw --> 
+        <name>begin_temperature_fpa_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.begin_temperature_fpa_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Set to the raw engineering counts for the LROC (F)ocal (P)lane (A)rray at the beginning
+            of a series of WAC frames.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- begin_temperature_scs --> 
+        <name>begin_temperature_scs</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.begin_temperature_scs</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Set to the temperature of the LROC SCS in degrees Celsius, as converted from the raw
+            engineering counts, at the beginning of a series of WAC frames.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- begin_temperature_scs_raw --> 
+        <name>begin_temperature_scs_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.begin_temperature_scs_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Set to the raw engineering counts for the LROC SCS at the beginning of a series of WAC
+            frames.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- bterm1 -->
+        <name>bterm1</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.bterm1</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding bterm 1</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- bterm2 -->
+        <name>bterm2</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.bterm2</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding bterm 2</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- bterm3 -->
+        <name>bterm3</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.bterm3</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding bterm 3</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- bterm4 -->
+        <name>bterm4</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.bterm4</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding bterm 4</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- bterm5 -->
+        <name>bterm5</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.bterm5</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding bterm 5</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- c_axis_radius -->
+        <name>c_axis_radius</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.c_axis_radius</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The c_axis_radius attribute provides the value of the
+            polar axis of the ellipsoid that defines the approximate shape of
+            a target body.  The c_axis_radius is normal to the plane defined by
+            the a_axis_radius and b_axis_radius. The IAU calls this "polar radius".
+            Mapping applications generally call this "semi_minor_axis"
+        </definition>
+        <comment>In PDS3 this was named C_AXIS_RADIUS.</comment>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0.0</minimum_value>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>m</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- calibration_software_ver_id -->
+        <name>calibration_software_ver_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.calibration_software_ver_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The version of calibration software used to generate a data product.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <maximum_characters>10</maximum_characters>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- channel -->
+        <name>channel</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.channel</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            One of nine Diviner channels.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>CH1</value>
+                <value_meaning>Diviner Channel 1 (A1).</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>CH2</value>
+                <value_meaning>Diviner Channel 2 (A2).</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>CH3</value>
+                <value_meaning>Diviner Channel 3 (A3).</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>CH4</value>
+                <value_meaning>Diviner Channel 4 (A4).</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>CH5</value>
+                <value_meaning>Diviner Channel 5 (A5).</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>CH6</value>
+                <value_meaning>Diviner Channel 6 (A6).</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>CH7</value>
+                <value_meaning>Diviner Channel 7 (B1).</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>CH8</value>
+                <value_meaning>Diviner Channel 8 (B2).</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>CH9</value>
+                <value_meaning>Diviner Channel 9 (B3).</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- channel_a_offset -->
+        <name>channel_a_offset</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.channel_a_offset</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded NAC channel A offset for either the NAC LEFT or NAC RIGHT.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- channel_b_offset -->
+        <name>channel_b_offset</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.channel_b_offset</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded NAC channel B offset for either the NAC LEFT or NAC RIGHT.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- compand_code -->
+        <name>compand_code</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.compand_code</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Indicates which stored companding table was used (0-7)</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>7</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- complete_lines -->
+        <name>complete_lines</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.complete_lines</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The number of lines of data in a data product that are complete; that is, with 
+            no missing data.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- compression_flag -->
+        <name>compression_flag</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.compression_flag</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Indicates if lossless compression was commanded (0=no, 1=yes)</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>1</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>coordinate_system_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.coordinate_system_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The given name of the used coordinate system. e.g. "MEAN EARTH/POLAR AXIS OF DE421"</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Text_Preserved</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>coordinate_system_type</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.coordinate_system_type</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>There are three basic types of coordinate systems: body-fixed rotating,
+            body-fixed non-rotating, and inertial. A body-fixed coordinate system is one associated
+            with the body (e.g., a planet or satellite). The body-fixed system is centered on the
+            body and rotates with the body (unless it is a non-rotating type), whereas an inertial
+            coordinate system is fixed at some point in space.
+            
+            Currently, the PDS has specifically defined two types of body-fixed rotating
+            coordinate systems: planetocentric and planetographic. However, the set of related data 
+            elements are modeled such that definitions for other body-fixed rotating coordinate systems,
+            body-fixed non-rotating and inertial coordinate systems can be added as the need arises.
+            Contact a PDS data engineer for assistance in defining a specific coordinate system.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <minimum_characters>8</minimum_characters>
+            <maximum_characters>25</maximum_characters>
+            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+            <DD_Permissible_Value>
+                <value>Body-fixed Rotating</value>
+                <value_meaning>The PDS has specifically defined two types of body-fixed rotating
+                    coordinate systems: planetocentric and planetographic.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Body-fixed Non-rotating</value>
+                <value_meaning>The body-fixed system is centered on the body and it is non-rotating</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Inertial</value>
+                <value_meaning>an inertial coordinate system is fixed at some point in space.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- dac_reset_level -->
+        <name>dac_reset_level</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.dac_reset_level</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded DAC reset level for either the NAC LEFT or NAC RIGHT.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- data_quality_desc -->
+        <name>data_quality_desc</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.data_quality_desc</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The data_quality_desc attribute describes the data qualities
+           associated with a data_quality_id attribute.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Text_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- data_quality_id -->
+        <name>data_quality_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.data_quality_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The data_quality_id attribute provides a numeric key which
+            identifies the quality of data available for a particular time period. 
+            The data_quality_id scheme is unique to a given instrument and is 
+            described by the associated data_quality_desc attribute.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- dlre_date_max -->
+        <name>dlre_date_max</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.dlre_date_max</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Gives the maximum recorded date value in a DLRE RDR data product.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <formation_rule>Gives the maximum recorded date value in a DLRE RDR data product. The format
+                is DD-MMM-YYYY.
+            </formation_rule>
+            <minimum_characters>11</minimum_characters>
+            <maximum_characters>11</maximum_characters>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- dlre_date_min -->
+        <name>dlre_date_min</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.dlre_date_min</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Gives the minimum recorded date value in a DLRE RDR data product.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <formation_rule>Gives the minimum recorded date value in a DLRE RDR data product. The format
+                is DD-MMM-YYYY.
+            </formation_rule>
+            <minimum_characters>11</minimum_characters>
+            <maximum_characters>11</maximum_characters>
+        </DD_Value_Domain>
+    </DD_Attribute>
+        
+    <DD_Attribute> <!-- dlre_geom_version_id -->
+        <name>dlre_geom_version_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.dlre_geom_version_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The version of Diviner geometry and averaging software used to generate 
+            a Diviner GDR product. Example value: 1.0.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <maximum_characters>10</maximum_characters>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- dlre_instrument_mode_id -->
+        <name>dlre_instrument_mode_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.dlre_instrument_mode_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Diviner instrument operating mode.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <maximum_characters>20</maximum_characters>
+            <DD_Permissible_Value>
+                <value>NOMINAL</value>
+                <value_meaning>Instrument mode = NOMINAL.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SMALL ROLL</value>
+                <value_meaning>Instrument mode = SMALL ROLL.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LARGE ROLL</value>
+                <value_meaning>Instrument mode = LARGE ROLL.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>FREEZING</value>
+                <value_meaning>Instrument mode = FREEZING.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>FROZEN</value>
+                <value_meaning>Instrument mode = FROZEN.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SAFING</value>
+                <value_meaning>Instrument mode = SAFING.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SAFED</value>
+                <value_meaning>Instrument mode = SAFED.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>MOVING</value>
+                <value_meaning>Instrument mode = MOVING.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- dlre_orientation -->
+        <name>dlre_orientation</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.dlre_orientation</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>An unordered set of all orientations recorded from activity flags in a 
+            DLRE RDR data product.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <maximum_characters>30</maximum_characters>
+            <DD_Permissible_Value>
+                <value>ON MOON</value>
+                <value_meaning>Orientation = ON MOON.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>NEAR LIMB</value>
+                <value_meaning>Orientation = NEAR LIMB.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>OFF MOON</value>
+                <value_meaning>Orientation = OFF MOON.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>ELEVATION ACTUATOR HOMED</value>
+                <value_meaning>Orientation = ELEVATION ACTUATOR HOMED.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- dlre_utc_max -->
+        <name>dlre_utc_max</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.dlre_utc_max</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Gives the maximum recorded UTC value in a DLRE RDR data product.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <formation_rule>Gives the maximum recorded UTC value in a DLRE RDR data product. The format
+                is HH-MM-SS.sss.
+            </formation_rule>
+            <minimum_characters>12</minimum_characters>
+            <maximum_characters>12</maximum_characters>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- dlre_utc_min -->
+        <name>dlre_utc_min</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.dlre_utc_min</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Gives the minimum recorded UTC value in a DLRE RDR data product.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <formation_rule>Gives the minimum recorded UTC value in a DLRE RDR data product. The format
+                is HH-MM-SS.sss.
+            </formation_rule>
+            <minimum_characters>12</minimum_characters>
+            <maximum_characters>12</maximum_characters>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- dreb_flight_software_ver_id -->
+        <name>dreb_flight_software_ver_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.dreb_flight_software_ver_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The version of Diviner Remote Electronics Box flight software used to 
+            acquire the telemetry data for a data product.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <maximum_characters>10</maximum_characters>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- end_temperature_fpa --> 
+        <name>end_temperature_fpa</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.end_temperature_fpa</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Set to the temperature of the LROC FPA in degrees Celsius, as converted from the raw
+            engineering counts, at the end of a series of WAC frames.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- end_temperature_fpa_raw --> 
+        <name>end_temperature_fpa_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.end_temperature_fpa_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Set to the raw engineering counts for the LROC (F)ocal (P)lane (A)rray at the end of a
+            series of WAC frames.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- end_temperature_scs --> 
+        <name>end_temperature_scs</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.end_temperature_scs</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Set to the temperature of the LROC SCS in degrees Celsius, as converted from the raw
+            engineering counts, at the end of a series of WAC frames.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- end_temperature_scs_raw --> 
+        <name>end_temperature_scs_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.end_temperature_scs_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Set to the raw engineering counts for the LROC SCS at the end of a series of WAC
+            frames.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- exposure_code --> 
+        <name>exposure_code</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.exposure_code</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded exposure code for a WAC observation.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- file_state --> 
+        <name>file_state</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.file_state</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Indicates whether a file possibly contains potentially corrupted data.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <minimum_characters>5</minimum_characters>
+            <maximum_characters>5</maximum_characters>
+            <DD_Permissible_Value>
+                <value>CLEAN</value>
+                <value_meaning>A CLEAN file may still contain missing or partial records, as long 
+                    as all available records are written successfully.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DIRTY</value>
+                <value_meaning>DIRTY means only that the file was prematurely closed during output, 
+                    e.g. during a program crash.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- flight_software_version_id --> 
+        <name>flight_software_version_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.flight_software_version_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Identifies the version of the instrument flight software used to acquire the 
+            data.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <maximum_characters>10</maximum_characters>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- frame_id --> 
+        <name>frame_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.frame_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>For NAC, records if the image was acquired from the "LEFT" or "RIGHT" NAC.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>LEFT</value>
+                <value_meaning>The image was acquired from the LEFT NAC.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>RIGHT</value>
+                <value_meaning>The image was acquired from the RIGHT NAC.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- instrument_mode_id --> 
+        <name>instrument_mode_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.instrument_mode_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded WAC mode: BW, COLOR, VIS or UV.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>BW</value>
+                <value_meaning>The commanded WAC instrument mode was BW.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>COLOR</value>
+                <value_meaning>The commanded WAC instrument mode was COLOR.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>VIS</value>
+                <value_meaning>The commanded WAC instrument mode was VIS.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>UV</value>
+                <value_meaning>The commanded WAC instrument mode was UV.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- interframe_delay --> 
+        <name>interframe_delay</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.interframe_delay</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the value of the interframe delay between WAC framelets. Keyword can have
+            values between 25/64 and 280/64 seconds, in 1/64 seconds increments.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- interframe_gap_code --> 
+        <name>interframe_gap_code</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.interframe_gap_code</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded interframe gap code for a WAC observation.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- latitude_type --> 
+        <name>latitude_type</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.latitude_type</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The latitude_type attribute defines the type of latitude 
+            (planetographic, planetocentric) used within a cartographic product 
+            and as reflected in attribute values within associated PDS labels. 
+            For planets and satellites, latitude is measured north and south of 
+            the equator; north latitudes are designated as positive. The planetocentric 
+            latitude is the angle between the equatorial plane and a line from the 
+            center of the body. The planetographic latitude is the angle between 
+            the equatorial plane and a line that is normal to the body. In summary, 
+            both latitudes are equivalent on a sphere (i.e., equatorial radius equal 
+            to polar radius); however, they differ on an ellipsoid (e.g., Mars, Earth).
+            For more on latitude_type, please see the IAU publication available here: 
+            http://astrogeology.usgs.gov/groups/IAU-WGCCRE</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+            <DD_Permissible_Value>
+                <value>Planetographic</value>
+                <value_meaning>The planetographic latitude is the angle between 
+                    the equatorial plane and a line that is normal to the body.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Planetocentric</value>
+                <value_meaning>The planetocentric latitude is the angle between 
+                    the equatorial plane and a line from the center of the body.
+                </value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+        
+    <DD_Attribute> <!-- line_code --> 
+        <name>line_code</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.line_code</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded value for the number of NAC lines to acquire,
+            in 1024 increments. (LINES = LINES_CODE * 1024)</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- line_exposure_code --> 
+        <name>line_exposure_code</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.line_exposure_code</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Index range from 0 to 4095 each corresponding to one LINE_EXPOSURE_DURATION increment.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>4095</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- line_exposure_duration --> 
+        <name>line_exposure_duration</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.line_exposure_duration</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>
+            For NAC products, LINE_EXPOSURE_DURATION can have values between 337.6 and 
+            35,281.6 microseconds, in 128/15 microsecond increments
+            (LINE_EXPOSURE_DURATION = [LINE_EXPOSURE_CODE * 128/15] + 337.6)
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- lola_dem_vers --> 
+        <name>lola_dem_vers</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.lola_dem_vers</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Gives the version of the LOLA digital elevation model that was used to 
+            locate Diviner footprints for the generation of a Diviner GDR product. 
+            Example value: 1.0.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <maximum_characters>10</maximum_characters>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- lola_instrument_mode_id -->
+        <name>lola_instrument_mode_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.lola_instrument_mode_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>LOLA instrument operating mode.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <maximum_characters>20</maximum_characters>
+            <DD_Permissible_Value>
+                <value>DISABLED</value>
+                <value_meaning>Instrument mode = DISABLED.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>ENABLED</value>
+                <value_meaning>Instrument mode = ENABLED.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>FIRING</value>
+                <value_meaning>Instrument mode = FIRING.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>GAINS_DIS</value>
+                <value_meaning>Instrument mode = GAINS_DIS.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>GAINS_FSW</value>
+                <value_meaning>Instrument mode = GAINS_FSW.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LASER_1</value>
+                <value_meaning>Instrument mode = LASER_1.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LASER_2</value>
+                <value_meaning>Instrument mode = LASER_2.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>NOFIRE</value>
+                <value_meaning>Instrument mode = NOFIRE.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>RGATES_DIS</value>
+                <value_meaning>Instrument mode = RGATES_DIS.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>RGATES_FSW</value>
+                <value_meaning>Instrument mode = RGATES_FSW.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SC_B</value>
+                <value_meaning>Instrument mode = SC_B</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SWINPUTS_DIS</value>
+                <value_meaning>Instrument mode = SWINPUTS_DIS.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SWINPUTS_FSW</value>
+                <value_meaning>Instrument mode = SWINPUTS_FSW.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>THRESHOLDS_DIS</value>
+                <value_meaning>Instrument mode = THRESHOLDS_DIS.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>THRESHOLDS_FSW</value>
+                <value_meaning>Instrument mode = THRESHOLDS_FSW.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute>
+        <name>longitude_direction</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.longitude_direction</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The longitude_direction attribute identifies the direction
+            of longitude (e.g. POSITIVE_EAST or POSITIVE_WEST) for a planet.	The
+            IAU definition for direction of positive longitude should be adopted: 
+            http://astrogeology.usgs.gov/groups/IAU-WGCCRE. Typically, for planets 
+            with prograde (direct) rotations, positive longitude direction is to 
+            the west.  For planets with retrograde rotations, positive longitude 
+            direction is to the east.  Generally the Positive West longitude_direction 
+            is used for planetographic systems and Positive East is used for 
+            planetocentric systems. If the data is defined with Spatial_Domain in a manner
+            not recommended by the IAU, there is a optional Secondary_Spatial_Domain section
+            to define a second set of bounding coordinates.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <minimum_characters>13</minimum_characters>
+            <maximum_characters>13</maximum_characters>
+            <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+            <DD_Permissible_Value>
+                <value>Positive East</value>
+                <value_meaning>Positive East longitudes (i.e., longitudes measured positively 
+                    to the east) will be used when the bodies rotation is retrograde. Because 
+                    of tradition, the Earth, Sun, and Moon do not conform with this definition. 
+                    Their rotations are direct and longitudes run both east and west 180 degree, 
+                    or east 360 degree.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>Positive West</value>
+                <value_meaning>Positive West longitudes (i.e., longitudes measured 
+                    positively to the west) will be used when the rotation is prograde (direct).
+                </value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+        
+    <DD_Attribute> <!-- look_azimuth_angle --> 
+        <name>look_azimuth_angle</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.look_azimuth_angle</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The East-West look azimuth discrimination angle. 
+            This is the angle between the projection of North into 
+            the tangent plane of a sphere at the image center point 
+            and the vector from subspacecraft point to the image 
+            center projected into the plane. It assumes values from 
+            0 to 360, where 0 means North-looking, 90 East-looking, 
+            180 South-looking, and 270 West-looking.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>359</maximum_value>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>Degree</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- lookup_table_type --> 
+        <name>lookup_table_type</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.lookup_table_type</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Always set to STORED.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>STORED</value>
+                <value_meaning>Lookup table type = STORED.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- middle_temperature_fpa --> 
+        <name>middle_temperature_fpa</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.middle_temperature_fpa</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Set to the temperature of the LROC FPA in degrees Celsius, as converted from the raw
+            engineering counts, at the middle of a series of WAC frames.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- middle_temperature_fpa_raw --> 
+        <name>middle_temperature_fpa_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.middle_temperature_fpa_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Set to the raw engineering counts for the LROC (F)ocal (P)lane (A)rray at the middle of a
+            series of WAC frames.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- middle_temperature_scs --> 
+        <name>middle_temperature_scs</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.middle_temperature_scs</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Set to the temperature of the LROC SCS in degrees Celsius, as converted from the raw
+            engineering counts, at the middle of a series of WAC frames.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- middle_temperature_scs_raw --> 
+        <name>middle_temperature_scs_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.middle_temperature_scs_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Set to the raw engineering counts for the LROC SCS at the middle of a series of WAC
+            frames.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- mission_phase_name -->
+        <name>mission_phase_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mission_phase_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>
+            The mission_phase_name attribute provides the mission-defined name of 
+            a time period within the mission.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>LAUNCH</value>
+                <value_meaning>2009-06-18</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>CRUISE</value>
+                <value_meaning>2009-06-18 to 2009-06-23</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LUNAR ORBIT ACQUISITION</value>
+                <value_meaning>2009-06-23</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>COMMISSIONING</value>
+                <value_meaning>2009-06-23 to 2009-09-14</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>NOMINAL MISSION</value>
+                <value_meaning>2009-09-15 to 2010-09-15</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SCIENCE MISSION</value>
+                <value_meaning>2010-09-16 to 2012-09-14</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>EXTENDED SCIENCE MISSION</value>
+                <value_meaning>2012-09-15 to 2014-09-14</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SECOND EXTENDED SCIENCE MISSION</value>
+                <value_meaning>2014-09-15 to 2016-09-14</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>THIRD EXTENDED SCIENCE MISSION</value>
+                <value_meaning>2016-09-15 to 2019-09-14</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>FOURTH EXTENDED SCIENCE MISSION</value>
+                <value_meaning>2019-09-15 to 2022-09-15</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- missing_lines --> 
+        <name>missing_lines</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.missing_lines</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The total number of lines of data missing from an image or observation 
+            when it was received on Earth.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- mode --> 
+        <name>mode</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mode</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the mode value as commanded for both NAC and WAC observations.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- mterm1 -->
+        <name>mterm1</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mterm1</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding mterm 1</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- mterm2 -->
+        <name>mterm2</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mterm2</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding mterm 2</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- mterm3 -->
+        <name>mterm3</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mterm3</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding mterm 3</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- mterm4 -->
+        <name>mterm4</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mterm4</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding mterm 4</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- mterm5 -->
+        <name>mterm5</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.mterm5</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding mterm 5</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- nframes -->
+        <name>nframes</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.nframes</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Records the commanded number of frames for a WAC observation.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- observation_type -->
+        <name>observation_type</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.observation_type</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Identifies the general type of an observation.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <maximum_characters>30</maximum_characters>
+            <DD_Permissible_Value>
+                <value>STANDARD NADIR</value>
+                <value_meaning>Observation type = STANDARD NADIR.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>ROTATED NADIR</value>
+                <value_meaning>Observation type = ROTATED NADIR.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SPACE CALIBRATION</value>
+                <value_meaning>Observation type = SPACE CALIBRATION.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SOLAR CALIBRATION</value>
+                <value_meaning>Observation type = SOLAR CALIBRATION.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>BLACKBODY CALIBRATION</value>
+                <value_meaning>Observation type = BLACKBODY CALIBRATION.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>STOWED</value>
+                <value_meaning>Observation type = STOWED.</value_meaning>
+            </DD_Permissible_Value>            
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- orbit_number -->
+        <name>orbit_number</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.orbit_number</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The orbit_number attribute identifies the number of the 
+           orbital revolution around a target body.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- parameter_max -->
+        <name>parameter_max</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.parameter_max</local_identifier>
+        <nillable_flag>true</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The maximum value for the Diviner parameter specified by 
+            lro.parameter_name.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- parameter_min -->
+        <name>parameter_min</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.parameter_min</local_identifier>
+        <nillable_flag>true</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The minimum value for the Diviner parameter specified by 
+            lro.parameter_name.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- parameter_name -->
+        <name>parameter_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.parameter_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Diviner parameter name.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>DLRE_JDATE</value>
+                <value_meaning>The recorded Julian date value in a DLRE RDR data 
+                    product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_ORBIT</value>
+                <value_meaning>The recorded orbit number value in a DLRE RDR data 
+                    product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_SUNDIST</value>
+                <value_meaning>The recorded sun distance value in a DLRE RDR data 
+                    product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_SUNLAT</value>
+                <value_meaning>The recorded sun latitude value in a DLRE RDR data 
+                    product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_SUNLON</value>
+                <value_meaning>The recorded sun longitude value in a DLRE RDR data 
+                    product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_SCLK</value>
+                <value_meaning>The recorded spacecraft clock value in a DLRE RDR 
+                    data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_SCLAT</value>
+                <value_meaning>The recorded spacecraft latitude value in a DLRE 
+                    RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_SCLON</value>
+                <value_meaning>The recorded spacecraft longitude value in a DLRE 
+                    RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_SCRAD</value>
+                <value_meaning>The recorded spacecraft radius value (distance 
+                    from center of moon to spacecraft) in a DLRE RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_SCALT</value>
+                <value_meaning>The recorded spacecraft altitude value (distance 
+                    from surface of moon to spacecraft) in a DLRE RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_EL_CMD</value>
+                <value_meaning>The recorded last elevation command value in a DLRE 
+                    RDR data product.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_AZ_CMD</value>
+                <value_meaning>The recorded last azimuth command value in a DLRE 
+                    RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_ORIENTLAT</value>
+                <value_meaning>The recorded orientation latitude value in a DLRE 
+                    RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_ORIENTLON</value>
+                <value_meaning>The recorded orientation longitude value in a DLRE 
+                    RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_VLOOKX</value>
+                <value_meaning>The recorded value of the X component of the Diviner 
+                    Look Unit Vector in a DLRE RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_VLOOKY</value>
+                <value_meaning>The recorded value of the Y component of the Diviner 
+                    Look Unit Vector in a DLRE RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_VLOOKZ</value>
+                <value_meaning>The recorded value of the Z component of the Diviner 
+                    Look Unit Vector in a DLRE RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_CLAT</value>
+                <value_meaning>The recorded FOV center latitude value in a DLRE RDR 
+                    data product.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_CLON</value>
+                <value_meaning>The recorded FOV center longitude value in a DLRE RDR 
+                    data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_CEMIS</value>
+                <value_meaning>The recorded FOV center emission angle value in a DLRE 
+                    RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_CSUNZEN</value>
+                <value_meaning>The recorded FOV center solar zenith angle value in a 
+                    DLRE RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_CSUNAZI</value>
+                <value_meaning>The recorded FOV center solar azimuth angle value in a 
+                    DLRE RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_CLOCTIME</value>
+                <value_meaning>The recorded local time at FOV center in a DLRE RDR 
+                    data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_QCA_SOLAR</value>
+                <value_meaning>The recorded solar calibration quality flag value in a 
+                    DLRE RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_QCA_THERMAL</value>
+                <value_meaning>The recorded thermal calibration quality flag value in 
+                    a DLRE RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_QGE</value>
+                <value_meaning>The recorded geometry quality flag value in a DLRE RDR 
+                    data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DLRE_QMI</value>
+                <value_meaning>The recorded miscellaneous quality flag value in a DLRE 
+                    RDR data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>A1_CHANNEL</value>
+                <value_meaning>The value of the Diviner instrument A1 detector channel 
+                    in the set of observations that make up a Diviner data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>A2_CHANNEL</value>
+                <value_meaning>The value of the Diviner instrument A2 detector channel 
+                    in the set of observations that make up a Diviner data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>A3_CHANNEL</value>
+                <value_meaning>The value of the Diviner instrument A3 detector channel 
+                    in the set of observations that make up a Diviner data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>A4_CHANNEL</value>
+                <value_meaning>The value of the Diviner instrument A4 detector channel 
+                    in the set of observations that make up a Diviner data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>A5_CHANNEL</value>
+                <value_meaning>The value of the Diviner instrument A5 detector channel 
+                    in the set of observations that make up a Diviner data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>A6_CHANNEL</value>
+                <value_meaning>The value of the Diviner instrument A6 detector channel 
+                    in the set of observations that make up a Diviner data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>B1_CHANNEL</value>
+                <value_meaning>The value of the Diviner instrument B1 detector channel 
+                    in the set of observations that make up a Diviner data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>B2_CHANNEL</value>
+                <value_meaning>The value of the Diviner instrument B2 detector channel 
+                    in the set of observations that make up a Diviner data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>B3_CHANNEL</value>
+                <value_meaning>The value of the Diviner instrument B3 detector channel 
+                    in the set of observations that make up a Diviner data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LAST_AZIMUTH_COMMAND</value>
+                <value_meaning>The value of the last azimuth command in the set of 
+                    observations that make up a Diviner data product.
+                </value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LAST_ELEVATION_COMMAND</value>
+                <value_meaning>The value of the last elevation command in the set of 
+                    observations that make up a Diviner data product.</value_meaning>
+            </DD_Permissible_Value>            
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- partial_lines -->
+        <name>partial_lines</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.partial_lines</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The number of lines of data in a data product that contain partial 
+            but incomplete data.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- preroll_time -->
+        <name>preroll_time</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.preroll_time</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>The UTC time and date at the start of the image acquisition command, 
+            corresponding to the acquisition of 1024 lines at the given exposure prior to the 
+            actual image acquisition.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Date_Time_YMD</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- producer_institution_name -->
+        <name>producer_institution_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.producer_institution_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The producer_institution_name attribute identifies a university,
+            research center, NASA center, or other institution associated with the 
+            production of a data product.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- product_type -->
+        <name>product_type</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.product_type</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The product_type attribute indicates the processing
+            level of an individual data product.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>CDR</value>
+                <value_meaning>Calibrated Data Record</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DDR</value>
+                <value_meaning>Derived Data Record</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>EDR</value>
+                <value_meaning>Experiment Data Record</value_meaning>
+            </DD_Permissible_Value>                        
+            <DD_Permissible_Value>
+                <value>GCP</value>
+                <value_meaning>Diviner Global Cumulative Product</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>GDR</value>
+                <value_meaning>Gridded Data Record</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LEND_EDR_HK</value>
+                <value_meaning>LEND Experiment Data Record housekeeping data.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LEND_EDR_SCI</value>
+                <value_meaning>LEND Experiment Data Record science data.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LEND_RDR_ALD</value>
+                <value_meaning>LEND Reduced Data Record averaged counts data.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LEND_RDR_CHK</value>
+                <value_meaning>LEND Reduced Data Record converted housekeeping data.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LEND_RDR_DLD</value>
+                <value_meaning>LEND Reduced Data Record derived data.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LEND_RDR_DLX</value>
+                <value_meaning>LEND Reduced Data Record extended derived data.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LEND_RDR_RSCI</value>
+                <value_meaning>LEND Reduced Data Record rectified science data.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LOLA_DAC</value>
+                <value_meaning>LOLA Gridded Data Record - albedo counts.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>LOLA_DEC</value>
+                <value_meaning>LOLA Gridded Data Record - topography counts.</value_meaning>
+            </DD_Permissible_Value>  
+            <DD_Permissible_Value>
+                <value>LOLA_DEM</value>
+                <value_meaning>LOLA Gridded Data Record - digital elevation model.</value_meaning>
+            </DD_Permissible_Value>  
+            <DD_Permissible_Value>
+                <value>LOLA_DRC</value>
+                <value_meaning>LOLA Gridded Data Record - surface roughness counts.</value_meaning>
+            </DD_Permissible_Value>  
+            <DD_Permissible_Value>
+                <value>LOLA_DRM</value>
+                <value_meaning>LOLA Gridded Data Record - surface roughness.</value_meaning>
+            </DD_Permissible_Value>  
+            <DD_Permissible_Value>
+                <value>LOLA_DSM</value>
+                <value_meaning>LOLA Gridded Data Record - surface slope.</value_meaning>
+            </DD_Permissible_Value>  
+            <DD_Permissible_Value>
+                <value>LOLA_DAM</value>
+                <value_meaning>LOLA Gridded Data Record - albedo map.</value_meaning>
+            </DD_Permissible_Value>  
+            <DD_Permissible_Value>
+                <value>PCP</value>
+                <value_meaning>Diviner Polar Cumulative Product</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>PRP</value>
+                <value_meaning>Diviner Polar Resource Product</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>RADR</value>
+                <value_meaning>LOLA Radiometric Active Data Record</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>RCP</value>
+                <value_meaning>Diviner Regional Cumulative Product</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>RDR</value>
+                <value_meaning>Reduced Data Record</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SHA</value>
+                <value_meaning>LOLA spherical harmonics data.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- product_version_id -->
+        <name>product_version_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.product_version_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The product_version_id attribute identifies the version of an
+           individual data product.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- radiance_max -->
+        <name>radiance_max</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.radiance_max</local_identifier>
+        <nillable_flag>true</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The maximum recorded value of radiance for the channel given by 
+            lro:channel in a DLRE RDR data product.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>-1000.0</minimum_value>
+            <maximum_value>100000.0 </maximum_value>
+            <unit_of_measure_type>Units_of_Radiance</unit_of_measure_type>
+            <specified_unit_id>W/M**2/SR</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- radiance_min -->
+        <name>radiance_min</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.radiance_min</local_identifier>
+        <nillable_flag>true</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The minimum recorded value of radiance for the channel given by 
+            lro:channel in a DLRE RDR data product.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>-1000.0</minimum_value>
+            <maximum_value>100000.0 </maximum_value>
+            <unit_of_measure_type>Units_of_Radiance</unit_of_measure_type>
+            <specified_unit_id>W/M**2/SR</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- range_resolution -->
+        <name>range_resolution</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.range_resolution</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The true resolution of the radar image in 
+            the range (across track) direction, evaluated at 
+            the center of the image for the transmit, receive, 
+            and processing parameters used for the sequence.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <maximum_value>450</maximum_value>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>kilometer</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- rationale_desc -->
+        <name>rationale_desc</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.rationale_desc</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The rationale_desc attribute describes the rationale for performing a particular observation.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- software_version_id -->
+        <name>software_version_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.software_version_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The software_version_id element indicates the version (development level) of a program or a 
+            program library.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <maximum_characters>20</maximum_characters>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- spacecraft_clock_count_partition -->
+        <name>spacecraft_clock_count_partition</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.spacecraft_clock_count_partition</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The spacecraft_clock_count_partition attribute indicates the clock partition active
+            for the spacecraft_clock_start_count and spacecraft_clock_stop_count attributes.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_NonNegative_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- spacecraft_clock_preroll_count -->
+        <name>spacecraft_clock_preroll_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.spacecraft_clock_preroll_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the sclk string for the start of an observation preroll acquisition.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <pattern>([0-9]{1,2}/)?[0-9]{1,10}(:[0-9]{5})?</pattern>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- spacecraft_clock_start_count -->
+        <name>spacecraft_clock_start_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.spacecraft_clock_start_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The spacecraft_clock_start_count attribute provides the value 
+            of the spacecraft clock at the beginning of a time period of 
+            interest.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <pattern>([0-9]{1,2}/)?[0-9]{1,10}([:|.][0-9]{1,9})?</pattern>
+        </DD_Value_Domain>
+    </DD_Attribute>  
+    
+    <DD_Attribute> <!-- spacecraft_clock_stop_count -->
+        <name>spacecraft_clock_stop_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.spacecraft_clock_stop_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The spacecraft_clock_stop_count attribute provides the value of the spacecraft 
+            clock at the beginning of a time period of interest.
+        </definition>    
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <pattern>([0-9]{1,2}/)?[0-9]{1,10}([:|.][0-9]{1,9})?</pattern>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- start_orbit_number -->
+        <name>start_orbit_number</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.start_orbit_number</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Provides the the lowest revolution orbit number that contributed data to a given
+            data product.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- start_solar_longitude -->
+        <name>start_solar_longitude</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.start_solar_longitude</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Marks the beginning of a time range measured in solar longitude. Solar longitude is 
+            the value of the angle between the body_Sun line at the time of interest and the body_Sun 
+            line at the vernal equinox, thus providing a measure of the season on the target body.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>-180</minimum_value>
+            <maximum_value>360</maximum_value>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>Degree</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- stcf_file_name -->
+        <name>stcf_file_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.stcf_file_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Provides the name of the LRO Spacecraft Time 
+            Correlation file, which is a housekeeping file containing 
+            the offset between the spacecraft raw clock and terrestrial 
+            time. The time correlation file is used to compute the 
+            start and stop spacecraft clock times for LOLA data 
+            products.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <maximum_characters>40</maximum_characters>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- stop_orbit_number -->
+        <name>stop_orbit_number</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.stop_orbit_number</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Provides the the highest revolution orbit number that contributed data to a given
+            data product.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- stop_solar_longitude -->
+        <name>stop_solar_longitude</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.stop_solar_longitude</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Marks the end of a time range measured in solar longitude. Solar longitude is 
+            the value of the angle between the body_Sun line at the time of interest and the body_Sun 
+            line at the vernal equinox, thus providing a measure of the season on the target body.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>-180</minimum_value>
+            <maximum_value>360</maximum_value>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>Degree</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- sub_spacecraft_ground_azimuth -->
+        <name>sub_spacecraft_ground_azimuth</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.sub_spacecraft_ground_azimuth</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Provides the value of the angle, measured on the 
+            target body surface, between the direction from a ground 
+            point to the north pole and the direction from the ground 
+            point to the sub-spacecraft point.  If the location of the 
+            ground point at which the azimuth is measured is not 
+            otherwise specified, it is assumed to correspond to the 
+            center of the image. The values of this angle increase in 
+            a clockwise direction. When a pair of values is given,
+            e.g. (350.0, 10.0), they represent the ordered end-members 
+            of a range of ground azimuth values that extends clockwise 
+            from the first to the second, modulo 360 degrees.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>360</maximum_value>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>Degree</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- tb_max -->
+        <name>tb_max</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.tb_max</local_identifier>
+        <nillable_flag>true</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The maximum recorded value of brightness temperature for the channel given by 
+            lro:channel in a DLRE RDR data product.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>-450.0</minimum_value>
+            <maximum_value>10000.0</maximum_value>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+            <specified_unit_id>K</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- tb_min -->
+        <name>tb_min</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.tb_min</local_identifier>
+        <nillable_flag>true</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The minimum recorded value of brightness temperature for the channel given by 
+            lro:channel in a DLRE RDR data product.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>-450.0</minimum_value>
+            <maximum_value>10000.0</maximum_value>
+            <unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+            <specified_unit_id>K</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- temperature_fpa -->
+        <name>temperature_fpa</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_fpa</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the temperature of the LROC FPA in degrees Celsius, as converted from the raw
+            engineering counts.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_fpa_raw -->
+        <name>temperature_fpa_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_fpa_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the raw engineering counts for the LROC (F)ocal (P)lane (A)rray.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_fpga -->
+        <name>temperature_fpga</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_fpga</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the temperature of the LROC FPGA in degrees Celsius, as converted from the raw
+            engineering counts.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_fpga_raw -->
+        <name>temperature_fpga_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_fpga_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the raw engineering counts for the LROC (F)ield (P)rogrammable (G)ate (A)rray.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_scs -->
+        <name>temperature_scs</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_scs</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the temperature of the LROC SCS in degrees Celsius, as converted from the raw
+            engineering counts.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_scs_raw -->
+        <name>temperature_scs_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_scs_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the raw engineering counts for the LROC SCS.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_telescope -->
+        <name>temperature_telescope</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_telescope</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the temperature of the LROC telescope corresponding to NAC-L or NAC-R, as
+            converted from the raw engineering counts.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- temperature_telescope_raw -->
+        <name>temperature_telescope_raw</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.temperature_telescope_raw</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Set to the raw engineering counts for the LROC Telescope corresponding to NAC-L or
+            NAC-R.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- total_lines -->
+        <name>total_lines</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.total_lines</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The total number of lines of data in a data product, including both complete 
+            lines and partial lines.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- upload_id -->
+        <name>upload_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.upload_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The upload_id attribute describes a spacecraft command set that is associated with the given data product.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- xterm1 -->
+        <name>xterm1</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.xterm1</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding xterm 1</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- xterm2 -->
+        <name>xterm2</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.xterm2</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding xterm 2</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- xterm3 -->
+        <name>xterm3</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.xterm3</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding xterm 3</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- xterm4 -->
+        <name>xterm4</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.xterm4</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding xterm 4</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- xterm5 -->
+        <name>xterm5</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.xterm5</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>NAC companding xterm 5</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <!-- End of attribute definitions -->
+
+<!-- Beginning of class definitions in order from innermost to outermost -->
+
+    <!-- Beginning of LROC_Parameters Class definition with attributes in the order as they appear in the label -->
+    <DD_Class> <!-- LROC_Parameters -->
+        <name>LROC_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.LROC_Parameters</local_identifier>
+        <submitter_name>GEO</submitter_name>
+        <definition>The LROC_Parameters class is the container for LROC-specific observation parameters.</definition>
+        <DD_Association>
+            <identifier_reference>lro.upload_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.rationale_desc</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.data_quality_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.data_quality_desc</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+
+        <!-- WAC specific attributes -->
+        <DD_Association>
+            <identifier_reference>lro.begin_temperature_scs</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.middle_temperature_scs</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.end_temperature_scs</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.begin_temperature_fpa</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.middle_temperature_fpa</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.end_temperature_fpa</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.begin_temperature_scs_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.middle_temperature_scs_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.end_temperature_scs_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.begin_temperature_fpa_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.middle_temperature_fpa_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.end_temperature_fpa_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+ 
+        <!-- NAC specific attributes -->
+        <DD_Association>
+            <identifier_reference>lro.preroll_time</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.spacecraft_clock_preroll_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.frame_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        
+        <!-- NAC environment attributes -->
+        <DD_Association>
+            <identifier_reference>lro.temperature_scs</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_fpa</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_fpga</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_telescope</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_scs_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_fpa_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_fpga_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.temperature_telescope_raw</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+                
+        <!-- WAC and NAC imaging attributes -->
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.exposure_code</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.interframe_delay</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.instrument_mode_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.lookup_table_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.line_exposure_duration</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.line_exposure_code</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.dac_reset_level</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.channel_a_offset</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.channel_b_offset</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC and NAC -->
+            <identifier_reference>lro.compand_code</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.line_code</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.bterm1</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.bterm2</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.bterm3</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.bterm4</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.bterm5</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.mterm1</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.mterm2</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.mterm3</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.mterm4</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.mterm5</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.xterm1</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.xterm2</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.xterm3</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.xterm4</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- NAC -->
+            <identifier_reference>lro.xterm5</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC and NAC -->
+            <identifier_reference>lro.compression_flag</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC and NAC -->
+            <identifier_reference>lro.mode</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.nframes</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.band_code</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.interframe_gap_code</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> <!-- WAC -->
+            <identifier_reference>lro.background_offset</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    <!-- End of LROC_Parameters Class definition -->
+    
+    <!-- Beginning of Parameter_Range Class definition with attributes in the order as they appear in the label -->
+    <DD_Class>
+        <name>Parameter_Range</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.Parameter_Range</local_identifier>
+        <submitter_name>GEO</submitter_name>
+        <definition>The Parameter_Range class contains the minimum and maximum values of Diviner parameters.</definition>
+        <DD_Association>
+            <identifier_reference>lro.parameter_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.parameter_min</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.parameter_max</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>        
+    </DD_Class>
+    <!-- End of Parameter_Range Class definition -->
+    
+    <!-- Beginning of Channel_Range Class definition with attributes in the order as they appear in the label -->
+    <DD_Class>
+        <name>Channel_Range</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.Channel_Range</local_identifier>
+        <submitter_name>GEO</submitter_name>
+        <definition>The Channel_Range class contains spectral parameters for specific Diviner channels.</definition>
+        <DD_Association>
+            <identifier_reference>lro.channel</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.radiance_min</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.radiance_max</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.tb_min</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.tb_max</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>         
+    </DD_Class>
+    <!-- End of Channel_Range Class definition -->
+
+    <!-- Beginning of Diviner_Parameters Class definition with attributes in the order as they appear in the label -->
+    <DD_Class> <!-- Diviner_Parameters -->
+        <name>Diviner_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.Diviner_Parameters</local_identifier>
+        <submitter_name>GEO</submitter_name>
+        <definition>The Diviner_Parameters class is the container for Diviner-specific observation parameters.</definition>
+        <DD_Association> 
+            <identifier_reference>lro.missing_lines</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.partial_lines</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.complete_lines</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.total_lines</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.file_state</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.flight_software_version_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.dreb_flight_software_ver_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.lola_dem_vers</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.dlre_geom_version_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.calibration_software_ver_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.software_version_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.dlre_date_min</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.dlre_date_max</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.dlre_utc_min</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.dlre_utc_max</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.dlre_orientation</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.observation_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.dlre_instrument_mode_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.Parameter_Range</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.Channel_Range</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>        
+    </DD_Class>
+    <!-- End of Diviner_Parameters Class definition -->
+    
+    <!-- Beginning of MiniRF_Parameters Class definition with attributes in the order as they appear in the label -->
+    <DD_Class> <!-- MiniRF_Parameters -->
+        <name>MiniRF_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.MiniRF_Parameters</local_identifier>
+        <submitter_name>GEO</submitter_name>
+        <definition>The MiniRF_Parameters class is the container for MiniRF-specific observation parameters.</definition>
+        <DD_Association> 
+            <identifier_reference>lro.look_azimuth_angle</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.sub_spacecraft_ground_azimuth</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.azimuth_resolution</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.range_resolution</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    <!-- End of MiniRF_Parameters Class definition -->
+        
+    <!-- Beginning of LOLA_Parameters Class definition with attributes in the order as they appear in the label -->
+    <DD_Class> <!-- LOLA_Parameters -->
+        <name>LOLA_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.LOLA_Parameters</local_identifier>
+        <submitter_name>GEO</submitter_name>
+        <definition>The LOLA_Parameters class is the container for LOLA-specific observation parameters.</definition>
+        <DD_Association> 
+            <identifier_reference>lro.lola_instrument_mode_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.stcf_file_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>                
+    </DD_Class>
+    <!-- End of LOLA_Parameters Class definition -->
+    
+    <!-- Beginning of Geodetic_Model Class definition with attributes in the order as they appear in the label -->
+    <DD_Class> <!-- Geodetic_Model -->
+        <name>Geodetic_Model</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.Geodetic_Model</local_identifier>
+        <submitter_name>GEO</submitter_name>
+        <definition>The Geodetic_Model class provides parameters describing the shape of the planet.</definition>
+        <DD_Association>
+            <identifier_reference>lro.latitude_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.a_axis_radius</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.b_axis_radius</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.c_axis_radius</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.longitude_direction</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.coordinate_system_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.coordinate_system_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    <!-- End of Geodetic_Model Class definition -->
+    
+    <!-- Beginning of LRO_Parameters Class definition with attributes in the order as they appear in the label -->
+    <DD_Class> <!-- LRO_Parameters -->
+        <name>LRO_Parameters</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.LRO_Parameters</local_identifier>
+        <submitter_name>GEO</submitter_name>
+        <definition>The LRO_Parameters class is the container for mission-specific metadata elements.</definition>
+        <abstract_flag>false</abstract_flag>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>lro.product_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>                
+        <DD_Association>
+            <identifier_reference>lro.product_version_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.orbit_number</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.start_orbit_number</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.stop_orbit_number</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.start_solar_longitude</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.stop_solar_longitude</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.mission_phase_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>unbounded</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.spacecraft_clock_count_partition</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.spacecraft_clock_start_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.spacecraft_clock_stop_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.producer_institution_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.LROC_Parameters</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.Diviner_Parameters</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.MiniRF_Parameters</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.LOLA_Parameters</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.Geodetic_Model</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    <!-- End of LRO_Parameters Class definition -->
+
+<!-- End of class definitions -->
+    
+</Ingest_LDD>
