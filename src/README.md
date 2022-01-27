@@ -13,7 +13,7 @@ LRO Mission Dictionary revisions:
 10/22/2021 
 - GEO/JGW Added Geodetic_Model class
 01/27/2022
-- GEO/SHS Rebuilt with 1H00 IM
+- GEO/SHS Rebuilt with 1G00 and 1H00 IM
 
 -----
 This directory should contain one IngestLDD for the LDD being built. The auto-generation script does not currently support multiple versions of an LDD being maintained.

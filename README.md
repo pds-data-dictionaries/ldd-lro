@@ -4,7 +4,7 @@ The Lunar Reconnaissance Orbiter (LRO) mission dictionary contains classes that 
 
 ## Versions (Source)
 
-[prototype](src/prototype)
+[1000](src)
 <!-- - [1.0.0.0](src/1.0.0.0) -->
 
 ## Builds
@@ -14,7 +14,8 @@ The build process insures compatibility of the LDD with the core information mod
 
 This LDD has been built for the following versions of the PDS4 information model.
 
-[prototype](build/prototype)
+[1.16.0.0](build/release/1.16.0.0)
+[1.17.0.0](build/release/1.17.0.0)
 <!-- - [1.12.0.0](build/1.12.0.0) -->
 
 ## Notes

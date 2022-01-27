@@ -1,0 +1,1349 @@
+PDS4 Local Data Dictionary Processing Report
+
+Configuration:
+   LDDTool Version        13.1.0
+   LDD Version Id:        1.0.0.0
+   LDD Label Version Id:  1.23
+   LDD Discipline (T/F):  false
+   LDD Namespace URL:     http://pds.nasa.gov/pds4/
+   LDD URN Prefix:        urn:nasa:pds:
+   Time                   Thu Jan 27 23:18:27 UTC 2022
+   Common Schema          [PDS4_PDS_1H00.xsd]
+   Common Schematron      [PDS4_PDS_1H00.sch]
+   IM Version Id:         1.17.0.0
+   IM Namespace Id:       pds
+   IM Label Version Id:   1.23
+   IM Object Model        [UpperModel.pont]
+   IM Data Dictionary     [dd11179.pins]
+   IM Configuration File  [MDPTNConfigClassDisp.xml]
+   IM Glossary            [Glossary.pins]
+   IM Document Spec       [DMDocument.pins]
+
+Parameters:
+   Input File             [/home/runner/work/ldd-lro/ldd-lro/src/PDS4_LRO_IngestLDD.xml]
+   PDS Processing         true
+   LDD Processing         true
+   Discipline LDD         false
+   Mission LDD            true
+   Write Attr Elements    false
+   Merge with Master      false
+
+Summary:
+   Classes                8
+   Attributes             110
+   Associations           117
+   Error messages         0
+   Warning messages       0
+   Information messages   0
+
+Detailed validation messages
+
+Parsed Input - Header:
+   LDD Name               LRO
+   LDD Version            1.0.0.0
+   Full Name              Susan Slavney
+   Steward                geo
+   Namespace Id           lro
+   Comment                
+        The LRO dictionary contains classes that describe aspects of the 
+        Lunar Reconnaissance Orbiter mission and related instruments.
+        
+        LRO version 1.0.0.0
+        PDS Build 1.17.0.0 (1H00)
+        LDDTool version 13.1.0
+        
+        Created with lddtool -plJ PDS4_LRO_IngestLDD.xml
+    
+   Last Modification Time 2022-01-27T00:00Z
+   PDS4 Merge Flag        false
+
+Parsed Input - Attributes:
+
+   name                   a_axis_radius
+   version                1.17
+   value data type        ASCII_Real
+   description            The a_axis_radius attribute provides the radius of the equatorial axis of the ellipsoid. The IAU calls this "Subplanetary equatorial radius" and mapping applications generally call this "semi_major_axis". 
+   minimum value          0.0
+   unit of measure type   Units_of_Length
+
+   name                   azimuth_resolution
+   version                1.17
+   value data type        ASCII_Real
+   description            The true resolution of the radar image in the azimuth (along track) direction, evaluated at the center of the image for the transmit, receive, and processing parameters used for the sequence.
+   minimum value          0
+   maximum value          450
+   unit of measure type   Units_of_Length
+
+   name                   b_axis_radius
+   version                1.17
+   value data type        ASCII_Real
+   description            The b_axis_radius attribute provides the value of the intermediate axis of the ellipsoid that defines the approximate shape of a target body. The b_axis_radius is usually in the equatorial plane. The IAU calls this axis "along orbit equatorial radius". Mapping applications, which generally only define a sphere or an ellipse, do not support this radius parameter.
+   minimum value          0.0
+   unit of measure type   Units_of_Length
+
+   name                   background_offset
+   version                1.17
+   value data type        ASCII_Integer
+   description            _TBD
+
+   name                   band_code
+   version                1.17
+   value data type        ASCII_Integer
+   description            The band_code records the commanded band code for a WAC observation.
+
+   name                   begin_temperature_fpa
+   version                1.17
+   value data type        ASCII_Real
+   description            Set to the temperature of the LROC FPA in degrees Celsius, as converted from the raw engineering counts, at the beginning of a series of WAC frames.
+   unit of measure type   Units_of_Temperature
+
+   name                   begin_temperature_fpa_raw
+   version                1.17
+   value data type        ASCII_Integer
+   description            Set to the raw engineering counts for the LROC (F)ocal (P)lane (A)rray at the beginning of a series of WAC frames.
+
+   name                   begin_temperature_scs
+   version                1.17
+   value data type        ASCII_Real
+   description            Set to the temperature of the LROC SCS in degrees Celsius, as converted from the raw engineering counts, at the beginning of a series of WAC frames.
+   unit of measure type   Units_of_Temperature
+
+   name                   begin_temperature_scs_raw
+   version                1.17
+   value data type        ASCII_Integer
+   description            Set to the raw engineering counts for the LROC SCS at the beginning of a series of WAC frames.
+
+   name                   bterm1
+   version                1.17
+   value data type        ASCII_Integer
+   description            NAC companding bterm 1
+
+   name                   bterm2
+   version                1.17
+   value data type        ASCII_Integer
+   description            NAC companding bterm 2
+
+   name                   bterm3
+   version                1.17
+   value data type        ASCII_Integer
+   description            NAC companding bterm 3
+
+   name                   bterm4
+   version                1.17
+   value data type        ASCII_Integer
+   description            NAC companding bterm 4
+
+   name                   bterm5
+   version                1.17
+   value data type        ASCII_Integer
+   description            NAC companding bterm 5
+
+   name                   c_axis_radius
+   version                1.17
+   value data type        ASCII_Real
+   description            The c_axis_radius attribute provides the value of the polar axis of the ellipsoid that defines the approximate shape of a target body. The c_axis_radius is normal to the plane defined by the a_axis_radius and b_axis_radius. The IAU calls this "polar radius". Mapping applications generally call this "semi_minor_axis" 
+   minimum value          0.0
+   unit of measure type   Units_of_Length
+
+   name                   calibration_software_ver_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The version of calibration software used to generate a data product.
+   maximum characters     10
+
+   name                   channel
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description             One of nine Diviner channels. 
+
+   name                   channel_a_offset
+   version                1.17
+   value data type        ASCII_Integer
+   description            Records the commanded NAC channel A offset for either the NAC LEFT or NAC RIGHT.
+
+   name                   channel_b_offset
+   version                1.17
+   value data type        ASCII_Integer
+   description            Records the commanded NAC channel B offset for either the NAC LEFT or NAC RIGHT.
+
+   name                   compand_code
+   version                1.17
+   value data type        ASCII_Integer
+   description            Indicates which stored companding table was used (0-7)
+   minimum value          0
+   maximum value          7
+
+   name                   complete_lines
+   version                1.17
+   value data type        ASCII_Integer
+   description            The number of lines of data in a data product that are complete; that is, with no missing data.
+   minimum value          0
+
+   name                   compression_flag
+   version                1.17
+   value data type        ASCII_Integer
+   description            Indicates if lossless compression was commanded (0=no, 1=yes)
+   minimum value          0
+   maximum value          1
+
+   name                   coordinate_system_name
+   version                1.17
+   value data type        ASCII_Text_Preserved
+   description            The given name of the used coordinate system. e.g. "MEAN EARTH/POLAR AXIS OF DE421"
+
+   name                   coordinate_system_type
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            There are three basic types of coordinate systems: body-fixed rotating, body-fixed non-rotating, and inertial. A body-fixed coordinate system is one associated with the body (e.g., a planet or satellite). The body-fixed system is centered on the body and rotates with the body (unless it is a non-rotating type), whereas an inertial coordinate system is fixed at some point in space. Currently, the PDS has specifically defined two types of body-fixed rotating coordinate systems: planetocentric and planetographic. However, the set of related data elements are modeled such that definitions for other body-fixed rotating coordinate systems, body-fixed non-rotating and inertial coordinate systems can be added as the need arises. Contact a PDS data engineer for assistance in defining a specific coordinate system. 
+   minimum characters     8
+   maximum characters     25
+
+   name                   dac_reset_level
+   version                1.17
+   value data type        ASCII_Integer
+   description            Records the commanded DAC reset level for either the NAC LEFT or NAC RIGHT.
+
+   name                   data_quality_desc
+   version                1.17
+   value data type        ASCII_Text_Collapsed
+   description            The data_quality_desc attribute describes the data qualities associated with a data_quality_id attribute. 
+
+   name                   data_quality_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The data_quality_id attribute provides a numeric key which identifies the quality of data available for a particular time period. The data_quality_id scheme is unique to a given instrument and is described by the associated data_quality_desc attribute. 
+
+   name                   dlre_date_max
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Gives the maximum recorded date value in a DLRE RDR data product.
+   minimum characters     11
+   maximum characters     11
+
+   name                   dlre_date_min
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Gives the minimum recorded date value in a DLRE RDR data product.
+   minimum characters     11
+   maximum characters     11
+
+   name                   dlre_geom_version_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The version of Diviner geometry and averaging software used to generate a Diviner GDR product. Example value: 1.0. 
+   maximum characters     10
+
+   name                   dlre_instrument_mode_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Diviner instrument operating mode.
+   maximum characters     20
+
+   name                   dlre_orientation
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            An unordered set of all orientations recorded from activity flags in a DLRE RDR data product. 
+   maximum characters     30
+
+   name                   dlre_utc_max
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Gives the maximum recorded UTC value in a DLRE RDR data product.
+   minimum characters     12
+   maximum characters     12
+
+   name                   dlre_utc_min
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Gives the minimum recorded UTC value in a DLRE RDR data product.
+   minimum characters     12
+   maximum characters     12
+
+   name                   dreb_flight_software_ver_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The version of Diviner Remote Electronics Box flight software used to acquire the telemetry data for a data product. 
+   maximum characters     10
+
+   name                   end_temperature_fpa
+   version                1.17
+   value data type        ASCII_Real
+   description            Set to the temperature of the LROC FPA in degrees Celsius, as converted from the raw engineering counts, at the end of a series of WAC frames.
+   unit of measure type   Units_of_Temperature
+
+   name                   end_temperature_fpa_raw
+   version                1.17
+   value data type        ASCII_Integer
+   description            Set to the raw engineering counts for the LROC (F)ocal (P)lane (A)rray at the end of a series of WAC frames.
+
+   name                   end_temperature_scs
+   version                1.17
+   value data type        ASCII_Real
+   description            Set to the temperature of the LROC SCS in degrees Celsius, as converted from the raw engineering counts, at the end of a series of WAC frames.
+   unit of measure type   Units_of_Temperature
+
+   name                   end_temperature_scs_raw
+   version                1.17
+   value data type        ASCII_Integer
+   description            Set to the raw engineering counts for the LROC SCS at the end of a series of WAC frames.
+
+   name                   exposure_code
+   version                1.17
+   value data type        ASCII_Integer
+   description            Records the commanded exposure code for a WAC observation.
+
+   name                   file_state
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Indicates whether a file possibly contains potentially corrupted data.
+   minimum characters     5
+   maximum characters     5
+
+   name                   flight_software_version_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Identifies the version of the instrument flight software used to acquire the data.
+   maximum characters     10
+
+   name                   frame_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            For NAC, records if the image was acquired from the "LEFT" or "RIGHT" NAC.
+
+   name                   instrument_mode_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Records the commanded WAC mode: BW, COLOR, VIS or UV.
+
+   name                   interframe_delay
+   version                1.17
+   value data type        ASCII_Real
+   description            Set to the value of the interframe delay between WAC framelets. Keyword can have values between 25/64 and 280/64 seconds, in 1/64 seconds increments.
+   unit of measure type   Units_of_Time
+
+   name                   interframe_gap_code
+   version                1.17
+   value data type        ASCII_Integer
+   description            Records the commanded interframe gap code for a WAC observation.
+
+   name                   latitude_type
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The latitude_type attribute defines the type of latitude (planetographic, planetocentric) used within a cartographic product and as reflected in attribute values within associated PDS labels. For planets and satellites, latitude is measured north and south of the equator; north latitudes are designated as positive. The planetocentric latitude is the angle between the equatorial plane and a line from the center of the body. The planetographic latitude is the angle between the equatorial plane and a line that is normal to the body. In summary, both latitudes are equivalent on a sphere (i.e., equatorial radius equal to polar radius); however, they differ on an ellipsoid (e.g., Mars, Earth). For more on latitude_type, please see the IAU publication available here: http://astrogeology.usgs.gov/groups/IAU-WGCCRE
+
+   name                   line_code
+   version                1.17
+   value data type        ASCII_Integer
+   description            Records the commanded value for the number of NAC lines to acquire, in 1024 increments. (LINES = LINES_CODE * 1024)
+
+   name                   line_exposure_code
+   version                1.17
+   value data type        ASCII_Integer
+   description            Index range from 0 to 4095 each corresponding to one LINE_EXPOSURE_DURATION increment.
+   minimum value          0
+   maximum value          4095
+
+   name                   line_exposure_duration
+   version                1.17
+   value data type        ASCII_Real
+   description             For NAC products, LINE_EXPOSURE_DURATION can have values between 337.6 and 35,281.6 microseconds, in 128/15 microsecond increments (LINE_EXPOSURE_DURATION = [LINE_EXPOSURE_CODE * 128/15] + 337.6) 
+   unit of measure type   Units_of_Time
+
+   name                   lola_dem_vers
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Gives the version of the LOLA digital elevation model that was used to locate Diviner footprints for the generation of a Diviner GDR product. Example value: 1.0. 
+   maximum characters     10
+
+   name                   lola_instrument_mode_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            LOLA instrument operating mode.
+   maximum characters     20
+
+   name                   longitude_direction
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The longitude_direction attribute identifies the direction of longitude (e.g. POSITIVE_EAST or POSITIVE_WEST) for a planet. The IAU definition for direction of positive longitude should be adopted: http://astrogeology.usgs.gov/groups/IAU-WGCCRE. Typically, for planets with prograde (direct) rotations, positive longitude direction is to the west. For planets with retrograde rotations, positive longitude direction is to the east. Generally the Positive West longitude_direction is used for planetographic systems and Positive East is used for planetocentric systems. If the data is defined with Spatial_Domain in a manner not recommended by the IAU, there is a optional Secondary_Spatial_Domain section to define a second set of bounding coordinates.
+   minimum characters     13
+   maximum characters     13
+
+   name                   look_azimuth_angle
+   version                1.17
+   value data type        ASCII_Real
+   description            The East-West look azimuth discrimination angle. This is the angle between the projection of North into the tangent plane of a sphere at the image center point and the vector from subspacecraft point to the image center projected into the plane. It assumes values from 0 to 360, where 0 means North-looking, 90 East-looking, 180 South-looking, and 270 West-looking. 
+   minimum value          0
+   maximum value          359
+   unit of measure type   Units_of_Angle
+
+   name                   lookup_table_type
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Always set to STORED.
+
+   name                   middle_temperature_fpa
+   version                1.17
+   value data type        ASCII_Real
+   description            Set to the temperature of the LROC FPA in degrees Celsius, as converted from the raw engineering counts, at the middle of a series of WAC frames.
+   unit of measure type   Units_of_Temperature
+
+   name                   middle_temperature_fpa_raw
+   version                1.17
+   value data type        ASCII_Integer
+   description            Set to the raw engineering counts for the LROC (F)ocal (P)lane (A)rray at the middle of a series of WAC frames.
+
+   name                   middle_temperature_scs
+   version                1.17
+   value data type        ASCII_Real
+   description            Set to the temperature of the LROC SCS in degrees Celsius, as converted from the raw engineering counts, at the middle of a series of WAC frames.
+   unit of measure type   Units_of_Temperature
+
+   name                   middle_temperature_scs_raw
+   version                1.17
+   value data type        ASCII_Integer
+   description            Set to the raw engineering counts for the LROC SCS at the middle of a series of WAC frames.
+
+   name                   mission_phase_name
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description             The mission_phase_name attribute provides the mission-defined name of a time period within the mission. 
+
+   name                   missing_lines
+   version                1.17
+   value data type        ASCII_Integer
+   description            The total number of lines of data missing from an image or observation when it was received on Earth.
+   minimum value          0
+
+   name                   mode
+   version                1.17
+   value data type        ASCII_Integer
+   description            Set to the mode value as commanded for both NAC and WAC observations.
+
+   name                   mterm1
+   version                1.17
+   value data type        ASCII_Real
+   description            NAC companding mterm 1
+
+   name                   mterm2
+   version                1.17
+   value data type        ASCII_Real
+   description            NAC companding mterm 2
+
+   name                   mterm3
+   version                1.17
+   value data type        ASCII_Real
+   description            NAC companding mterm 3
+
+   name                   mterm4
+   version                1.17
+   value data type        ASCII_Real
+   description            NAC companding mterm 4
+
+   name                   mterm5
+   version                1.17
+   value data type        ASCII_Real
+   description            NAC companding mterm 5
+
+   name                   nframes
+   version                1.17
+   value data type        ASCII_Integer
+   description            Records the commanded number of frames for a WAC observation.
+
+   name                   observation_type
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Identifies the general type of an observation.
+   maximum characters     30
+
+   name                   orbit_number
+   version                1.17
+   value data type        ASCII_NonNegative_Integer
+   description            The orbit_number attribute identifies the number of the orbital revolution around a target body. 
+
+   name                   parameter_max
+   version                1.17
+   value data type        ASCII_Real
+   description            The maximum value for the Diviner parameter specified by lro.parameter_name.
+   nillable               true
+
+   name                   parameter_min
+   version                1.17
+   value data type        ASCII_Real
+   description            The minimum value for the Diviner parameter specified by lro.parameter_name.
+   nillable               true
+
+   name                   parameter_name
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Diviner parameter name.
+
+   name                   partial_lines
+   version                1.17
+   value data type        ASCII_Integer
+   description            The number of lines of data in a data product that contain partial but incomplete data. 
+
+   name                   preroll_time
+   version                1.17
+   value data type        ASCII_Date_Time_YMD
+   description            The UTC time and date at the start of the image acquisition command, corresponding to the acquisition of 1024 lines at the given exposure prior to the actual image acquisition. 
+
+   name                   producer_institution_name
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The producer_institution_name attribute identifies a university, research center, NASA center, or other institution associated with the production of a data product. 
+
+   name                   product_type
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The product_type attribute indicates the processing level of an individual data product.
+
+   name                   product_version_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The product_version_id attribute identifies the version of an individual data product. 
+
+   name                   radiance_max
+   version                1.17
+   value data type        ASCII_Real
+   description            The maximum recorded value of radiance for the channel given by lro:channel in a DLRE RDR data product.
+   nillable               true
+   minimum value          -1000.0
+   maximum value          100000.0 
+   unit of measure type   Units_of_Radiance
+
+   name                   radiance_min
+   version                1.17
+   value data type        ASCII_Real
+   description            The minimum recorded value of radiance for the channel given by lro:channel in a DLRE RDR data product. 
+   nillable               true
+   minimum value          -1000.0
+   maximum value          100000.0 
+   unit of measure type   Units_of_Radiance
+
+   name                   range_resolution
+   version                1.17
+   value data type        ASCII_Real
+   description            The true resolution of the radar image in the range (across track) direction, evaluated at the center of the image for the transmit, receive, and processing parameters used for the sequence. 
+   maximum value          450
+   unit of measure type   Units_of_Length
+
+   name                   rationale_desc
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The rationale_desc attribute describes the rationale for performing a particular observation.
+
+   name                   software_version_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The software_version_id element indicates the version (development level) of a program or a program library.
+   maximum characters     20
+
+   name                   spacecraft_clock_count_partition
+   version                1.17
+   value data type        ASCII_NonNegative_Integer
+   description            The spacecraft_clock_count_partition attribute indicates the clock partition active for the spacecraft_clock_start_count and spacecraft_clock_stop_count attributes. 
+
+   name                   spacecraft_clock_preroll_count
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Set to the sclk string for the start of an observation preroll acquisition.
+
+   name                   spacecraft_clock_start_count
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The spacecraft_clock_start_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
+
+   name                   spacecraft_clock_stop_count
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The spacecraft_clock_stop_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. 
+
+   name                   start_orbit_number
+   version                1.17
+   value data type        ASCII_Real
+   description            Provides the the lowest revolution orbit number that contributed data to a given data product. 
+
+   name                   start_solar_longitude
+   version                1.17
+   value data type        ASCII_Real
+   description            Marks the beginning of a time range measured in solar longitude. Solar longitude is the value of the angle between the body_Sun line at the time of interest and the body_Sun line at the vernal equinox, thus providing a measure of the season on the target body. 
+   minimum value          -180
+   maximum value          360
+   unit of measure type   Units_of_Angle
+
+   name                   stcf_file_name
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Provides the name of the LRO Spacecraft Time Correlation file, which is a housekeeping file containing the offset between the spacecraft raw clock and terrestrial time. The time correlation file is used to compute the start and stop spacecraft clock times for LOLA data products. 
+   maximum characters     40
+
+   name                   stop_orbit_number
+   version                1.17
+   value data type        ASCII_Real
+   description            Provides the the highest revolution orbit number that contributed data to a given data product. 
+
+   name                   stop_solar_longitude
+   version                1.17
+   value data type        ASCII_Real
+   description            Marks the end of a time range measured in solar longitude. Solar longitude is the value of the angle between the body_Sun line at the time of interest and the body_Sun line at the vernal equinox, thus providing a measure of the season on the target body. 
+   minimum value          -180
+   maximum value          360
+   unit of measure type   Units_of_Angle
+
+   name                   sub_spacecraft_ground_azimuth
+   version                1.17
+   value data type        ASCII_Real
+   description            Provides the value of the angle, measured on the target body surface, between the direction from a ground point to the north pole and the direction from the ground point to the sub-spacecraft point. If the location of the ground point at which the azimuth is measured is not otherwise specified, it is assumed to correspond to the center of the image. The values of this angle increase in a clockwise direction. When a pair of values is given, e.g. (350.0, 10.0), they represent the ordered end-members of a range of ground azimuth values that extends clockwise from the first to the second, modulo 360 degrees. 
+   minimum value          0
+   maximum value          360
+   unit of measure type   Units_of_Angle
+
+   name                   tb_max
+   version                1.17
+   value data type        ASCII_Real
+   description            The maximum recorded value of brightness temperature for the channel given by lro:channel in a DLRE RDR data product. 
+   nillable               true
+   minimum value          -450.0
+   maximum value          10000.0
+   unit of measure type   Units_of_Temperature
+
+   name                   tb_min
+   version                1.17
+   value data type        ASCII_Real
+   description            The minimum recorded value of brightness temperature for the channel given by lro:channel in a DLRE RDR data product. 
+   nillable               true
+   minimum value          -450.0
+   maximum value          10000.0
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_fpa
+   version                1.17
+   value data type        ASCII_Real
+   description            Set to the temperature of the LROC FPA in degrees Celsius, as converted from the raw engineering counts.
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_fpa_raw
+   version                1.17
+   value data type        ASCII_Integer
+   description            Set to the raw engineering counts for the LROC (F)ocal (P)lane (A)rray.
+
+   name                   temperature_fpga
+   version                1.17
+   value data type        ASCII_Real
+   description            Set to the temperature of the LROC FPGA in degrees Celsius, as converted from the raw engineering counts.
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_fpga_raw
+   version                1.17
+   value data type        ASCII_Integer
+   description            Set to the raw engineering counts for the LROC (F)ield (P)rogrammable (G)ate (A)rray.
+
+   name                   temperature_scs
+   version                1.17
+   value data type        ASCII_Real
+   description            Set to the temperature of the LROC SCS in degrees Celsius, as converted from the raw engineering counts.
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_scs_raw
+   version                1.17
+   value data type        ASCII_Integer
+   description            Set to the raw engineering counts for the LROC SCS.
+
+   name                   temperature_telescope
+   version                1.17
+   value data type        ASCII_Real
+   description            Set to the temperature of the LROC telescope corresponding to NAC-L or NAC-R, as converted from the raw engineering counts.
+   unit of measure type   Units_of_Temperature
+
+   name                   temperature_telescope_raw
+   version                1.17
+   value data type        ASCII_Integer
+   description            Set to the raw engineering counts for the LROC Telescope corresponding to NAC-L or NAC-R.
+
+   name                   total_lines
+   version                1.17
+   value data type        ASCII_Integer
+   description            The total number of lines of data in a data product, including both complete lines and partial lines.
+
+   name                   upload_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The upload_id attribute describes a spacecraft command set that is associated with the given data product.
+
+   name                   xterm1
+   version                1.17
+   value data type        ASCII_Integer
+   description            NAC companding xterm 1
+
+   name                   xterm2
+   version                1.17
+   value data type        ASCII_Integer
+   description            NAC companding xterm 2
+
+   name                   xterm3
+   version                1.17
+   value data type        ASCII_Integer
+   description            NAC companding xterm 3
+
+   name                   xterm4
+   version                1.17
+   value data type        ASCII_Integer
+   description            NAC companding xterm 4
+
+   name                   xterm5
+   version                1.17
+   value data type        ASCII_Integer
+   description            NAC companding xterm 5
+
+Parsed Input - Classes:
+
+   name                   LROC_Parameters
+   description            The LROC_Parameters class is the container for LROC-specific observation parameters.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lro.upload_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.rationale_desc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.data_quality_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.data_quality_desc
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.begin_temperature_scs
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.middle_temperature_scs
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.end_temperature_scs
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.begin_temperature_fpa
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.middle_temperature_fpa
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.end_temperature_fpa
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.begin_temperature_scs_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.middle_temperature_scs_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.end_temperature_scs_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.begin_temperature_fpa_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.middle_temperature_fpa_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.end_temperature_fpa_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.preroll_time
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.spacecraft_clock_preroll_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.frame_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_scs
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_fpa
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_fpga
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_telescope
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_scs_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_fpa_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_fpga_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.temperature_telescope_raw
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.exposure_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.interframe_delay
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.instrument_mode_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.lookup_table_type
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.line_exposure_duration
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.line_exposure_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.dac_reset_level
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.channel_a_offset
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.channel_b_offset
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.compand_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.line_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.bterm1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.bterm2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.bterm3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.bterm4
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.bterm5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mterm1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mterm2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mterm3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mterm4
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mterm5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.xterm1
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.xterm2
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.xterm3
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.xterm4
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.xterm5
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.compression_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mode
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.nframes
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.band_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.interframe_gap_code
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.background_offset
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Parameter_Range
+   description            The Parameter_Range class contains the minimum and maximum values of Diviner parameters.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lro.parameter_name
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.parameter_min
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.parameter_max
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Channel_Range
+   description            The Channel_Range class contains spectral parameters for specific Diviner channels.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lro.channel
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.radiance_min
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.radiance_max
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.tb_min
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.tb_max
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Diviner_Parameters
+   description            The Diviner_Parameters class is the container for Diviner-specific observation parameters.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lro.missing_lines
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.partial_lines
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.complete_lines
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.total_lines
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.file_state
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.flight_software_version_id
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      lro.dreb_flight_software_ver_id
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      lro.lola_dem_vers
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.dlre_geom_version_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.calibration_software_ver_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.software_version_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.dlre_date_min
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.dlre_date_max
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.dlre_utc_min
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.dlre_utc_max
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.dlre_orientation
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      lro.observation_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      lro.dlre_instrument_mode_id
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      lro.Parameter_Range
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+      local identifier      lro.Channel_Range
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+   name                   MiniRF_Parameters
+   description            The MiniRF_Parameters class is the container for MiniRF-specific observation parameters.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lro.look_azimuth_angle
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.sub_spacecraft_ground_azimuth
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.azimuth_resolution
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.range_resolution
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   LOLA_Parameters
+   description            The LOLA_Parameters class is the container for LOLA-specific observation parameters.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lro.lola_instrument_mode_id
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      lro.stcf_file_name
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Geodetic_Model
+   description            The Geodetic_Model class provides parameters describing the shape of the planet.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lro.latitude_type
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.a_axis_radius
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.b_axis_radius
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.c_axis_radius
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.longitude_direction
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.coordinate_system_type
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.coordinate_system_name
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   LRO_Parameters
+   description            The LRO_Parameters class is the container for mission-specific metadata elements.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lro.product_type
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.product_version_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.orbit_number
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.start_orbit_number
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.stop_orbit_number
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.start_solar_longitude
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.stop_solar_longitude
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.mission_phase_name
+      minimum occurrences   0
+      maximum occurrences   unbounded
+      reference type        attribute_of
+
+      local identifier      lro.spacecraft_clock_count_partition
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.spacecraft_clock_start_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.spacecraft_clock_stop_count
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.producer_institution_name
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.LROC_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      lro.Diviner_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      lro.MiniRF_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      lro.LOLA_Parameters
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      lro.Geodetic_Model
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+End of Report
