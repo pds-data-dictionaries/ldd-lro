@@ -1,9 +1,9 @@
 
->>  INFO LDDTOOL Version: 13.1.0
->>  INFO IM Version Id: 1.17.0.0
+>>  INFO LDDTOOL Version: 10.0.0
+>>  INFO IM Version Id: 1.16.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.23
->>  INFO Date: Thu Jan 27 22:28:43 UTC 2022
+>>  INFO IM Label Version Id: 1.22
+>>  INFO Date: Thu Jan 27 23:18:03 UTC 2022
 >>  INFO PARENT_DIR: /tmp/lddtool-13.1.0
 >>  INFO SCRIPT_DIR: /tmp/lddtool-13.1.0/bin
 >>  INFO LIB_DIR: /tmp/lddtool-13.1.0/lib
@@ -83,18 +83,19 @@
 
 Input:
 
-     - IM Version: 1H00
+     - IM Version: 1G00
      - PDS4 Flag: true
      - LDD Flag: true
+     - IM Version: true
      - Export JSON Flag: true
 
      - Ingest LDD(s): /home/runner/work/ldd-lro/ldd-lro/src/PDS4_LRO_IngestLDD.xml
 
 Output:
 
-     - ./PDS4_LRO_1H00_1000.xsd
-     - ./PDS4_LRO_1H00_1000.sch
-     - ./PDS4_LRO_1H00_1000.xml
-     - ./PDS4_LRO_1H00_1000.JSON
+     - ./PDS4_LRO_1G00_1000.xsd
+     - ./PDS4_LRO_1G00_1000.sch
+     - ./PDS4_LRO_1G00_1000.xml
+     - ./PDS4_LRO_1G00_1000.JSON
 
 >>  INFO Exit(0)
