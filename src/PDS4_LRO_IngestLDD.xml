@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model 
-    href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.sch"
+    href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <!-- 11/06/2019 GEO/SHS Initial version
@@ -10,13 +10,14 @@
      07/29/2021 GEO/JGW Rebuilt with 1G00 IM
      10/11/2021 GEO/JGW Added permissible values for product_type
      10/22/2021 GEO/JGW Added Geodetic_Model class
+     01/27/2022 GEO/SHS Rebuilt with 1H00 IM
     -->
 
 <Ingest_LDD 
     xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1
-                        http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd">
+                        http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd">
     <name>LRO</name>
     <ldd_version_id>1.0.0.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
@@ -28,12 +29,12 @@
         Lunar Reconnaissance Orbiter mission and related instruments.
         
         LRO version 1.0.0.0
-        PDS Build 1.16.0.0 (1G00)
-        LDDTool version 13.0.2
+        PDS Build 1.17.0.0 (1G00)
+        LDDTool version 13.1.0
         
         Created with lddtool -plJ PDS4_LRO_IngestLDD.xml
     </comment>
-    <last_modification_date_time>2021-10-22T00:00Z</last_modification_date_time>
+    <last_modification_date_time>2022-01-27T00:00Z</last_modification_date_time>
 	
 	<!-- PGeissler changed mterm1 to mterm5 to ASCII_Real; added units to NAC temperatures, line_exposure_time, interframe_delay -->
 
@@ -533,7 +534,7 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
-    <DD_Attribute>
+    <DD_Attribute> <!-- coordinate_system_name -->
         <name>coordinate_system_name</name>
         <version_id>1.0</version_id>
         <local_identifier>lro.coordinate_system_name</local_identifier>
@@ -546,7 +547,7 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
-    <DD_Attribute>
+    <DD_Attribute> <!-- coordinate_system_type -->
         <name>coordinate_system_type</name>
         <version_id>1.0</version_id>
         <local_identifier>lro.coordinate_system_type</local_identifier>
@@ -1177,7 +1178,7 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
-    <DD_Attribute>
+    <DD_Attribute> <!-- longitude_direction -->
         <name>longitude_direction</name>
         <version_id>1.0</version_id>
         <local_identifier>lro.longitude_direction</local_identifier>
