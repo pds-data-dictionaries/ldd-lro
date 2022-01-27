@@ -29,7 +29,7 @@
         Lunar Reconnaissance Orbiter mission and related instruments.
         
         LRO version 1.0.0.0
-        PDS Build 1.17.0.0 (1G00)
+        PDS Build 1.17.0.0 (1H00)
         LDDTool version 13.1.0
         
         Created with lddtool -plJ PDS4_LRO_IngestLDD.xml
