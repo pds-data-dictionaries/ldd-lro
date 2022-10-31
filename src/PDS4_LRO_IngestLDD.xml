@@ -11,6 +11,7 @@
      10/11/2021 GEO/JGW Added permissible values for product_type
      10/22/2021 GEO/JGW Added Geodetic_Model class
      01/27/2022 GEO/SHS Rebuilt with 1H00 IM
+     10/31/2022 APL/RCE Additional Mini-RF elements
     -->
 
 <Ingest_LDD 
@@ -58,6 +59,9 @@
 	    b_axis_radius
 	    background_offset
 	    band_code
+	    band_description
+	    band_name
+	    band_sequence_number
 	    begin_temperature_fpa
 	    begin_temperature_fpa_raw
 	    begin_temperature_scs
@@ -112,6 +116,7 @@
 	    middle_temperature_fpa_raw
 	    middle_temperature_scs
 	    middle_temperature_scs_raw
+	    minirf_instrument_mode_id
 	    mission_phase_name
 	    missing_lines
 	    mode
@@ -253,6 +258,48 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute> <!-- band_description -->
+        <name>band_description</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.band_description</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The band_description contains a description of a specific band in a
+        MiniRF multibanded 3D image</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>UTF8_Text_Preserved</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- band_name -->
+        <name>band_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.band_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The band_name contains a string identifying the common name for a 
+        specific band in a MiniRF multibanded 3D image</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- band_sequence_number -->
+        <name>band_sequence_number</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.band_sequence_number</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The band_sequence_number records the index for a specific band
+        in a MiniRF multibanded 3D image. Index starts at 1</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
     <DD_Attribute> <!-- begin_temperature_fpa --> 
         <name>begin_temperature_fpa</name>
         <version_id>1.0</version_id>
@@ -1315,6 +1362,20 @@
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
         </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- minirf_instrument_mode_id --> 
+        <name>minirf_instrument_mode_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.minirf_instrument_mode_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Mini-RF instrument operating mode.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <maximum_characters>50</maximum_characters>
+         </DD_Value_Domain>       
     </DD_Attribute>
     
     <DD_Attribute> <!-- mission_phase_name -->
@@ -2925,6 +2986,35 @@
         </DD_Association>         
     </DD_Class>
     <!-- End of Channel_Range Class definition -->
+    
+    <!-- Beginning of MiniRF_Band Class definition with attributes in the order as they appear in the label -->
+    <DD_Class>
+        <name>MiniRF_Band</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.MiniRF_Band</local_identifier>
+        <submitter_name>APL</submitter_name>
+        <definition>The MiniRF_Band class contains the name and description for a specific band in a MiniRF Array_3D_Image</definition>
+        <DD_Association>
+            <identifier_reference>lro:band_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro:band_description</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro:band_sequence_number</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+    
+    <!-- End of MiniRF_Band Class definition -->
 
     <!-- Beginning of Diviner_Parameters Class definition with attributes in the order as they appear in the label -->
     <DD_Class> <!-- Diviner_Parameters -->
@@ -3064,6 +3154,12 @@
         <submitter_name>GEO</submitter_name>
         <definition>The MiniRF_Parameters class is the container for MiniRF-specific observation parameters.</definition>
         <DD_Association> 
+            <identifier_reference>lro.minirf_instrument_mode_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
             <identifier_reference>lro.look_azimuth_angle</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
@@ -3086,6 +3182,12 @@
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.MiniRF_Band</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
         </DD_Association>
     </DD_Class>
     <!-- End of MiniRF_Parameters Class definition -->
