@@ -2995,19 +2995,19 @@
         <submitter_name>APL</submitter_name>
         <definition>The MiniRF_Band class contains the name and description for a specific band in a MiniRF Array_3D_Image</definition>
         <DD_Association>
-            <identifier_reference>lro:band_name</identifier_reference>
+            <identifier_reference>lro.band_name</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>lro:band_description</identifier_reference>
+            <identifier_reference>lro.band_description</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association>
-            <identifier_reference>lro:band_sequence_number</identifier_reference>
+            <identifier_reference>lro.band_sequence_number</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>1</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
