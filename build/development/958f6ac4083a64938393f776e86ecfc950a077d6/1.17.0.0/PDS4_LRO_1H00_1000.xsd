@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:lro  Version:1.0.0.0 - Mon Oct 31 16:59:20 UTC 2022 -->
+  <!-- PDS4 XML/Schema for Name Space Id:lro  Version:1.0.0.0 - Mon Oct 31 18:06:49 UTC 2022 -->
   <!-- Generated from the PDS4 Information Model Version 1.17.0.0 - System Build 12.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
@@ -224,16 +224,31 @@
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
+  <xs:complexType name="MiniRF_Band">
+    <xs:annotation>
+      <xs:documentation>The MiniRF_Band class contains the name and
+        description for a specific band in a MiniRF
+        Array_3D_Image</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="band_name" type="lro:band_name" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="band_description" type="lro:band_description" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="band_sequence_number" type="lro:band_sequence_number" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="MiniRF_Parameters">
     <xs:annotation>
       <xs:documentation>The MiniRF_Parameters class is the container for
         MiniRF-specific observation parameters.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="minirf_instrument_mode_id" type="lro:minirf_instrument_mode_id" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="look_azimuth_angle" type="lro:look_azimuth_angle" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="sub_spacecraft_ground_azimuth" type="lro:sub_spacecraft_ground_azimuth" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="azimuth_resolution" type="lro:azimuth_resolution" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="range_resolution" type="lro:range_resolution" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="MiniRF_Band" type="lro:MiniRF_Band" minOccurs="0" maxOccurs="unbounded"> </xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -340,6 +355,40 @@
     <xs:annotation>
       <xs:documentation>The band_code records the commanded band code
         for a WAC observation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="band_description">
+    <xs:annotation>
+      <xs:documentation>The band_description contains a description of a
+        specific band in a MiniRF multibanded 3D image</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:UTF8_Text_Preserved">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="band_name">
+    <xs:annotation>
+      <xs:documentation>The band_name contains a string identifying the
+        common name for a specific band in a MiniRF multibanded 3D
+        image</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="band_sequence_number">
+    <xs:annotation>
+      <xs:documentation>The band_sequence_number records the index for a
+        specific band in a MiniRF multibanded 3D image. Index starts at
+        1</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="-9223372036854775808"/>
@@ -1079,6 +1128,17 @@
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="-9223372036854775808"/>
      <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="minirf_instrument_mode_id">
+    <xs:annotation>
+      <xs:documentation>Mini-RF instrument operating
+        mode.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="50"/>
 	   </xs:restriction>
   </xs:simpleType>
 

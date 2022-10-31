@@ -3,17 +3,11 @@
 >>  INFO IM Version Id: 1.17.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.23
->>  INFO Date: Mon Oct 31 17:59:53 UTC 2022
+>>  INFO Date: Mon Oct 31 18:06:49 UTC 2022
 >>  INFO PARENT_DIR: /tmp/lddtool-14.1.2
 >>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.2/bin
 >>  INFO LIB_DIR: /tmp/lddtool-14.1.2/lib
 
->>> ERROR Class:0001_NASA_PDS_1.lro.MiniRF_Band  Association:lro:band_name  Attribute: lro:band_name - Missing Attribute
->>> ERROR Association: lro:band_name - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.lro.MiniRF_Band  Association:lro:band_description  Attribute: lro:band_description - Missing Attribute
->>> ERROR Association: lro:band_description - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.lro.MiniRF_Band  Association:lro:band_sequence_number  Attribute: lro:band_sequence_number - Missing Attribute
->>> ERROR Association: lro:band_sequence_number - Could not find referenced attribute - Reference Type: attribute_of
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
 >>> INFO Init:  - LDD Dictionary_Type is Mission
 >>> INFO Attribute: <parameter_max> - A 'nillable' attribute was found that is not a required attribute in at least one class.
@@ -80,13 +74,10 @@
 >>> INFO Attribute: <tb_min> - The default minimum value provided by the attribute's data type is being overridden with -450.0
 >>> INFO Attribute: <tb_min> - The default maximum value provided by the attribute's data type is being overridden with 10000.0
 >>> WARNING Init:  - Config.Properties Namespace Id Not Found:lro
->>> WARNING Attribute: <band_description> - This local attribute was not used in an Association.
->>> WARNING Attribute: <band_name> - This local attribute was not used in an Association.
->>> WARNING Attribute: <band_sequence_number> - This local attribute was not used in an Association.
 
  -- LDDTool Execution Summary --
-     4 warning(s)
-     6 error(s)
+     1 warning(s)
+     0 error(s)
      0 fatal error(s)
 
 Input:
@@ -106,4 +97,4 @@ Output:
      - ./PDS4_LRO_1H00_1000.xml
      - ./PDS4_LRO_1H00_1000.JSON
 
->>  INFO Exit(1)
+>>  INFO Exit(0)
