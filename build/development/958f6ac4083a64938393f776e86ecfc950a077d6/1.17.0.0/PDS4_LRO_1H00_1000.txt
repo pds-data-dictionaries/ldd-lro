@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Mon Oct 31 16:59:20 UTC 2022
+   Time                   Mon Oct 31 18:06:49 UTC 2022
    Common Schema          [PDS4_PDS_1H00.xsd]
    Common Schematron      [PDS4_PDS_1H00.sch]
    IM Version Id:         1.17.0.0
@@ -29,9 +29,9 @@ Parameters:
    Merge with Master      false
 
 Summary:
-   Classes                8
-   Attributes             110
-   Associations           117
+   Classes                9
+   Attributes             114
+   Associations           122
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -90,6 +90,21 @@ Parsed Input - Attributes:
    version                1.17
    value data type        ASCII_Integer
    description            The band_code records the commanded band code for a WAC observation.
+
+   name                   band_description
+   version                1.17
+   value data type        UTF8_Text_Preserved
+   description            The band_description contains a description of a specific band in a MiniRF multibanded 3D image
+
+   name                   band_name
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            The band_name contains a string identifying the common name for a specific band in a MiniRF multibanded 3D image
+
+   name                   band_sequence_number
+   version                1.17
+   value data type        ASCII_Integer
+   description            The band_sequence_number records the index for a specific band in a MiniRF multibanded 3D image. Index starts at 1
 
    name                   begin_temperature_fpa
    version                1.17
@@ -402,6 +417,12 @@ Parsed Input - Attributes:
    version                1.17
    value data type        ASCII_Integer
    description            Set to the raw engineering counts for the LROC SCS at the middle of a series of WAC frames.
+
+   name                   minirf_instrument_mode_id
+   version                1.17
+   value data type        ASCII_Short_String_Collapsed
+   description            Mini-RF instrument operating mode.
+   maximum characters     50
 
    name                   mission_phase_name
    version                1.17
@@ -1056,6 +1077,29 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
+   name                   MiniRF_Band
+   description            The MiniRF_Band class contains the name and description for a specific band in a MiniRF Array_3D_Image
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      lro.band_name
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.band_description
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.band_sequence_number
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
    name                   Diviner_Parameters
    description            The Diviner_Parameters class is the container for Diviner-specific observation parameters.
    is abstract            false
@@ -1172,6 +1216,11 @@ Parsed Input - Classes:
 
    Associations
 
+      local identifier      lro.minirf_instrument_mode_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
       local identifier      lro.look_azimuth_angle
       minimum occurrences   0
       maximum occurrences   1
@@ -1191,6 +1240,11 @@ Parsed Input - Classes:
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
+
+      local identifier      lro.MiniRF_Band
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
 
    name                   LOLA_Parameters
    description            The LOLA_Parameters class is the container for LOLA-specific observation parameters.
