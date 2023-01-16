@@ -237,6 +237,7 @@
 "lro:LRO_Parameters:2                 lro:mission_phase_name:2             Value:COMMISSIONING","Value","COMMISSIONING","","","2009-06-23 to 2009-09-14"
 "lro:LRO_Parameters:2                 lro:mission_phase_name:2             Value:CRUISE","Value","CRUISE","","","2009-06-18 to 2009-06-23"
 "lro:LRO_Parameters:2                 lro:mission_phase_name:2             Value:EXTENDED SCIENCE MIS","Value","EXTENDED SCIENCE MISSION","","","2012-09-15 to 2014-09-14"
+"lro:LRO_Parameters:2                 lro:mission_phase_name:2             Value:FIFTH EXTENDED SCIEN","Value","FIFTH EXTENDED SCIENCE MISSION","","","2022-10-01 to 2025-09-30"
 "lro:LRO_Parameters:2                 lro:mission_phase_name:2             Value:FOURTH EXTENDED SCIE","Value","FOURTH EXTENDED SCIENCE MISSION","","","2019-09-15 to 2022-09-15"
 "lro:LRO_Parameters:2                 lro:mission_phase_name:2             Value:LAUNCH","Value","LAUNCH","","","2009-06-18"
 "lro:LRO_Parameters:2                 lro:mission_phase_name:2             Value:LUNAR ORBIT ACQUISIT","Value","LUNAR ORBIT ACQUISITION","","","2009-06-23"

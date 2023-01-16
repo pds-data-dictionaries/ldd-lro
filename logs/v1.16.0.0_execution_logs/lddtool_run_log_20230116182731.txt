@@ -3,7 +3,7 @@
 >>  INFO IM Version Id: 1.16.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.22
->>  INFO Date: Mon Jan 16 18:10:52 UTC 2023
+>>  INFO Date: Mon Jan 16 18:27:31 UTC 2023
 >>  INFO PARENT_DIR: /tmp/lddtool-14.1.2
 >>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.2/bin
 >>  INFO LIB_DIR: /tmp/lddtool-14.1.2/lib
@@ -91,9 +91,9 @@ Input:
 
 Output:
 
-     - ./PDS4_LRO_1G00_1000.xsd
-     - ./PDS4_LRO_1G00_1000.sch
-     - ./PDS4_LRO_1G00_1000.xml
-     - ./PDS4_LRO_1G00_1000.JSON
+     - ./PDS4_LRO_1G00_1010.xsd
+     - ./PDS4_LRO_1G00_1010.sch
+     - ./PDS4_LRO_1G00_1010.xml
+     - ./PDS4_LRO_1G00_1010.JSON
 
 >>  INFO Exit(0)

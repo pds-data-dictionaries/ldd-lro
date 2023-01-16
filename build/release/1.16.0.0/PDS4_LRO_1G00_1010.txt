@@ -2,12 +2,12 @@ PDS4 Local Data Dictionary Processing Report
 
 Configuration:
    LDDTool Version        14.1.2
-   LDD Version Id:        1.0.0.0
+   LDD Version Id:        1.0.1.0
    LDD Label Version Id:  1.22
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Mon Jan 16 18:10:52 UTC 2023
+   Time                   Mon Jan 16 18:27:31 UTC 2023
    Common Schema          [PDS4_PDS_1G00.xsd]
    Common Schematron      [PDS4_PDS_1G00.sch]
    IM Version Id:         1.16.0.0
@@ -40,21 +40,20 @@ Detailed validation messages
 
 Parsed Input - Header:
    LDD Name               LRO
-   LDD Version            1.0.0.0
-   Full Name              Susan Slavney
+   LDD Version            1.0.1.0
+   Full Name              Jennifer Ward
    Steward                geo
    Namespace Id           lro
    Comment                
         The LRO dictionary contains classes that describe aspects of the 
         Lunar Reconnaissance Orbiter mission and related instruments.
         
-        LRO version 1.0.0.0
-        PDS Build 1.17.0.0 (1H00)
-        LDDTool version 13.1.0
+        LRO version 1.0.1.0
+        PDS Build 1.18.0.0 (1I00)
         
-        Created with lddtool -plJ PDS4_LRO_IngestLDD.xml
+        Created with lddtool on GitHub
     
-   Last Modification Time 2022-01-27T00:00Z
+   Last Modification Time 2023-01-16T00:00Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:

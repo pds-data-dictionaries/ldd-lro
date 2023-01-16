@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:lro  Version:1.0.0.0 - Mon Jan 16 18:10:54 UTC 2023 -->
-  <!-- Generated from the PDS4 Information Model Version 1.17.0.0 - System Build 12.0 -->
+  <!-- PDS4 Schematron for Name Space Id:lro  Version:1.0.1.0 - Mon Jan 16 18:27:31 UTC 2023 -->
+  <!-- Generated from the PDS4 Information Model Version 1.16.0.0 - System Build 11.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
@@ -251,9 +251,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="lro:LRO_Parameters/lro:mission_phase_name">
-      <sch:assert test=". = ('COMMISSIONING', 'CRUISE', 'EXTENDED SCIENCE MISSION', 'FOURTH EXTENDED SCIENCE MISSION', 'LAUNCH', 'LUNAR ORBIT ACQUISITION', 'NOMINAL MISSION', 'SCIENCE MISSION', 'SECOND EXTENDED SCIENCE MISSION', 'THIRD EXTENDED SCIENCE MISSION')">
+      <sch:assert test=". = ('COMMISSIONING', 'CRUISE', 'EXTENDED SCIENCE MISSION', 'FIFTH EXTENDED SCIENCE MISSION', 'FOURTH EXTENDED SCIENCE MISSION', 'LAUNCH', 'LUNAR ORBIT ACQUISITION', 'NOMINAL MISSION', 'SCIENCE MISSION', 'SECOND EXTENDED SCIENCE MISSION', 'THIRD EXTENDED SCIENCE MISSION')">
         <title>lro:LRO_Parameters/lro:mission_phase_name/lro:mission_phase_name</title>
-        The attribute lro:LRO_Parameters/lro:mission_phase_name must be equal to one of the following values 'COMMISSIONING', 'CRUISE', 'EXTENDED SCIENCE MISSION', 'FOURTH EXTENDED SCIENCE MISSION', 'LAUNCH', 'LUNAR ORBIT ACQUISITION', 'NOMINAL MISSION', 'SCIENCE MISSION', 'SECOND EXTENDED SCIENCE MISSION', 'THIRD EXTENDED SCIENCE MISSION'.</sch:assert>
+        The attribute lro:LRO_Parameters/lro:mission_phase_name must be equal to one of the following values 'COMMISSIONING', 'CRUISE', 'EXTENDED SCIENCE MISSION', 'FIFTH EXTENDED SCIENCE MISSION', 'FOURTH EXTENDED SCIENCE MISSION', 'LAUNCH', 'LUNAR ORBIT ACQUISITION', 'NOMINAL MISSION', 'SCIENCE MISSION', 'SECOND EXTENDED SCIENCE MISSION', 'THIRD EXTENDED SCIENCE MISSION'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
