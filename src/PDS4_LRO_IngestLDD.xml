@@ -93,7 +93,6 @@
 	    dlre_utc_min
 	    dlre_utc_max
 	    dreb_flight_software_ver_id
-        emission_angle
 	    end_temperature_fpa
 	    end_temperature_fpa_raw
 	    end_temperature_scs
@@ -136,7 +135,6 @@
 	    parameter_min
 	    parameter_name
 	    partial_lines
-        phase_angle
 	    preroll_time
 	    producer_institution_name
 	    product_type
@@ -148,7 +146,9 @@
         range_beamwidth
 	    range_resolution
 	    rationale_desc	    
+        sar_emission_angle
         sar_incidence_angle
+        sar_phase_angle
         sar_instrument_mode_id
 	    software_version_id
 	    spacecraft_clock_count_partition
@@ -264,7 +264,7 @@
         <local_identifier>lro.background_offset</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>IMG</submitter_name>
-        <definition>TBD</definition>
+        <definition>The background offset</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -491,7 +491,7 @@
         <local_identifier>lro.center_frequency</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>The center frequency definition, TBD</definition>
+        <definition>The center frequency</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
@@ -960,13 +960,13 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
-    <DD_Attribute> <!-- emission_angle --> 
-        <name>emission_angle</name>
+    <DD_Attribute> <!-- sar_emission_angle --> 
+        <name>sar_emission_angle</name>
         <version_id>1.0</version_id>
-        <local_identifier>lro.emission_angle</local_identifier>
+        <local_identifier>lro.sar_emission_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>Emission angle, TBD</definition>
+        <definition>Emission angle for SAR</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -2030,13 +2030,13 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
-    <DD_Attribute> <!-- phase_angle --> 
-        <name>phase_angle</name>
+    <DD_Attribute> <!-- sar_phase_angle --> 
+        <name>sar_phase_angle</name>
         <version_id>1.0</version_id>
-        <local_identifier>lro.phase_angle</local_identifier>
+        <local_identifier>lro.sar_phase_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>Phase angle, TBD</definition>
+        <definition>Phase angle for SAR</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -2329,7 +2329,7 @@
         <local_identifier>lro.sar_incidence_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>Phase angle, TBD</definition>
+        <definition>incidence angle for SAR</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -2351,23 +2351,23 @@
             <maximum_characters>20</maximum_characters>
             <DD_Permissible_Value>
                 <value>BASELINE_S</value>
-                <value_meaning>baseline S, TBD</value_meaning>
+                <value_meaning>baseline S</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>BASELINE_X</value>
-                <value_meaning>baseline x, tbd</value_meaning>
+                <value_meaning>baseline X</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>ZOOM_S</value>
-                <value_meaning>zoom s, tbd</value_meaning>
+                <value_meaning>zoom S</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>ZOOM_X</value>
-                <value_meaning>zoom x, tbd</value_meaning>
+                <value_meaning>zoom X</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>BISTATIC</value>
-                <value_meaning>bistatic, tbd</value_meaning>
+                <value_meaning>bistatic</value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
@@ -3433,13 +3433,13 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association> 
-            <identifier_reference>lro.emission_angle</identifier_reference>
+            <identifier_reference>lro.sar_emission_angle</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>        
         <DD_Association> 
-            <identifier_reference>lro.phase_angle</identifier_reference>
+            <identifier_reference>lro.sar_phase_angle</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
