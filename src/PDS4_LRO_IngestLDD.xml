@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model 
-    href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.sch"
+    href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1I00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <!-- 11/06/2019 GEO/SHS Initial version
@@ -11,6 +11,7 @@
      10/11/2021 GEO/JGW Added permissible values for product_type
      10/22/2021 GEO/JGW Added Geodetic_Model class
      01/27/2022 GEO/SHS Rebuilt with 1H00 IM
+     01/16/2023 IMG Added 5th extended mission for under mission_phase_name and built for 1I00 IM (T. Hare)
     -->
 
 <Ingest_LDD 
@@ -19,22 +20,21 @@
     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1
                         http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd">
     <name>LRO</name>
-    <ldd_version_id>1.0.0.0</ldd_version_id>
+    <ldd_version_id>1.0.1.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
-    <full_name>Susan Slavney</full_name>
+    <full_name>Jennifer Ward</full_name>
     <steward_id>geo</steward_id>
     <namespace_id>lro</namespace_id>
     <comment>
         The LRO dictionary contains classes that describe aspects of the 
         Lunar Reconnaissance Orbiter mission and related instruments.
         
-        LRO version 1.0.0.0
-        PDS Build 1.17.0.0 (1H00)
-        LDDTool version 13.1.0
+        LRO version 1.0.1.0
+        PDS Build 1.18.0.0 (1I00)
         
-        Created with lddtool -plJ PDS4_LRO_IngestLDD.xml
+        Created with lddtool on GitHub
     </comment>
-    <last_modification_date_time>2022-01-27T00:00Z</last_modification_date_time>
+    <last_modification_date_time>2023-01-16T00:00Z</last_modification_date_time>
 	
 	<!-- PGeissler changed mterm1 to mterm5 to ASCII_Real; added units to NAC temperatures, line_exposure_time, interframe_delay -->
 
@@ -1369,6 +1369,10 @@
             <DD_Permissible_Value>
                 <value>FOURTH EXTENDED SCIENCE MISSION</value>
                 <value_meaning>2019-09-15 to 2022-09-15</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>FIFTH EXTENDED SCIENCE MISSION</value>
+                <value_meaning>2022-10-01 to 2025-09-30</value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
