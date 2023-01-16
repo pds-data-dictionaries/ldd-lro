@@ -1,12 +1,12 @@
 
->>  INFO LDDTOOL Version: 10.0.0
->>  INFO IM Version Id: 1.16.0.0
+>>  INFO LDDTOOL Version: 14.1.2
+>>  INFO IM Version Id: 1.17.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.22
->>  INFO Date: Thu Jan 27 23:18:03 UTC 2022
->>  INFO PARENT_DIR: /tmp/lddtool-13.1.0
->>  INFO SCRIPT_DIR: /tmp/lddtool-13.1.0/bin
->>  INFO LIB_DIR: /tmp/lddtool-13.1.0/lib
+>>  INFO IM Label Version Id: 1.23
+>>  INFO Date: Mon Jan 16 18:10:54 UTC 2023
+>>  INFO PARENT_DIR: /tmp/lddtool-14.1.2
+>>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.2/bin
+>>  INFO LIB_DIR: /tmp/lddtool-14.1.2/lib
 
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
 >>> INFO Init:  - LDD Dictionary_Type is Mission
@@ -73,17 +73,15 @@
 >>> INFO Attribute: <tb_min> - The default minimum value provided by the attribute's data type is being overridden with -450.0
 >>> INFO Attribute: <tb_min> - The default maximum value provided by the attribute's data type is being overridden with 10000.0
 >>> WARNING Init:  - Config.Properties Namespace Id Not Found:lro
->>> WARNING Header:  - New steward has been specified:geo
->>> WARNING Header:  - New namespace id has been specified:lro
 
  -- LDDTool Execution Summary --
-     3 warning(s)
+     1 warning(s)
      0 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1G00
+     - IM Version: 1H00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -93,9 +91,9 @@ Input:
 
 Output:
 
-     - ./PDS4_LRO_1G00_1000.xsd
-     - ./PDS4_LRO_1G00_1000.sch
-     - ./PDS4_LRO_1G00_1000.xml
-     - ./PDS4_LRO_1G00_1000.JSON
+     - ./PDS4_LRO_1H00_1000.xsd
+     - ./PDS4_LRO_1H00_1000.sch
+     - ./PDS4_LRO_1H00_1000.xml
+     - ./PDS4_LRO_1H00_1000.JSON
 
 >>  INFO Exit(0)
