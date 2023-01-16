@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:lro  Version:1.0.0.0 - Mon Oct 31 18:06:59 UTC 2022 -->
+  <!-- PDS4 Schematron for Name Space Id:lro  Version:1.0.0.0 - Mon Jan 16 19:04:10 UTC 2023 -->
   <!-- Generated from the PDS4 Information Model Version 1.16.0.0 - System Build 11.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -278,10 +278,73 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:azimuth_beamwidth">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
+        <title>lro:MiniRF_Parameters/lro:azimuth_beamwidth/lro:azimuth_beamwidth</title>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="lro:MiniRF_Parameters/lro:azimuth_resolution">
       <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
         <title>lro:MiniRF_Parameters/lro:azimuth_resolution/lro:azimuth_resolution</title>
         The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:center_frequency">
+      <sch:assert test="@unit = ('GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz')">
+        <title>lro:MiniRF_Parameters/lro:center_frequency/lro:center_frequency</title>
+        The attribute @unit must be equal to one of the following values 'GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:chirp_bandwidth">
+      <sch:assert test="@unit = ('GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz')">
+        <title>lro:MiniRF_Parameters/lro:chirp_bandwidth/lro:chirp_bandwidth</title>
+        The attribute @unit must be equal to one of the following values 'GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:chirp_sample_rate">
+      <sch:assert test="@unit = ('GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz')">
+        <title>lro:MiniRF_Parameters/lro:chirp_sample_rate/lro:chirp_sample_rate</title>
+        The attribute @unit must be equal to one of the following values 'GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:chirp_start_frequency">
+      <sch:assert test="@unit = ('GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz')">
+        <title>lro:MiniRF_Parameters/lro:chirp_start_frequency/lro:chirp_start_frequency</title>
+        The attribute @unit must be equal to one of the following values 'GHz', 'Hz', 'MHz', 'THz', 'kHz', 'mHz'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:emission_angle">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
+        <title>lro:MiniRF_Parameters/lro:emission_angle/lro:emission_angle</title>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:grid_resolution_height">
+      <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
+        <title>lro:MiniRF_Parameters/lro:grid_resolution_height/lro:grid_resolution_height</title>
+        The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:grid_resolution_width">
+      <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
+        <title>lro:MiniRF_Parameters/lro:grid_resolution_width/lro:grid_resolution_width</title>
+        The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:ground_station">
+      <sch:assert test=". = ('ARECIBO', 'DSS13')">
+        <title>lro:MiniRF_Parameters/lro:ground_station/lro:ground_station</title>
+        The attribute lro:MiniRF_Parameters/lro:ground_station must be equal to one of the following values 'ARECIBO', 'DSS13'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -292,10 +355,52 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:phase_angle">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
+        <title>lro:MiniRF_Parameters/lro:phase_angle/lro:phase_angle</title>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:pulse_repitition_interval">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
+        <title>lro:MiniRF_Parameters/lro:pulse_repitition_interval/lro:pulse_repitition_interval</title>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:pulse_width">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
+        <title>lro:MiniRF_Parameters/lro:pulse_width/lro:pulse_width</title>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:range_beamwidth">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
+        <title>lro:MiniRF_Parameters/lro:range_beamwidth/lro:range_beamwidth</title>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="lro:MiniRF_Parameters/lro:range_resolution">
       <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
         <title>lro:MiniRF_Parameters/lro:range_resolution/lro:range_resolution</title>
         The attribute @unit must be equal to one of the following values 'AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:sar_incidence_angle">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
+        <title>lro:MiniRF_Parameters/lro:sar_incidence_angle/lro:sar_incidence_angle</title>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:sar_instrument_mode_id">
+      <sch:assert test=". = ('BASELINE_S', 'BASELINE_X', 'BISTATIC', 'ZOOM_S', 'ZOOM_X')">
+        <title>lro:MiniRF_Parameters/lro:sar_instrument_mode_id/lro:sar_instrument_mode_id</title>
+        The attribute lro:MiniRF_Parameters/lro:sar_instrument_mode_id must be equal to one of the following values 'BASELINE_S', 'BASELINE_X', 'BISTATIC', 'ZOOM_S', 'ZOOM_X'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

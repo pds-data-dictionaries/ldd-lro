@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Mon Oct 31 18:06:59 UTC 2022
+   Time                   Mon Jan 16 19:04:10 UTC 2023
    Common Schema          [PDS4_PDS_1G00.xsd]
    Common Schematron      [PDS4_PDS_1G00.sch]
    IM Version Id:         1.16.0.0
@@ -30,8 +30,8 @@ Parameters:
 
 Summary:
    Classes                9
-   Attributes             114
-   Associations           122
+   Attributes             129
+   Associations           137
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -66,6 +66,12 @@ Parsed Input - Attributes:
    minimum value          0.0
    unit of measure type   Units_of_Length
 
+   name                   azimuth_beamwidth
+   version                1.16
+   value data type        ASCII_Real
+   description            The null to null main lobe beam pattern beamwidth in azimuth direction.
+   unit of measure type   Units_of_Angle
+
    name                   azimuth_resolution
    version                1.16
    value data type        ASCII_Real
@@ -93,7 +99,7 @@ Parsed Input - Attributes:
 
    name                   band_description
    version                1.16
-   value data type        UTF8_Text_Preserved
+   value data type        ASCII_Short_String_Collapsed
    description            The band_description contains a description of a specific band in a MiniRF multibanded 3D image
 
    name                   band_name
@@ -166,6 +172,12 @@ Parsed Input - Attributes:
    description            The version of calibration software used to generate a data product.
    maximum characters     10
 
+   name                   center_frequency
+   version                1.16
+   value data type        ASCII_Integer
+   description            The center freq definition, TBD
+   unit of measure type   Units_of_Frequency
+
    name                   channel
    version                1.16
    value data type        ASCII_Short_String_Collapsed
@@ -180,6 +192,29 @@ Parsed Input - Attributes:
    version                1.16
    value data type        ASCII_Integer
    description            Records the commanded NAC channel B offset for either the NAC LEFT or NAC RIGHT.
+
+   name                   chirp_bandwidth
+   version                1.16
+   value data type        ASCII_Real
+   description            bandwidth of the chirp signal (max frequency - min frequency). chirp_rate is chip_bandwidth/pulse_width.
+   unit of measure type   Units_of_Frequency
+
+   name                   chirp_rate
+   version                1.16
+   value data type        ASCII_Real
+   description            Chirp rate in Hz/sec.
+
+   name                   chirp_sample_rate
+   version                1.16
+   value data type        ASCII_Real
+   description            sampling frequency of the chirp signal.
+   unit of measure type   Units_of_Frequency
+
+   name                   chirp_start_frequency
+   version                1.16
+   value data type        ASCII_Real
+   description            Starting frequency of the chirp signal.
+   unit of measure type   Units_of_Frequency
 
    name                   compand_code
    version                1.16
@@ -280,6 +315,12 @@ Parsed Input - Attributes:
    description            The version of Diviner Remote Electronics Box flight software used to acquire the telemetry data for a data product. 
    maximum characters     10
 
+   name                   emission_angle
+   version                1.16
+   value data type        ASCII_Real
+   description            Emission angle, TBD
+   unit of measure type   Units_of_Angle
+
    name                   end_temperature_fpa
    version                1.16
    value data type        ASCII_Real
@@ -324,6 +365,23 @@ Parsed Input - Attributes:
    version                1.16
    value data type        ASCII_Short_String_Collapsed
    description            For NAC, records if the image was acquired from the "LEFT" or "RIGHT" NAC.
+
+   name                   grid_resolution_height
+   version                1.16
+   value data type        ASCII_Real
+   description            vertical resolution of the grid used to generate the bistatic raw sar data.
+   unit of measure type   Units_of_Length
+
+   name                   grid_resolution_width
+   version                1.16
+   value data type        ASCII_Real
+   description            horizontal resolution of the grid used to generate the bistatic raw sar data.
+   unit of measure type   Units_of_Length
+
+   name                   ground_station
+   version                1.16
+   value data type        ASCII_Short_String_Collapsed
+   description            Identifies the ground station used as the transmitter in Mini-RF bistatic operations.
 
    name                   instrument_mode_id
    version                1.16
@@ -418,12 +476,6 @@ Parsed Input - Attributes:
    value data type        ASCII_Integer
    description            Set to the raw engineering counts for the LROC SCS at the middle of a series of WAC frames.
 
-   name                   minirf_instrument_mode_id
-   version                1.16
-   value data type        ASCII_Short_String_Collapsed
-   description            Mini-RF instrument operating mode.
-   maximum characters     50
-
    name                   mission_phase_name
    version                1.16
    value data type        ASCII_Short_String_Collapsed
@@ -503,6 +555,12 @@ Parsed Input - Attributes:
    value data type        ASCII_Integer
    description            The number of lines of data in a data product that contain partial but incomplete data. 
 
+   name                   phase_angle
+   version                1.16
+   value data type        ASCII_Real
+   description            Phase angle, TBD
+   unit of measure type   Units_of_Angle
+
    name                   preroll_time
    version                1.16
    value data type        ASCII_Date_Time_YMD
@@ -523,6 +581,18 @@ Parsed Input - Attributes:
    value data type        ASCII_Short_String_Collapsed
    description            The product_version_id attribute identifies the version of an individual data product. 
 
+   name                   pulse_repitition_interval
+   version                1.16
+   value data type        ASCII_Real
+   description            Pulse repitition interval of the signal from the transmitter for Mini-RF bistatic operations.
+   unit of measure type   Units_of_Time
+
+   name                   pulse_width
+   version                1.16
+   value data type        ASCII_Real
+   description            duration of the chirp pulse.
+   unit of measure type   Units_of_Time
+
    name                   radiance_max
    version                1.16
    value data type        ASCII_Real
@@ -541,6 +611,12 @@ Parsed Input - Attributes:
    maximum value          100000.0 
    unit of measure type   Units_of_Radiance
 
+   name                   range_beamwidth
+   version                1.16
+   value data type        ASCII_Real
+   description            The null to null main lobe beam pattern beamwidth along the range direction.
+   unit of measure type   Units_of_Angle
+
    name                   range_resolution
    version                1.16
    value data type        ASCII_Real
@@ -552,6 +628,18 @@ Parsed Input - Attributes:
    version                1.16
    value data type        ASCII_Short_String_Collapsed
    description            The rationale_desc attribute describes the rationale for performing a particular observation.
+
+   name                   sar_incidence_angle
+   version                1.16
+   value data type        ASCII_Real
+   description            Phase angle, TBD
+   unit of measure type   Units_of_Angle
+
+   name                   sar_instrument_mode_id
+   version                1.16
+   value data type        ASCII_Short_String_Collapsed
+   description            Mini-RF SAR instrument operating mode.
+   maximum characters     20
 
    name                   software_version_id
    version                1.16
@@ -1216,12 +1304,27 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      lro.minirf_instrument_mode_id
+      local identifier      lro.look_azimuth_angle
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      lro.look_azimuth_angle
+      local identifier      lro.sar_incidence_angle
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.emission_angle
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.phase_angle
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.center_frequency
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -1237,6 +1340,66 @@ Parsed Input - Classes:
       reference type        attribute_of
 
       local identifier      lro.range_resolution
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.sar_instrument_mode_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.pulse_repitition_interval
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.ground_station
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.azimuth_beamwidth
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.range_beamwidth
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.pulse_width
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.chirp_rate
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.chirp_start_frequency
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.chirp_sample_rate
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.chirp_bandwidth
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.grid_resolution_height
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      lro.grid_resolution_width
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of

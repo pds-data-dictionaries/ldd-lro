@@ -3,7 +3,7 @@
 >>  INFO IM Version Id: 1.17.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.23
->>  INFO Date: Mon Oct 31 18:06:49 UTC 2022
+>>  INFO Date: Mon Jan 16 19:04:22 UTC 2023
 >>  INFO PARENT_DIR: /tmp/lddtool-14.1.2
 >>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.2/bin
 >>  INFO LIB_DIR: /tmp/lddtool-14.1.2/lib
@@ -52,7 +52,6 @@
 >>> INFO Attribute: <longitude_direction> - The default maximum characters provided by the attribute's data type is being overridden with 13
 >>> INFO Attribute: <look_azimuth_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <look_azimuth_angle> - The default maximum value provided by the attribute's data type is being overridden with 359
->>> INFO Attribute: <minirf_instrument_mode_id> - The default maximum characters provided by the attribute's data type is being overridden with 50
 >>> INFO Attribute: <missing_lines> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <observation_type> - The default maximum characters provided by the attribute's data type is being overridden with 30
 >>> INFO Attribute: <radiance_max> - The default minimum value provided by the attribute's data type is being overridden with -1000.0
@@ -60,6 +59,7 @@
 >>> INFO Attribute: <radiance_min> - The default minimum value provided by the attribute's data type is being overridden with -1000.0
 >>> INFO Attribute: <radiance_min> - The default maximum value provided by the attribute's data type is being overridden with 100000.0 
 >>> INFO Attribute: <range_resolution> - The default maximum value provided by the attribute's data type is being overridden with 450
+>>> INFO Attribute: <sar_instrument_mode_id> - The default maximum characters provided by the attribute's data type is being overridden with 20
 >>> INFO Attribute: <software_version_id> - The default maximum characters provided by the attribute's data type is being overridden with 20
 >>> INFO Attribute: <software_version_id> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <start_solar_longitude> - The default minimum value provided by the attribute's data type is being overridden with -180
