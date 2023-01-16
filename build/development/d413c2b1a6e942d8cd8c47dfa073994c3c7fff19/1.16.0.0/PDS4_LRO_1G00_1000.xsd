@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:lro  Version:1.0.0.0 - Thu Jan 27 23:18:03 UTC 2022 -->
+  <!-- PDS4 XML/Schema for Name Space Id:lro  Version:1.0.0.0 - Mon Jan 16 18:10:52 UTC 2023 -->
   <!-- Generated from the PDS4 Information Model Version 1.16.0.0 - System Build 11.1 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.16.0.0 - pds: - Common Dictionary                                       -->
   <!-- 1.0.0.0 - lro: - LRO                                                      -->
-  <!--   file:/home/runner/work/ldd-lro/ldd-lro/src/PDS4_LRO_IngestLDD.xml       -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://pds.nasa.gov/pds4/mission/lro/v1"
