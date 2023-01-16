@@ -588,10 +588,10 @@
         <local_identifier>lro.chirp_bandwidth</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>bandwidth of the chirp signal (max frequency - min frequency). chirp_rate
-            is chip_bandwidth/pulse_width.</definition>
+        <definition>bandwidth of the chirp signal (max frequency - min frequency). chirp_rate is chip_bandwidth/pulse_width.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
             <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
             <specified_unit_id>MHz</specified_unit_id>
         </DD_Value_Domain>
@@ -3426,7 +3426,7 @@
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+        </DD_Association>    
         <DD_Association> 
             <identifier_reference>lro.sar_incidence_angle</identifier_reference>
             <reference_type>attribute_of</reference_type>
@@ -3438,7 +3438,7 @@
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
+        </DD_Association>        
         <DD_Association> 
             <identifier_reference>lro.phase_angle</identifier_reference>
             <reference_type>attribute_of</reference_type>
@@ -3474,6 +3474,7 @@
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
         <DD_Association> 
             <identifier_reference>lro.sar_instrument_mode_id</identifier_reference>
             <reference_type>attribute_of</reference_type>
