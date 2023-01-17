@@ -50,7 +50,7 @@
 	    In alphabetical order, the attributes are:
 	    
 	    a_axis_radius
-        azimuth_beamwidth
+      azimuth_beamwidth
 	    azimuth_resolution
 	    b_axis_radius
 	    background_offset
@@ -69,14 +69,14 @@
 	    bterm5
 	    c_axis_radius
 	    calibration_software_ver_id
-        center_frequency
+      center_frequency
 	    channel
 	    channel_a_offset
 	    channel_b_offset
-        chirp_bandwidth
-        chirp_rate
-        chirp_sample_rate
-        chip_start_frequency
+      chirp_bandwidth
+      chirp_rate
+      chirp_sample_rate
+      chip_start_frequency
 	    coordinate_system_name
 	    coordinate_system_type
 	    compand_code
@@ -101,9 +101,9 @@
 	    file_state
 	    flight_software_version_id
 	    frame_id
-        grid_resolution_height
-        grid_resolution_width
-        ground_station
+      grid_resolution_height
+      grid_resolution_width
+      ground_station
 	    instrument_mode_id
 	    interframe_delay
 	    interframe_gap_code
@@ -139,17 +139,17 @@
 	    producer_institution_name
 	    product_type
 	    product_version_id
-        pulse_repitition_interval
-        pulse_width
+      pulse_repitition_interval
+      pulse_width
 	    radiance_min
 	    radiance_max
-        range_beamwidth
+      range_beamwidth
 	    range_resolution
 	    rationale_desc	    
-        sar_emission_angle
-        sar_incidence_angle
-        sar_phase_angle
-        sar_instrument_mode_id
+      sar_emission_angle
+      sar_incidence_angle
+      sar_phase_angle
+      sar_instrument_mode_id
 	    software_version_id
 	    spacecraft_clock_count_partition
 	    spacecraft_clock_preroll_count
