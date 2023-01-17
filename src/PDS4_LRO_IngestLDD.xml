@@ -2036,7 +2036,7 @@
         <local_identifier>lro.sar_phase_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>Phase angle for SAR</definition>
+        <definition>The angle between the SAR (Mini-RF) receiver and the Earth-based transmitter. It is also known as the bistatic angle.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -2329,7 +2329,7 @@
         <local_identifier>lro.sar_incidence_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>incidence angle for SAR</definition>
+        <definition>The angle between the normal to the lunar surface (body radius based on a digital elevation model or DEM) and the vector to the Earth-based transmitter.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
