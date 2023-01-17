@@ -3,8 +3,8 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "IM Version": "1.17.0.0" ,
-      "LDD Version": "1.0.0.0" ,
-      "Date": "2023-01-16T10:10:54" ,
+      "LDD Version": "1.0.1.0" ,
+      "Date": "2023-01-16T13:49:02" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "namespaces": ["pds:", "lro:"] ,
       "classDictionary": [
@@ -1860,6 +1860,69 @@
         }
       , {
           "class": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band" ,
+            "title": "MiniRF_Band" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": "The MiniRF_Band class contains the name and description for a specific band in a MiniRF Array_3D_Image"
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_name" ,
+                "title": "band_name" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_name"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_description" ,
+                "title": "band_description" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_description"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_sequence_number" ,
+                "title": "band_sequence_number" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_sequence_number"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
             "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters" ,
             "title": "MiniRF_Parameters" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -1887,6 +1950,70 @@
               }
             }
            , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_incidence_angle" ,
+                "title": "sar_incidence_angle" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_incidence_angle"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.emission_angle" ,
+                "title": "emission_angle" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.emission_angle"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.phase_angle" ,
+                "title": "phase_angle" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1040" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.phase_angle"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.center_frequency" ,
+                "title": "center_frequency" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1050" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.center_frequency"
+                 ]
+              }
+            }
+           , {"association": {
                 "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sub_spacecraft_ground_azimuth" ,
                 "title": "sub_spacecraft_ground_azimuth" ,
                 "assocType": "attribute_of" ,
@@ -1896,7 +2023,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1020" ,
+                "classOrder": "1060" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sub_spacecraft_ground_azimuth"
                  ]
@@ -1912,7 +2039,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1030" ,
+                "classOrder": "1070" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.azimuth_resolution"
                  ]
@@ -1928,9 +2055,217 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1040" ,
+                "classOrder": "1080" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.range_resolution"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_instrument_mode_id" ,
+                "title": "sar_instrument_mode_id" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1100" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_instrument_mode_id"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_repitition_interval" ,
+                "title": "pulse_repitition_interval" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1110" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_repitition_interval"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.ground_station" ,
+                "title": "ground_station" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1120" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.ground_station"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.azimuth_beamwidth" ,
+                "title": "azimuth_beamwidth" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1130" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.azimuth_beamwidth"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.range_beamwidth" ,
+                "title": "range_beamwidth" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1140" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.range_beamwidth"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_width" ,
+                "title": "pulse_width" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1150" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_width"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_rate" ,
+                "title": "chirp_rate" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1160" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_rate"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_start_frequency" ,
+                "title": "chirp_start_frequency" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1170" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_start_frequency"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_sample_rate" ,
+                "title": "chirp_sample_rate" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1180" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_sample_rate"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_bandwidth" ,
+                "title": "chirp_bandwidth" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1190" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_bandwidth"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.grid_resolution_height" ,
+                "title": "grid_resolution_height" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1200" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.grid_resolution_height"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.grid_resolution_width" ,
+                "title": "grid_resolution_width" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1210" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.grid_resolution_width"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.MiniRF_Band" ,
+                "title": "MiniRF_Band" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "*" ,
+                "classOrder": "1090" ,
+                "classId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Band"
                  ]
               }
             }
@@ -4692,6 +5027,12 @@
                 }
              }
             , {"PermissibleValue": {
+                  "value": "FIFTH EXTENDED SCIENCE MISSION" ,
+                  "valueMeaning": "2022-10-01 to 2025-09-30" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
                   "value": "FOURTH EXTENDED SCIENCE MISSION" ,
                   "valueMeaning": "2019-09-15 to 2022-09-15" ,
                   "isDeprecated": "false"
@@ -5165,6 +5506,106 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_description" ,
+            "title": "band_description" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "The band_description contains a description of a specific band in a MiniRF multibanded 3D image" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_name" ,
+            "title": "band_name" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "The band_name contains a string identifying the common name for a specific band in a MiniRF multibanded 3D image" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_sequence_number" ,
+            "title": "band_sequence_number" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "The band_sequence_number records the index for a specific band in a MiniRF multibanded 3D image. Index starts at 1" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Integer" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Integer" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-9223372036854775808" ,
+            "maximumValue": "9223372036854775807" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.azimuth_beamwidth" ,
+            "title": "azimuth_beamwidth" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "The null to null main lobe beam pattern beamwidth in azimuth direction." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.azimuth_resolution" ,
             "title": "azimuth_resolution" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -5190,6 +5631,245 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.center_frequency" ,
+            "title": "center_frequency" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "The center frequency definition, TBD" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Integer" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Integer" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-9223372036854775808" ,
+            "maximumValue": "9223372036854775807" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Frequency" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
+            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_bandwidth" ,
+            "title": "chirp_bandwidth" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "bandwidth of the chirp signal (max frequency - min frequency). chirp_rate is chip_bandwidth\/pulse_width." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Frequency" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
+            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_rate" ,
+            "title": "chirp_rate" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "Chirp rate in Hz\/sec." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_sample_rate" ,
+            "title": "chirp_sample_rate" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "sampling frequency of the chirp signal." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Frequency" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
+            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_start_frequency" ,
+            "title": "chirp_start_frequency" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "Starting frequency of the chirp signal." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Frequency" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
+            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.emission_angle" ,
+            "title": "emission_angle" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "Emission angle, TBD" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.grid_resolution_height" ,
+            "title": "grid_resolution_height" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "vertical resolution of the grid used to generate the bistatic raw sar data." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Length" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Length" ,
+            "unitId": "AU, Angstrom, cm, km, m, micrometer, mm, nm" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.grid_resolution_width" ,
+            "title": "grid_resolution_width" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "horizontal resolution of the grid used to generate the bistatic raw sar data." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Length" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Length" ,
+            "unitId": "AU, Angstrom, cm, km, m, micrometer, mm, nm" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.ground_station" ,
+            "title": "ground_station" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "Identifies the ground station used as the transmitter in Mini-RF bistatic operations." ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "ARECIBO" ,
+                  "valueMeaning": "The S-band transmitter at Arecibo Observatory in Puerto Rico." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "DSS13" ,
+                  "valueMeaning": "The X-band transmitter at DSS-13 ground station in Venus, California." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.look_azimuth_angle" ,
             "title": "look_azimuth_angle" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -5206,6 +5886,106 @@
             "maximumCharacters": "Unbounded" ,
             "minimumValue": "0" ,
             "maximumValue": "359" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.phase_angle" ,
+            "title": "phase_angle" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "Phase angle, TBD" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_repitition_interval" ,
+            "title": "pulse_repitition_interval" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "Pulse repitition interval of the signal from the transmitter for Mini-RF bistatic operations." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Time" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Time" ,
+            "unitId": "day, hr, julian day, microseconds, min, ms, ns, s, yr" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_width" ,
+            "title": "pulse_width" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "duration of the chirp pulse." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Time" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Time" ,
+            "unitId": "day, hr, julian day, microseconds, min, ms, ns, s, yr" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.range_beamwidth" ,
+            "title": "range_beamwidth" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "The null to null main lobe beam pattern beamwidth along the range direction." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
             "pattern": "null" ,
             "unitOfMeasure": "Units_of_Angle" ,
             "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
@@ -5236,6 +6016,88 @@
             "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Length" ,
             "unitId": "AU, Angstrom, cm, km, m, micrometer, mm, nm" ,
             "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_incidence_angle" ,
+            "title": "sar_incidence_angle" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "Phase angle, TBD" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_instrument_mode_id" ,
+            "title": "sar_instrument_mode_id" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.17" ,
+            "description": "Mini-RF SAR instrument operating mode." ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "20" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "BASELINE_S" ,
+                  "valueMeaning": "baseline S, TBD" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "BASELINE_X" ,
+                  "valueMeaning": "baseline x, tbd" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "BISTATIC" ,
+                  "valueMeaning": "bistatic, tbd" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ZOOM_S" ,
+                  "valueMeaning": "zoom s, tbd" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ZOOM_X" ,
+                  "valueMeaning": "zoom x, tbd" ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
           }
         }
       , {

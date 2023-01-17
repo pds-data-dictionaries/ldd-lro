@@ -2,9 +2,9 @@
   {
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
-      "IM Version": "1.17.0.0" ,
-      "LDD Version": "1.0.0.0" ,
-      "Date": "2023-01-16T10:10:54" ,
+      "IM Version": "1.16.0.0" ,
+      "LDD Version": "1.0.1.0" ,
+      "Date": "2023-01-16T13:49:01" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "namespaces": ["pds:", "lro:"] ,
       "classDictionary": [
@@ -1860,6 +1860,69 @@
         }
       , {
           "class": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band" ,
+            "title": "MiniRF_Band" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": "The MiniRF_Band class contains the name and description for a specific band in a MiniRF Array_3D_Image"
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_name" ,
+                "title": "band_name" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_name"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_description" ,
+                "title": "band_description" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_description"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_sequence_number" ,
+                "title": "band_sequence_number" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_sequence_number"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
             "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters" ,
             "title": "MiniRF_Parameters" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -1887,6 +1950,70 @@
               }
             }
            , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_incidence_angle" ,
+                "title": "sar_incidence_angle" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_incidence_angle"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.emission_angle" ,
+                "title": "emission_angle" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.emission_angle"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.phase_angle" ,
+                "title": "phase_angle" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1040" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.phase_angle"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.center_frequency" ,
+                "title": "center_frequency" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1050" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.center_frequency"
+                 ]
+              }
+            }
+           , {"association": {
                 "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sub_spacecraft_ground_azimuth" ,
                 "title": "sub_spacecraft_ground_azimuth" ,
                 "assocType": "attribute_of" ,
@@ -1896,7 +2023,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1020" ,
+                "classOrder": "1060" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sub_spacecraft_ground_azimuth"
                  ]
@@ -1912,7 +2039,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1030" ,
+                "classOrder": "1070" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.azimuth_resolution"
                  ]
@@ -1928,9 +2055,217 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1040" ,
+                "classOrder": "1080" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.range_resolution"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_instrument_mode_id" ,
+                "title": "sar_instrument_mode_id" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1100" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_instrument_mode_id"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_repitition_interval" ,
+                "title": "pulse_repitition_interval" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1110" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_repitition_interval"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.ground_station" ,
+                "title": "ground_station" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1120" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.ground_station"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.azimuth_beamwidth" ,
+                "title": "azimuth_beamwidth" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1130" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.azimuth_beamwidth"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.range_beamwidth" ,
+                "title": "range_beamwidth" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1140" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.range_beamwidth"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_width" ,
+                "title": "pulse_width" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1150" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_width"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_rate" ,
+                "title": "chirp_rate" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1160" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_rate"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_start_frequency" ,
+                "title": "chirp_start_frequency" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1170" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_start_frequency"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_sample_rate" ,
+                "title": "chirp_sample_rate" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1180" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_sample_rate"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_bandwidth" ,
+                "title": "chirp_bandwidth" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1190" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_bandwidth"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.grid_resolution_height" ,
+                "title": "grid_resolution_height" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1200" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.grid_resolution_height"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.grid_resolution_width" ,
+                "title": "grid_resolution_width" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1210" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.grid_resolution_width"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.MiniRF_Band" ,
+                "title": "MiniRF_Band" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "*" ,
+                "classOrder": "1090" ,
+                "classId": [
+                  "0001_NASA_PDS_1.lro.MiniRF_Band"
                  ]
               }
             }
@@ -2009,7 +2344,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": " One of nine Diviner channels. " ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -2090,7 +2425,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The maximum recorded value of radiance for the channel given by lro:channel in a DLRE RDR data product." ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
@@ -2115,7 +2450,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The minimum recorded value of radiance for the channel given by lro:channel in a DLRE RDR data product. " ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
@@ -2140,7 +2475,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The maximum recorded value of brightness temperature for the channel given by lro:channel in a DLRE RDR data product. " ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
@@ -2165,7 +2500,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The minimum recorded value of brightness temperature for the channel given by lro:channel in a DLRE RDR data product. " ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
@@ -2190,7 +2525,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The version of calibration software used to generate a data product." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2215,7 +2550,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The number of lines of data in a data product that are complete; that is, with no missing data." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2240,7 +2575,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Gives the maximum recorded date value in a DLRE RDR data product." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2265,7 +2600,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Gives the minimum recorded date value in a DLRE RDR data product." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2290,7 +2625,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The version of Diviner geometry and averaging software used to generate a Diviner GDR product. Example value: 1.0. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2315,7 +2650,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Diviner instrument operating mode." ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -2390,7 +2725,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "An unordered set of all orientations recorded from activity flags in a DLRE RDR data product. " ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -2441,7 +2776,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Gives the maximum recorded UTC value in a DLRE RDR data product." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2466,7 +2801,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Gives the minimum recorded UTC value in a DLRE RDR data product." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2491,7 +2826,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The version of Diviner Remote Electronics Box flight software used to acquire the telemetry data for a data product. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2516,7 +2851,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Indicates whether a file possibly contains potentially corrupted data." ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -2555,7 +2890,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Identifies the version of the instrument flight software used to acquire the data." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2580,7 +2915,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Gives the version of the LOLA digital elevation model that was used to locate Diviner footprints for the generation of a Diviner GDR product. Example value: 1.0. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2605,7 +2940,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The total number of lines of data missing from an image or observation when it was received on Earth." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2630,7 +2965,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Identifies the general type of an observation." ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -2693,7 +3028,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The number of lines of data in a data product that contain partial but incomplete data. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2718,7 +3053,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The software_version_id element indicates the version (development level) of a program or a program library." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2743,7 +3078,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The total number of lines of data in a data product, including both complete lines and partial lines." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2768,7 +3103,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The a_axis_radius attribute provides the radius of the equatorial axis of the ellipsoid. The IAU calls this \"Subplanetary equatorial radius\" and mapping applications generally call this \"semi_major_axis\". " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2793,7 +3128,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The b_axis_radius attribute provides the value of the intermediate axis of the ellipsoid that defines the approximate shape of a target body. The b_axis_radius is usually in the equatorial plane. The IAU calls this axis \"along orbit equatorial radius\". Mapping applications, which generally only define a sphere or an ellipse, do not support this radius parameter." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2818,7 +3153,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The c_axis_radius attribute provides the value of the polar axis of the ellipsoid that defines the approximate shape of a target body. The c_axis_radius is normal to the plane defined by the a_axis_radius and b_axis_radius. The IAU calls this \"polar radius\". Mapping applications generally call this \"semi_minor_axis\" " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2843,7 +3178,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The given name of the used coordinate system. e.g. \"MEAN EARTH\/POLAR AXIS OF DE421\"" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -2868,7 +3203,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "There are three basic types of coordinate systems: body-fixed rotating, body-fixed non-rotating, and inertial. A body-fixed coordinate system is one associated with the body (e.g., a planet or satellite). The body-fixed system is centered on the body and rotates with the body (unless it is a non-rotating type), whereas an inertial coordinate system is fixed at some point in space. Currently, the PDS has specifically defined two types of body-fixed rotating coordinate systems: planetocentric and planetographic. However, the set of related data elements are modeled such that definitions for other body-fixed rotating coordinate systems, body-fixed non-rotating and inertial coordinate systems can be added as the need arises. Contact a PDS data engineer for assistance in defining a specific coordinate system. " ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -2913,7 +3248,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The latitude_type attribute defines the type of latitude (planetographic, planetocentric) used within a cartographic product and as reflected in attribute values within associated PDS labels. For planets and satellites, latitude is measured north and south of the equator; north latitudes are designated as positive. The planetocentric latitude is the angle between the equatorial plane and a line from the center of the body. The planetographic latitude is the angle between the equatorial plane and a line that is normal to the body. In summary, both latitudes are equivalent on a sphere (i.e., equatorial radius equal to polar radius); however, they differ on an ellipsoid (e.g., Mars, Earth). For more on latitude_type, please see the IAU publication available here: http:\/\/astrogeology.usgs.gov\/groups\/IAU-WGCCRE" ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -2952,7 +3287,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The longitude_direction attribute identifies the direction of longitude (e.g. POSITIVE_EAST or POSITIVE_WEST) for a planet. The IAU definition for direction of positive longitude should be adopted: http:\/\/astrogeology.usgs.gov\/groups\/IAU-WGCCRE. Typically, for planets with prograde (direct) rotations, positive longitude direction is to the west. For planets with retrograde rotations, positive longitude direction is to the east. Generally the Positive West longitude_direction is used for planetographic systems and Positive East is used for planetocentric systems. If the data is defined with Spatial_Domain in a manner not recommended by the IAU, there is a optional Secondary_Spatial_Domain section to define a second set of bounding coordinates." ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -2991,7 +3326,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "LOLA instrument operating mode." ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -3108,7 +3443,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Provides the name of the LRO Spacecraft Time Correlation file, which is a housekeeping file containing the offset between the spacecraft raw clock and terrestrial time. The time correlation file is used to compute the start and stop spacecraft clock times for LOLA data products. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3133,7 +3468,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "_TBD" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3158,7 +3493,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The band_code records the commanded band code for a WAC observation." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3183,7 +3518,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the temperature of the LROC FPA in degrees Celsius, as converted from the raw engineering counts, at the beginning of a series of WAC frames." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3208,7 +3543,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the raw engineering counts for the LROC (F)ocal (P)lane (A)rray at the beginning of a series of WAC frames." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3233,7 +3568,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the temperature of the LROC SCS in degrees Celsius, as converted from the raw engineering counts, at the beginning of a series of WAC frames." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3258,7 +3593,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the raw engineering counts for the LROC SCS at the beginning of a series of WAC frames." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3283,7 +3618,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding bterm 1" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3308,7 +3643,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding bterm 2" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3333,7 +3668,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding bterm 3" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3358,7 +3693,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding bterm 4" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3383,7 +3718,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding bterm 5" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3408,7 +3743,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Records the commanded NAC channel A offset for either the NAC LEFT or NAC RIGHT." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3433,7 +3768,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Records the commanded NAC channel B offset for either the NAC LEFT or NAC RIGHT." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3458,7 +3793,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Indicates which stored companding table was used (0-7)" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3483,7 +3818,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Indicates if lossless compression was commanded (0=no, 1=yes)" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3508,7 +3843,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Records the commanded DAC reset level for either the NAC LEFT or NAC RIGHT." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3533,7 +3868,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The data_quality_desc attribute describes the data qualities associated with a data_quality_id attribute. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3558,7 +3893,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The data_quality_id attribute provides a numeric key which identifies the quality of data available for a particular time period. The data_quality_id scheme is unique to a given instrument and is described by the associated data_quality_desc attribute. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3583,7 +3918,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the temperature of the LROC FPA in degrees Celsius, as converted from the raw engineering counts, at the end of a series of WAC frames." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3608,7 +3943,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the raw engineering counts for the LROC (F)ocal (P)lane (A)rray at the end of a series of WAC frames." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3633,7 +3968,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the temperature of the LROC SCS in degrees Celsius, as converted from the raw engineering counts, at the end of a series of WAC frames." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3658,7 +3993,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the raw engineering counts for the LROC SCS at the end of a series of WAC frames." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3683,7 +4018,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Records the commanded exposure code for a WAC observation." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3708,7 +4043,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "For NAC, records if the image was acquired from the \"LEFT\" or \"RIGHT\" NAC." ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -3747,7 +4082,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Records the commanded WAC mode: BW, COLOR, VIS or UV." ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -3798,7 +4133,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the value of the interframe delay between WAC framelets. Keyword can have values between 25\/64 and 280\/64 seconds, in 1\/64 seconds increments." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3823,7 +4158,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Records the commanded interframe gap code for a WAC observation." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3848,7 +4183,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Records the commanded value for the number of NAC lines to acquire, in 1024 increments. (LINES = LINES_CODE * 1024)" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3873,7 +4208,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Index range from 0 to 4095 each corresponding to one LINE_EXPOSURE_DURATION increment." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3898,7 +4233,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": " For NAC products, LINE_EXPOSURE_DURATION can have values between 337.6 and 35,281.6 microseconds, in 128\/15 microsecond increments (LINE_EXPOSURE_DURATION = [LINE_EXPOSURE_CODE * 128\/15] + 337.6) " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3923,7 +4258,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Always set to STORED." ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -3956,7 +4291,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the temperature of the LROC FPA in degrees Celsius, as converted from the raw engineering counts, at the middle of a series of WAC frames." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -3981,7 +4316,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the raw engineering counts for the LROC (F)ocal (P)lane (A)rray at the middle of a series of WAC frames." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4006,7 +4341,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the temperature of the LROC SCS in degrees Celsius, as converted from the raw engineering counts, at the middle of a series of WAC frames." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4031,7 +4366,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the raw engineering counts for the LROC SCS at the middle of a series of WAC frames." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4056,7 +4391,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the mode value as commanded for both NAC and WAC observations." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4081,7 +4416,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding mterm 1" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4106,7 +4441,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding mterm 2" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4131,7 +4466,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding mterm 3" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4156,7 +4491,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding mterm 4" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4181,7 +4516,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding mterm 5" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4206,7 +4541,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Records the commanded number of frames for a WAC observation." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4231,7 +4566,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The UTC time and date at the start of the image acquisition command, corresponding to the acquisition of 1024 lines at the given exposure prior to the actual image acquisition. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4256,7 +4591,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The rationale_desc attribute describes the rationale for performing a particular observation." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4281,7 +4616,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the sclk string for the start of an observation preroll acquisition." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4306,7 +4641,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the temperature of the LROC FPA in degrees Celsius, as converted from the raw engineering counts." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4331,7 +4666,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the raw engineering counts for the LROC (F)ocal (P)lane (A)rray." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4356,7 +4691,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the temperature of the LROC FPGA in degrees Celsius, as converted from the raw engineering counts." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4381,7 +4716,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the raw engineering counts for the LROC (F)ield (P)rogrammable (G)ate (A)rray." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4406,7 +4741,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the temperature of the LROC SCS in degrees Celsius, as converted from the raw engineering counts." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4431,7 +4766,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the raw engineering counts for the LROC SCS." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4456,7 +4791,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the temperature of the LROC telescope corresponding to NAC-L or NAC-R, as converted from the raw engineering counts." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4481,7 +4816,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Set to the raw engineering counts for the LROC Telescope corresponding to NAC-L or NAC-R." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4506,7 +4841,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The upload_id attribute describes a spacecraft command set that is associated with the given data product." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4531,7 +4866,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding xterm 1" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4556,7 +4891,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding xterm 2" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4581,7 +4916,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding xterm 3" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4606,7 +4941,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding xterm 4" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4631,7 +4966,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "NAC companding xterm 5" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4656,7 +4991,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": " The mission_phase_name attribute provides the mission-defined name of a time period within the mission. " ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -4688,6 +5023,12 @@
             , {"PermissibleValue": {
                   "value": "EXTENDED SCIENCE MISSION" ,
                   "valueMeaning": "2012-09-15 to 2014-09-14" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "FIFTH EXTENDED SCIENCE MISSION" ,
+                  "valueMeaning": "2022-10-01 to 2025-09-30" ,
                   "isDeprecated": "false"
                 }
              }
@@ -4743,7 +5084,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The orbit_number attribute identifies the number of the orbital revolution around a target body. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4768,7 +5109,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The producer_institution_name attribute identifies a university, research center, NASA center, or other institution associated with the production of a data product. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4793,7 +5134,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The product_type attribute indicates the processing level of an individual data product." ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
@@ -4970,7 +5311,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The product_version_id attribute identifies the version of an individual data product. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -4995,7 +5336,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The spacecraft_clock_count_partition attribute indicates the clock partition active for the spacecraft_clock_start_count and spacecraft_clock_stop_count attributes. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -5020,7 +5361,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The spacecraft_clock_start_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -5045,7 +5386,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The spacecraft_clock_stop_count attribute provides the value of the spacecraft clock at the beginning of a time period of interest. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -5070,7 +5411,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Provides the the lowest revolution orbit number that contributed data to a given data product. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -5095,7 +5436,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Marks the beginning of a time range measured in solar longitude. Solar longitude is the value of the angle between the body_Sun line at the time of interest and the body_Sun line at the vernal equinox, thus providing a measure of the season on the target body. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -5120,7 +5461,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Provides the the highest revolution orbit number that contributed data to a given data product. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -5145,7 +5486,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Marks the end of a time range measured in solar longitude. Solar longitude is the value of the angle between the body_Sun line at the time of interest and the body_Sun line at the vernal equinox, thus providing a measure of the season on the target body. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -5165,12 +5506,112 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_description" ,
+            "title": "band_description" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "The band_description contains a description of a specific band in a MiniRF multibanded 3D image" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_name" ,
+            "title": "band_name" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "The band_name contains a string identifying the common name for a specific band in a MiniRF multibanded 3D image" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Band.lro.band_sequence_number" ,
+            "title": "band_sequence_number" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "The band_sequence_number records the index for a specific band in a MiniRF multibanded 3D image. Index starts at 1" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Integer" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Integer" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-9223372036854775808" ,
+            "maximumValue": "9223372036854775807" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.azimuth_beamwidth" ,
+            "title": "azimuth_beamwidth" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "The null to null main lobe beam pattern beamwidth in azimuth direction." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.azimuth_resolution" ,
             "title": "azimuth_resolution" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The true resolution of the radar image in the azimuth (along track) direction, evaluated at the center of the image for the transmit, receive, and processing parameters used for the sequence." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -5190,12 +5631,251 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.center_frequency" ,
+            "title": "center_frequency" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "The center frequency definition, TBD" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Integer" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Integer" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-9223372036854775808" ,
+            "maximumValue": "9223372036854775807" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Frequency" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
+            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_bandwidth" ,
+            "title": "chirp_bandwidth" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "bandwidth of the chirp signal (max frequency - min frequency). chirp_rate is chip_bandwidth\/pulse_width." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Frequency" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
+            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_rate" ,
+            "title": "chirp_rate" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "Chirp rate in Hz\/sec." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_sample_rate" ,
+            "title": "chirp_sample_rate" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "sampling frequency of the chirp signal." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Frequency" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
+            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.chirp_start_frequency" ,
+            "title": "chirp_start_frequency" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "Starting frequency of the chirp signal." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Frequency" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
+            "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.emission_angle" ,
+            "title": "emission_angle" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "Emission angle, TBD" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.grid_resolution_height" ,
+            "title": "grid_resolution_height" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "vertical resolution of the grid used to generate the bistatic raw sar data." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Length" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Length" ,
+            "unitId": "AU, Angstrom, cm, km, m, micrometer, mm, nm" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.grid_resolution_width" ,
+            "title": "grid_resolution_width" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "horizontal resolution of the grid used to generate the bistatic raw sar data." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Length" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Length" ,
+            "unitId": "AU, Angstrom, cm, km, m, micrometer, mm, nm" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.ground_station" ,
+            "title": "ground_station" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "Identifies the ground station used as the transmitter in Mini-RF bistatic operations." ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "ARECIBO" ,
+                  "valueMeaning": "The S-band transmitter at Arecibo Observatory in Puerto Rico." ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "DSS13" ,
+                  "valueMeaning": "The X-band transmitter at DSS-13 ground station in Venus, California." ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.look_azimuth_angle" ,
             "title": "look_azimuth_angle" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The East-West look azimuth discrimination angle. This is the angle between the projection of North into the tangent plane of a sphere at the image center point and the vector from subspacecraft point to the image center projected into the plane. It assumes values from 0 to 360, where 0 means North-looking, 90 East-looking, 180 South-looking, and 270 West-looking. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -5215,12 +5895,112 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.phase_angle" ,
+            "title": "phase_angle" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "Phase angle, TBD" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_repitition_interval" ,
+            "title": "pulse_repitition_interval" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "Pulse repitition interval of the signal from the transmitter for Mini-RF bistatic operations." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Time" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Time" ,
+            "unitId": "day, hr, julian day, microseconds, min, ms, ns, s, yr" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_width" ,
+            "title": "pulse_width" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "duration of the chirp pulse." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Time" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Time" ,
+            "unitId": "day, hr, julian day, microseconds, min, ms, ns, s, yr" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.range_beamwidth" ,
+            "title": "range_beamwidth" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "The null to null main lobe beam pattern beamwidth along the range direction." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.range_resolution" ,
             "title": "range_resolution" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The true resolution of the radar image in the range (across track) direction, evaluated at the center of the image for the transmit, receive, and processing parameters used for the sequence. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -5240,12 +6020,94 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_incidence_angle" ,
+            "title": "sar_incidence_angle" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "Phase angle, TBD" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_instrument_mode_id" ,
+            "title": "sar_instrument_mode_id" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "Mini-RF SAR instrument operating mode." ,
+            "isNillable": "false" ,
+            "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "20" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          , "PermissibleValueList": [
+              {"PermissibleValue": {
+                  "value": "BASELINE_S" ,
+                  "valueMeaning": "baseline S, TBD" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "BASELINE_X" ,
+                  "valueMeaning": "baseline x, tbd" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "BISTATIC" ,
+                  "valueMeaning": "bistatic, tbd" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ZOOM_S" ,
+                  "valueMeaning": "zoom s, tbd" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "ZOOM_X" ,
+                  "valueMeaning": "zoom x, tbd" ,
+                  "isDeprecated": "false"
+                }
+             }
+           ]
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sub_spacecraft_ground_azimuth" ,
             "title": "sub_spacecraft_ground_azimuth" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Provides the value of the angle, measured on the target body surface, between the direction from a ground point to the north pole and the direction from the ground point to the sub-spacecraft point. If the location of the ground point at which the azimuth is measured is not otherwise specified, it is assumed to correspond to the center of the image. The values of this angle increase in a clockwise direction. When a pair of values is given, e.g. (350.0, 10.0), they represent the ordered end-members of a range of ground azimuth values that extends clockwise from the first to the second, modulo 360 degrees. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
@@ -5270,7 +6132,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The maximum value for the Diviner parameter specified by lro.parameter_name." ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
@@ -5295,7 +6157,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "The minimum value for the Diviner parameter specified by lro.parameter_name." ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
@@ -5320,7 +6182,7 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
-            "versionId": "1.17" ,
+            "versionId": "1.16" ,
             "description": "Diviner parameter name." ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,

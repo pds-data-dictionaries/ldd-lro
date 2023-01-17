@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:lro  Version:1.0.0.0 - Mon Jan 16 18:10:54 UTC 2023 -->
-  <!-- Generated from the PDS4 Information Model Version 1.17.0.0 - System Build 12.0 -->
+  <!-- PDS4 XML/Schema for Name Space Id:lro  Version:1.0.1.0 - Mon Jan 16 21:49:00 UTC 2023 -->
+  <!-- Generated from the PDS4 Information Model Version 1.16.0.0 - System Build 11.1 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
-  <!-- 1.17.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.0.0.0 - lro: - LRO                                                      -->
+  <!-- 1.16.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.0.1.0 - lro: - LRO                                                      -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://pds.nasa.gov/pds4/mission/lro/v1"
@@ -13,21 +13,15 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.0.0.0">
+    version="1.0.1.0">
  
-    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd"/>
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
 
         The LRO dictionary contains classes that describe aspects of the 
         Lunar Reconnaissance Orbiter mission and related instruments.
-        
-        LRO version 1.0.0.0
-        PDS Build 1.17.0.0 (1H00)
-        LDDTool version 13.1.0
-        
-        Created with lddtool -plJ PDS4_LRO_IngestLDD.xml
     
     </xs:documentation>
   </xs:annotation>
@@ -220,8 +214,21 @@
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test="lro:product_type = ('CDR', 'DDR', 'EDR', 'GCP', 'GDR', 'LEND_EDR_HK', 'LEND_EDR_SCI', 'LEND_RDR_ALD', 'LEND_RDR_CHK', 'LEND_RDR_DLD', 'LEND_RDR_DLX', 'LEND_RDR_RSCI', 'LOLA_DAC', 'LOLA_DAM', 'LOLA_DEC', 'LOLA_DEM', 'LOLA_DRC', 'LOLA_DRM', 'LOLA_DSM', 'PCP', 'PRP', 'RADR', 'RCP', 'RDR', 'SHA')"/> -->
-    <!-- <xs:assert test="lro:mission_phase_name = ('COMMISSIONING', 'CRUISE', 'EXTENDED SCIENCE MISSION', 'FOURTH EXTENDED SCIENCE MISSION', 'LAUNCH', 'LUNAR ORBIT ACQUISITION', 'NOMINAL MISSION', 'SCIENCE MISSION', 'SECOND EXTENDED SCIENCE MISSION', 'THIRD EXTENDED SCIENCE MISSION')"/> -->
+    <!-- <xs:assert test="lro:mission_phase_name = ('COMMISSIONING', 'CRUISE', 'EXTENDED SCIENCE MISSION', 'FIFTH EXTENDED SCIENCE MISSION', 'FOURTH EXTENDED SCIENCE MISSION', 'LAUNCH', 'LUNAR ORBIT ACQUISITION', 'NOMINAL MISSION', 'SCIENCE MISSION', 'SECOND EXTENDED SCIENCE MISSION', 'THIRD EXTENDED SCIENCE MISSION')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="MiniRF_Band">
+    <xs:annotation>
+      <xs:documentation>The MiniRF_Band class contains the name and
+        description for a specific band in a MiniRF
+        Array_3D_Image</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="band_name" type="lro:band_name" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="band_description" type="lro:band_description" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="band_sequence_number" type="lro:band_sequence_number" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="MiniRF_Parameters">
@@ -231,10 +238,31 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="look_azimuth_angle" type="lro:look_azimuth_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="sar_incidence_angle" type="lro:sar_incidence_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="emission_angle" type="lro:emission_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="phase_angle" type="lro:phase_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="center_frequency" type="lro:center_frequency" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="sub_spacecraft_ground_azimuth" type="lro:sub_spacecraft_ground_azimuth" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="azimuth_resolution" type="lro:azimuth_resolution" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="range_resolution" type="lro:range_resolution" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="MiniRF_Band" type="lro:MiniRF_Band" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="sar_instrument_mode_id" type="lro:sar_instrument_mode_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="pulse_repitition_interval" type="lro:pulse_repitition_interval" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="ground_station" type="lro:ground_station" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="azimuth_beamwidth" type="lro:azimuth_beamwidth" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="range_beamwidth" type="lro:range_beamwidth" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="pulse_width" type="lro:pulse_width" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="chirp_rate" type="lro:chirp_rate" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="chirp_start_frequency" type="lro:chirp_start_frequency" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="chirp_sample_rate" type="lro:chirp_sample_rate" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="chirp_bandwidth" type="lro:chirp_bandwidth" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="grid_resolution_height" type="lro:grid_resolution_height" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="grid_resolution_width" type="lro:grid_resolution_width" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="lro:sar_instrument_mode_id = ('BASELINE_S', 'BASELINE_X', 'BISTATIC', 'ZOOM_S', 'ZOOM_X')"/> -->
+    <!-- <xs:assert test="lro:ground_station = ('ARECIBO', 'DSS13')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
   <xs:complexType name="Parameter_Range">
@@ -277,6 +305,25 @@
     <xs:simpleContent>
       <xs:extension base="lro:a_axis_radius_WO_Units">
         <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="azimuth_beamwidth_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="azimuth_beamwidth">
+    <xs:annotation>
+      <xs:documentation>The null to null main lobe beam pattern
+        beamwidth in azimuth direction.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:azimuth_beamwidth_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -340,6 +387,41 @@
     <xs:annotation>
       <xs:documentation>The band_code records the commanded band code
         for a WAC observation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="band_description">
+    <xs:annotation>
+      <xs:documentation>The band_description contains a description of a
+        specific band in a MiniRF multibanded 3D image</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="band_name">
+    <xs:annotation>
+      <xs:documentation>The band_name contains a string identifying the
+        common name for a specific band in a MiniRF multibanded 3D
+        image</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="band_sequence_number">
+    <xs:annotation>
+      <xs:documentation>The band_sequence_number records the index for a
+        specific band in a MiniRF multibanded 3D image. Index starts at
+        1</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="-9223372036854775808"/>
@@ -495,6 +577,25 @@
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="center_frequency_WO_Units">
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="center_frequency">
+    <xs:annotation>
+      <xs:documentation>The center frequency definition,
+        TBD</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:center_frequency_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Frequency" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:simpleType name="channel">
     <xs:annotation>
       <xs:documentation> One of nine Diviner channels.
@@ -527,6 +628,74 @@
      <xs:maxInclusive value="9223372036854775807"/>
 	   </xs:restriction>
   </xs:simpleType>
+
+  <xs:simpleType name="chirp_bandwidth_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="chirp_bandwidth">
+    <xs:annotation>
+      <xs:documentation>bandwidth of the chirp signal (max frequency -
+        min frequency). chirp_rate is
+        chip_bandwidth/pulse_width.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:chirp_bandwidth_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Frequency" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="chirp_rate">
+    <xs:annotation>
+<xs:documentation>Chirp rate in Hz/sec.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="chirp_sample_rate_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="chirp_sample_rate">
+    <xs:annotation>
+      <xs:documentation>sampling frequency of the chirp
+        signal.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:chirp_sample_rate_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Frequency" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="chirp_start_frequency_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="chirp_start_frequency">
+    <xs:annotation>
+      <xs:documentation>Starting frequency of the chirp
+        signal.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:chirp_start_frequency_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Frequency" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="compand_code">
     <xs:annotation>
@@ -722,6 +891,24 @@
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="emission_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="emission_angle">
+    <xs:annotation>
+<xs:documentation>Emission angle, TBD</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:emission_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:simpleType name="end_temperature_fpa_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
@@ -822,6 +1009,55 @@
     <xs:annotation>
       <xs:documentation>For NAC, records if the image was acquired from
         the "LEFT" or "RIGHT" NAC.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="grid_resolution_height_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="grid_resolution_height">
+    <xs:annotation>
+      <xs:documentation>vertical resolution of the grid used to generate
+        the bistatic raw sar data.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:grid_resolution_height_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="grid_resolution_width_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="grid_resolution_width">
+    <xs:annotation>
+      <xs:documentation>horizontal resolution of the grid used to
+        generate the bistatic raw sar data.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:grid_resolution_width_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="ground_station">
+    <xs:annotation>
+      <xs:documentation>Identifies the ground station used as the
+        transmitter in Mini-RF bistatic operations.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -1247,6 +1483,24 @@
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="phase_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="phase_angle">
+    <xs:annotation>
+<xs:documentation>Phase angle, TBD</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:phase_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:simpleType name="preroll_time">
     <xs:annotation>
       <xs:documentation>The UTC time and date at the start of the image
@@ -1295,6 +1549,43 @@
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="pulse_repitition_interval_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="pulse_repitition_interval">
+    <xs:annotation>
+      <xs:documentation>Pulse repitition interval of the signal from the
+        transmitter for Mini-RF bistatic operations.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:pulse_repitition_interval_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="pulse_width_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="pulse_width">
+    <xs:annotation>
+<xs:documentation>duration of the chirp pulse.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:pulse_width_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:simpleType name="radiance_max_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1000.0"/>
@@ -1337,6 +1628,25 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:simpleType name="range_beamwidth_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="range_beamwidth">
+    <xs:annotation>
+      <xs:documentation>The null to null main lobe beam pattern
+        beamwidth along the range direction.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:range_beamwidth_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:simpleType name="range_resolution_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
@@ -1367,6 +1677,35 @@
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
      <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sar_incidence_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="sar_incidence_angle">
+    <xs:annotation>
+<xs:documentation>Phase angle, TBD</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:sar_incidence_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="sar_instrument_mode_id">
+    <xs:annotation>
+      <xs:documentation>Mini-RF SAR instrument operating
+        mode.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="20"/>
 	   </xs:restriction>
   </xs:simpleType>
 
