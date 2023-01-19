@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model 
-    href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1I00.sch"
+    href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <!-- 11/06/2019 GEO/SHS Initial version
@@ -11,17 +11,17 @@
      10/11/2021 GEO/JGW Added permissible values for product_type
      10/22/2021 GEO/JGW Added Geodetic_Model class
      01/27/2022 GEO/SHS Rebuilt with 1H00 IM
-     10/31/2022 APL/RCE Additional Mini-RF elements
-     01/16/2023 IMG/TMH Added 5th extended mission for under mission_phase_name and built for 1I00 IM
+     01/16/2023 IMG/TMH (v1010) Added 5th extended mission for under mission_phase_name and built for 1I00/1J00
+     01/19/2023 APL/RCE (v1020) Additional Mini-RF elements
     -->
 
 <Ingest_LDD 
     xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1
-                        http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd">
+                        http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd">
     <name>LRO</name>
-    <ldd_version_id>1.0.1.0</ldd_version_id>
+    <ldd_version_id>1.0.2.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
     <full_name>Jennifer Ward</full_name>
     <steward_id>geo</steward_id>
@@ -30,11 +30,10 @@
         The LRO dictionary contains classes that describe aspects of the 
         Lunar Reconnaissance Orbiter mission and related instruments.
     </comment>
-    <last_modification_date_time>2023-01-16T00:00Z</last_modification_date_time>
+    <last_modification_date_time>2023-01-19T00:00Z</last_modification_date_time>
 	
 	<!-- PGeissler changed mterm1 to mterm5 to ASCII_Real; added units to NAC temperatures, line_exposure_time, interframe_delay -->
-
-        <!-- PGeissler 5-08-2020 ldd-lro-1d00.xml changed mission_phase_name to allow multiple mission phases -->
+    <!-- PGeissler 5-08-2020 ldd-lro-1d00.xml changed mission_phase_name to allow multiple mission phases -->
 
     <!-- LRO Mission Dictionary Attributes -->
     <!-- Definitions of attributes of these LRO-specific classes: 
@@ -50,7 +49,7 @@
 	    In alphabetical order, the attributes are:
 	    
 	    a_axis_radius
-      azimuth_beamwidth
+        azimuth_beamwidth
 	    azimuth_resolution
 	    b_axis_radius
 	    background_offset
@@ -69,14 +68,14 @@
 	    bterm5
 	    c_axis_radius
 	    calibration_software_ver_id
-      center_frequency
+        center_frequency
 	    channel
 	    channel_a_offset
 	    channel_b_offset
-      chirp_bandwidth
-      chirp_rate
-      chirp_sample_rate
-      chip_start_frequency
+        chirp_bandwidth
+        chirp_rate
+        chirp_sample_rate
+        chip_start_frequency
 	    coordinate_system_name
 	    coordinate_system_type
 	    compand_code
@@ -101,9 +100,9 @@
 	    file_state
 	    flight_software_version_id
 	    frame_id
-      grid_resolution_height
-      grid_resolution_width
-      ground_station
+        grid_resolution_height
+        grid_resolution_width
+        ground_station
 	    instrument_mode_id
 	    interframe_delay
 	    interframe_gap_code
@@ -139,17 +138,17 @@
 	    producer_institution_name
 	    product_type
 	    product_version_id
-      pulse_repitition_interval
-      pulse_width
+        pulse_repitition_interval
+        pulse_width
 	    radiance_min
 	    radiance_max
-      range_beamwidth
+        range_beamwidth
 	    range_resolution
 	    rationale_desc	    
-      sar_emission_angle
-      sar_incidence_angle
-      sar_phase_angle
-      sar_instrument_mode_id
+        sar_emission_angle
+        sar_incidence_angle
+        sar_phase_angle
+        sar_instrument_mode_id
 	    software_version_id
 	    spacecraft_clock_count_partition
 	    spacecraft_clock_preroll_count
