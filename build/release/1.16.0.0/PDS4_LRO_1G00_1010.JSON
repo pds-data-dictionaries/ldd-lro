@@ -4,7 +4,7 @@
       "Title": "PDS4 Data Dictionary" ,
       "IM Version": "1.16.0.0" ,
       "LDD Version": "1.0.1.0" ,
-      "Date": "2023-01-16T13:49:01" ,
+      "Date": "2023-01-19T13:13:27" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "namespaces": ["pds:", "lro:"] ,
       "classDictionary": [
@@ -1966,8 +1966,8 @@
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.emission_angle" ,
-                "title": "emission_angle" ,
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_emission_angle" ,
+                "title": "sar_emission_angle" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
@@ -1977,13 +1977,13 @@
                 "maximumCardinality": "1" ,
                 "classOrder": "1030" ,
                 "attributeId": [
-                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.emission_angle"
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_emission_angle"
                  ]
               }
             }
            , {"association": {
-                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.phase_angle" ,
-                "title": "phase_angle" ,
+                "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_phase_angle" ,
+                "title": "sar_phase_angle" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
@@ -1993,7 +1993,7 @@
                 "maximumCardinality": "1" ,
                 "classOrder": "1040" ,
                 "attributeId": [
-                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.phase_angle"
+                  "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_phase_angle"
                  ]
               }
             }
@@ -3469,7 +3469,7 @@
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
             "versionId": "1.16" ,
-            "description": "_TBD" ,
+            "description": "The background offset" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -5637,7 +5637,7 @@
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
             "versionId": "1.16" ,
-            "description": "The center frequency definition, TBD" ,
+            "description": "The center frequency" ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -5751,31 +5751,6 @@
             "unitOfMeasure": "Units_of_Frequency" ,
             "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Frequency" ,
             "unitId": "GHz, Hz, MHz, THz, kHz, mHz" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
-            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.emission_angle" ,
-            "title": "emission_angle" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "lro" ,
-            "steward": "geo" ,
-            "versionId": "1.16" ,
-            "description": "Emission angle, TBD" ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "ASCII_Real" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
-            "minimumCharacters": "Unbounded" ,
-            "maximumCharacters": "Unbounded" ,
-            "minimumValue": "-1.7976931348623157e308" ,
-            "maximumValue": "1.7976931348623157e308" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "Units_of_Angle" ,
-            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
-            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
             "defaultUnitId": "null"
           }
         }
@@ -5895,31 +5870,6 @@
         }
       , {
           "attribute": {
-            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.phase_angle" ,
-            "title": "phase_angle" ,
-            "registrationAuthorityId": "0001_NASA_PDS_1" ,
-            "nameSpaceId": "lro" ,
-            "steward": "geo" ,
-            "versionId": "1.16" ,
-            "description": "Phase angle, TBD" ,
-            "isNillable": "false" ,
-            "isEnumerated": "false" ,
-            "isDeprecated": "false" ,
-            "dataType": "ASCII_Real" ,
-            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
-            "minimumCharacters": "Unbounded" ,
-            "maximumCharacters": "Unbounded" ,
-            "minimumValue": "-1.7976931348623157e308" ,
-            "maximumValue": "1.7976931348623157e308" ,
-            "pattern": "null" ,
-            "unitOfMeasure": "Units_of_Angle" ,
-            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
-            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
-            "defaultUnitId": "null"
-          }
-        }
-      , {
-          "attribute": {
             "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.pulse_repitition_interval" ,
             "title": "pulse_repitition_interval" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -6020,13 +5970,38 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_emission_angle" ,
+            "title": "sar_emission_angle" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "Emission angle for SAR" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_incidence_angle" ,
             "title": "sar_incidence_angle" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "lro" ,
             "steward": "geo" ,
             "versionId": "1.16" ,
-            "description": "Phase angle, TBD" ,
+            "description": "The angle between the normal to the lunar surface (body radius based on a digital elevation model or DEM) and the vector to the Earth-based transmitter." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
@@ -6069,35 +6044,60 @@
           , "PermissibleValueList": [
               {"PermissibleValue": {
                   "value": "BASELINE_S" ,
-                  "valueMeaning": "baseline S, TBD" ,
+                  "valueMeaning": "baseline S" ,
                   "isDeprecated": "false"
                 }
              }
             , {"PermissibleValue": {
                   "value": "BASELINE_X" ,
-                  "valueMeaning": "baseline x, tbd" ,
+                  "valueMeaning": "baseline X" ,
                   "isDeprecated": "false"
                 }
              }
             , {"PermissibleValue": {
                   "value": "BISTATIC" ,
-                  "valueMeaning": "bistatic, tbd" ,
+                  "valueMeaning": "bistatic" ,
                   "isDeprecated": "false"
                 }
              }
             , {"PermissibleValue": {
                   "value": "ZOOM_S" ,
-                  "valueMeaning": "zoom s, tbd" ,
+                  "valueMeaning": "zoom S" ,
                   "isDeprecated": "false"
                 }
              }
             , {"PermissibleValue": {
                   "value": "ZOOM_X" ,
-                  "valueMeaning": "zoom x, tbd" ,
+                  "valueMeaning": "zoom X" ,
                   "isDeprecated": "false"
                 }
              }
            ]
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.lro.MiniRF_Parameters.lro.sar_phase_angle" ,
+            "title": "sar_phase_angle" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "lro" ,
+            "steward": "geo" ,
+            "versionId": "1.16" ,
+            "description": "The angle between the SAR (Mini-RF) receiver and the Earth-based transmitter. It is also known as the bistatic angle." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Real" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
+            "minimumCharacters": "Unbounded" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "-1.7976931348623157e308" ,
+            "maximumValue": "1.7976931348623157e308" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "Units_of_Angle" ,
+            "unitOfMeasureId": "0001_NASA_PDS_1.pds.Units_of_Angle" ,
+            "unitId": "arcmin, arcsec, deg, hr, mrad, rad" ,
+            "defaultUnitId": "null"
           }
         }
       , {

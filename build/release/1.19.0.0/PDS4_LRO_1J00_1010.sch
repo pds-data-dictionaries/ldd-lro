@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:lro  Version:1.0.1.0 - Mon Jan 16 21:49:03 UTC 2023 -->
+  <!-- PDS4 Schematron for Name Space Id:lro  Version:1.0.1.0 - Thu Jan 19 21:13:29 UTC 2023 -->
   <!-- Generated from the PDS4 Information Model Version 1.19.0.0 - System Build 13.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -320,13 +320,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="lro:MiniRF_Parameters/lro:emission_angle">
-      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
-        <title>lro:MiniRF_Parameters/lro:emission_angle/lro:emission_angle</title>
-        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="lro:MiniRF_Parameters/lro:grid_resolution_height">
       <sch:assert test="@unit = ('AU', 'Angstrom', 'cm', 'km', 'm', 'micrometer', 'mm', 'nm')">
         <title>lro:MiniRF_Parameters/lro:grid_resolution_height/lro:grid_resolution_height</title>
@@ -351,13 +344,6 @@
     <sch:rule context="lro:MiniRF_Parameters/lro:look_azimuth_angle">
       <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
         <title>lro:MiniRF_Parameters/lro:look_azimuth_angle/lro:look_azimuth_angle</title>
-        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="lro:MiniRF_Parameters/lro:phase_angle">
-      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
-        <title>lro:MiniRF_Parameters/lro:phase_angle/lro:phase_angle</title>
         The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -390,6 +376,13 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:sar_emission_angle">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
+        <title>lro:MiniRF_Parameters/lro:sar_emission_angle/lro:sar_emission_angle</title>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:rule context="lro:MiniRF_Parameters/lro:sar_incidence_angle">
       <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
         <title>lro:MiniRF_Parameters/lro:sar_incidence_angle/lro:sar_incidence_angle</title>
@@ -401,6 +394,13 @@
       <sch:assert test=". = ('BASELINE_S', 'BASELINE_X', 'BISTATIC', 'ZOOM_S', 'ZOOM_X')">
         <title>lro:MiniRF_Parameters/lro:sar_instrument_mode_id/lro:sar_instrument_mode_id</title>
         The attribute lro:MiniRF_Parameters/lro:sar_instrument_mode_id must be equal to one of the following values 'BASELINE_S', 'BASELINE_X', 'BISTATIC', 'ZOOM_S', 'ZOOM_X'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="lro:MiniRF_Parameters/lro:sar_phase_angle">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad')">
+        <title>lro:MiniRF_Parameters/lro:sar_phase_angle/lro:sar_phase_angle</title>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'mrad', 'rad'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

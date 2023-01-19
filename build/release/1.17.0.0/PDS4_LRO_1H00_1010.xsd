@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:lro  Version:1.0.1.0 - Mon Jan 16 21:49:02 UTC 2023 -->
+  <!-- PDS4 XML/Schema for Name Space Id:lro  Version:1.0.1.0 - Thu Jan 19 21:13:26 UTC 2023 -->
   <!-- Generated from the PDS4 Information Model Version 1.17.0.0 - System Build 12.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
@@ -239,8 +239,8 @@
     <xs:sequence>
       <xs:element name="look_azimuth_angle" type="lro:look_azimuth_angle" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="sar_incidence_angle" type="lro:sar_incidence_angle" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="emission_angle" type="lro:emission_angle" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="phase_angle" type="lro:phase_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="sar_emission_angle" type="lro:sar_emission_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="sar_phase_angle" type="lro:sar_phase_angle" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="center_frequency" type="lro:center_frequency" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="sub_spacecraft_ground_azimuth" type="lro:sub_spacecraft_ground_azimuth" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="azimuth_resolution" type="lro:azimuth_resolution" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -375,7 +375,7 @@
 
   <xs:simpleType name="background_offset">
     <xs:annotation>
-<xs:documentation>_TBD</xs:documentation>
+<xs:documentation>The background offset</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="-9223372036854775808"/>
@@ -586,8 +586,7 @@
 
   <xs:complexType name="center_frequency">
     <xs:annotation>
-      <xs:documentation>The center frequency definition,
-        TBD</xs:documentation>
+<xs:documentation>The center frequency</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="lro:center_frequency_WO_Units">
@@ -890,24 +889,6 @@
      <xs:maxLength value="10"/>
 	   </xs:restriction>
   </xs:simpleType>
-
-  <xs:simpleType name="emission_angle_WO_Units">
-    <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="-1.7976931348623157e308"/>
-     <xs:maxInclusive value="1.7976931348623157e308"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="emission_angle">
-    <xs:annotation>
-<xs:documentation>Emission angle, TBD</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="lro:emission_angle_WO_Units">
-        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
 
   <xs:simpleType name="end_temperature_fpa_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
@@ -1483,24 +1464,6 @@
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="phase_angle_WO_Units">
-    <xs:restriction base="pds:ASCII_Real">
-     <xs:minInclusive value="-1.7976931348623157e308"/>
-     <xs:maxInclusive value="1.7976931348623157e308"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="phase_angle">
-    <xs:annotation>
-<xs:documentation>Phase angle, TBD</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="lro:phase_angle_WO_Units">
-        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-
   <xs:simpleType name="preroll_time">
     <xs:annotation>
       <xs:documentation>The UTC time and date at the start of the image
@@ -1680,6 +1643,24 @@
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="sar_emission_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="sar_emission_angle">
+    <xs:annotation>
+<xs:documentation>Emission angle for SAR</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:sar_emission_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:simpleType name="sar_incidence_angle_WO_Units">
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
@@ -1689,7 +1670,9 @@
 
   <xs:complexType name="sar_incidence_angle">
     <xs:annotation>
-<xs:documentation>Phase angle, TBD</xs:documentation>
+      <xs:documentation>The angle between the normal to the lunar
+        surface (body radius based on a digital elevation model or DEM)
+        and the vector to the Earth-based transmitter.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="lro:sar_incidence_angle_WO_Units">
@@ -1708,6 +1691,26 @@
      <xs:maxLength value="20"/>
 	   </xs:restriction>
   </xs:simpleType>
+
+  <xs:simpleType name="sar_phase_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="sar_phase_angle">
+    <xs:annotation>
+      <xs:documentation>The angle between the SAR (Mini-RF) receiver and
+        the Earth-based transmitter. It is also known as the bistatic
+        angle.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:sar_phase_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <xs:simpleType name="software_version_id">
     <xs:annotation>

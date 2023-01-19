@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Mon Jan 16 21:49:00 UTC 2023
+   Time                   Thu Jan 19 21:13:27 UTC 2023
    Common Schema          [PDS4_PDS_1G00.xsd]
    Common Schematron      [PDS4_PDS_1G00.sch]
    IM Version Id:         1.16.0.0
@@ -84,7 +84,7 @@ Parsed Input - Attributes:
    name                   background_offset
    version                1.16
    value data type        ASCII_Integer
-   description            _TBD
+   description            The background offset
 
    name                   band_code
    version                1.16
@@ -169,7 +169,7 @@ Parsed Input - Attributes:
    name                   center_frequency
    version                1.16
    value data type        ASCII_Integer
-   description            The center frequency definition, TBD
+   description            The center frequency
    unit of measure type   Units_of_Frequency
 
    name                   channel
@@ -309,10 +309,10 @@ Parsed Input - Attributes:
    description            The version of Diviner Remote Electronics Box flight software used to acquire the telemetry data for a data product. 
    maximum characters     10
 
-   name                   emission_angle
+   name                   sar_emission_angle
    version                1.16
    value data type        ASCII_Real
-   description            Emission angle, TBD
+   description            Emission angle for SAR
    unit of measure type   Units_of_Angle
 
    name                   end_temperature_fpa
@@ -549,10 +549,10 @@ Parsed Input - Attributes:
    value data type        ASCII_Integer
    description            The number of lines of data in a data product that contain partial but incomplete data. 
 
-   name                   phase_angle
+   name                   sar_phase_angle
    version                1.16
    value data type        ASCII_Real
-   description            Phase angle, TBD
+   description            The angle between the SAR (Mini-RF) receiver and the Earth-based transmitter. It is also known as the bistatic angle.
    unit of measure type   Units_of_Angle
 
    name                   preroll_time
@@ -626,7 +626,7 @@ Parsed Input - Attributes:
    name                   sar_incidence_angle
    version                1.16
    value data type        ASCII_Real
-   description            Phase angle, TBD
+   description            The angle between the normal to the lunar surface (body radius based on a digital elevation model or DEM) and the vector to the Earth-based transmitter.
    unit of measure type   Units_of_Angle
 
    name                   sar_instrument_mode_id
@@ -1308,12 +1308,12 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      lro.emission_angle
+      local identifier      lro.sar_emission_angle
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
-      local identifier      lro.phase_angle
+      local identifier      lro.sar_phase_angle
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
