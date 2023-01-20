@@ -309,6 +309,12 @@ Parsed Input - Attributes:
    description            The version of Diviner Remote Electronics Box flight software used to acquire the telemetry data for a data product. 
    maximum characters     10
 
+   name                   sar_emission_angle
+   version                1.19
+   value data type        ASCII_Real
+   description            Emission angle for SAR
+   unit of measure type   Units_of_Angle
+
    name                   end_temperature_fpa
    version                1.19
    value data type        ASCII_Real
@@ -542,6 +548,12 @@ Parsed Input - Attributes:
    version                1.19
    value data type        ASCII_Integer
    description            The number of lines of data in a data product that contain partial but incomplete data. 
+
+   name                   sar_phase_angle
+   version                1.19
+   value data type        ASCII_Real
+   description            The angle between the SAR (Mini-RF) receiver and the Earth-based transmitter. It is also known as the bistatic angle.
+   unit of measure type   Units_of_Angle
 
    name                   preroll_time
    version                1.19
