@@ -30,7 +30,7 @@
         The LRO dictionary contains classes that describe aspects of the 
         Lunar Reconnaissance Orbiter mission and related instruments.
     </comment>
-    <last_modification_date_time>2023-01-19T00:00Z</last_modification_date_time>
+    <last_modification_date_time>2023-01-20T00:00Z</last_modification_date_time>
 	
 	<!-- PGeissler changed mterm1 to mterm5 to ASCII_Real; added units to NAC temperatures, line_exposure_time, interframe_delay -->
     <!-- PGeissler 5-08-2020 ldd-lro-1d00.xml changed mission_phase_name to allow multiple mission phases -->
@@ -956,21 +956,6 @@
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
             <maximum_characters>10</maximum_characters>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute> <!-- sar_emission_angle --> 
-        <name>sar_emission_angle</name>
-        <version_id>1.0</version_id>
-        <local_identifier>lro.sar_emission_angle</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>APL</submitter_name>
-        <definition>Emission angle for SAR</definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>Degree</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -2028,21 +2013,6 @@
             <value_data_type>ASCII_Integer</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
-    <DD_Attribute> <!-- sar_phase_angle --> 
-        <name>sar_phase_angle</name>
-        <version_id>1.0</version_id>
-        <local_identifier>lro.sar_phase_angle</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>APL</submitter_name>
-        <definition>The angle between the SAR (Mini-RF) receiver and the Earth-based transmitter. It is also known as the bistatic angle.</definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-            <specified_unit_id>Degree</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
 
     <DD_Attribute> <!-- preroll_time -->
         <name>preroll_time</name>
@@ -2321,7 +2291,22 @@
             <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
+    <DD_Attribute> <!-- sar_emission_angle --> 
+        <name>sar_emission_angle</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.sar_emission_angle</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Emission angle for SAR</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>Degree</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute> <!-- sar_incidence_angle --> 
         <name>sar_incidence_angle</name>
         <version_id>1.0</version_id>
@@ -2370,7 +2355,22 @@
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
+    <DD_Attribute> <!-- sar_phase_angle --> 
+        <name>sar_phase_angle</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.sar_phase_angle</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The angle between the SAR (Mini-RF) receiver and the Earth-based transmitter. It is also known as the bistatic angle.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>Degree</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute> <!-- software_version_id -->
         <name>software_version_id</name>
         <version_id>1.0</version_id>
