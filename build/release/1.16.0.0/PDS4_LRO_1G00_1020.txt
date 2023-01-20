@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Thu Jan 19 21:24:33 UTC 2023
+   Time                   Fri Jan 20 18:16:45 UTC 2023
    Common Schema          [PDS4_PDS_1G00.xsd]
    Common Schematron      [PDS4_PDS_1G00.sch]
    IM Version Id:         1.16.0.0
@@ -48,7 +48,7 @@ Parsed Input - Header:
         The LRO dictionary contains classes that describe aspects of the 
         Lunar Reconnaissance Orbiter mission and related instruments.
     
-   Last Modification Time 2023-01-19T00:00Z
+   Last Modification Time 2023-01-20T00:00Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -309,6 +309,7 @@ Parsed Input - Attributes:
    description            The version of Diviner Remote Electronics Box flight software used to acquire the telemetry data for a data product. 
    maximum characters     10
 
+=======
    name                   sar_emission_angle
    version                1.16
    value data type        ASCII_Real
@@ -623,6 +624,12 @@ Parsed Input - Attributes:
    value data type        ASCII_Short_String_Collapsed
    description            The rationale_desc attribute describes the rationale for performing a particular observation.
 
+   name                   sar_emission_angle
+   version                1.16
+   value data type        ASCII_Real
+   description            Emission angle for SAR
+   unit of measure type   Units_of_Angle
+
    name                   sar_incidence_angle
    version                1.16
    value data type        ASCII_Real
@@ -634,6 +641,12 @@ Parsed Input - Attributes:
    value data type        ASCII_Short_String_Collapsed
    description            Mini-RF SAR instrument operating mode.
    maximum characters     20
+
+   name                   sar_phase_angle
+   version                1.16
+   value data type        ASCII_Real
+   description            The angle between the SAR (Mini-RF) receiver and the Earth-based transmitter. It is also known as the bistatic angle.
+   unit of measure type   Units_of_Angle
 
    name                   software_version_id
    version                1.16
