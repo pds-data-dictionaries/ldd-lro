@@ -75,7 +75,7 @@
         chirp_bandwidth
         chirp_rate
         chirp_sample_rate
-        chip_start_frequency
+        chirp_start_frequency
 	    coordinate_system_name
 	    coordinate_system_type
 	    compand_code
@@ -138,7 +138,7 @@
 	    producer_institution_name
 	    product_type
 	    product_version_id
-        pulse_repitition_interval
+        pulse_repetition_interval
         pulse_width
 	    radiance_min
 	    radiance_max
@@ -583,6 +583,7 @@
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
         <definition>bandwidth of the chirp signal (max frequency - min frequency). chirp_rate is chip_bandwidth/pulse_width.</definition>
+        <definition>bandwidth of the chirp signal (max frequency - min frequency). chirp_rate is chirp_bandwidth/pulse_width.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -2175,13 +2176,13 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
-    <DD_Attribute> <!-- pulse_repitition_interval --> 
-        <name>pulse_repitition_interval</name>
+    <DD_Attribute> <!-- pulse_repetition_interval --> 
+        <name>pulse_repetition_interval</name>
         <version_id>1.0</version_id>
-        <local_identifier>lro.pulse_repitition_interval</local_identifier>
+        <local_identifier>lro.pulse_repetition_interval</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>Pulse repitition interval of the signal from the transmitter for 
+        <definition>Pulse repetition interval of the signal from the transmitter for 
             Mini-RF bistatic operations.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
