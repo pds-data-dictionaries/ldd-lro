@@ -685,6 +685,7 @@
         <definition>The period of time over which the linear frequency modulated chirp is transmitted.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
             <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
             <specified_unit_id>microseconds</specified_unit_id>
         </DD_Value_Domain>
@@ -3760,7 +3761,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association> 
-            <identifier_reference>lro.receiver_pulse_width</identifier_reference>
+            <identifier_reference>lro.receive_pulse_width</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
