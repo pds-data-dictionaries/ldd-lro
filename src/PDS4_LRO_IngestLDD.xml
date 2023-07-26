@@ -1276,8 +1276,6 @@
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
-            <minimum_value>0.0</minimum_value>
-            <maximum_value>25000.0</maximum_value>
             <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
             <specified_unit_id>microseconds</specified_unit_id>
         </DD_Value_Domain>
@@ -2477,7 +2475,7 @@
         <definition>Frequency used to capture samples in the receiver</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Integer</value_data_type>
+            <value_data_type>ASCII_Real</value_data_type>
             <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
             <specified_unit_id>Hz</specified_unit_id>
         </DD_Value_Domain>
@@ -3710,7 +3708,7 @@
         <name>MiniRF_Parameters</name>
         <version_id>1.0</version_id>
         <local_identifier>lro.MiniRF_Parameters</local_identifier>
-        <submitter_name>GEO</submitter_name>
+        <submitter_name>APL</submitter_name>
         <definition>The MiniRF_Parameters class is the container for MiniRF-specific observation parameters.</definition>
         <DD_Association> 
             <identifier_reference>lro.experiment_id</identifier_reference>
