@@ -2988,6 +2988,10 @@
                 <value>DSS-13</value>
                 <value_meaning>DSS-13, DSN Ground Station</value_meaning>
             </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>MINI-RF</value>
+                <value_meaning>transmitter on Mini-RF spacecraft</value_meaning>
+            </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
 
