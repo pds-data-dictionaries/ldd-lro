@@ -14,6 +14,7 @@
      01/16/2023 IMG/TMH (v1010) Added 5th extended mission for under mission_phase_name and built for 1I00/1J00
      01/19/2023 APL/RCE (v1020) Additional Mini-RF elements
      04/05/2023 GEO/JGW (v1021) Bug fix - adding missing permissible values to dlre_instrument_mode_id 
+     06/30/2023 GEO/JGW (v1030) Added 4 attributes to Diviner_Parameters and LRO_Parameters classes
     -->
 
 <Ingest_LDD 
@@ -22,7 +23,7 @@
     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1
                         http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd">
     <name>LRO</name>
-    <ldd_version_id>1.0.2.1</ldd_version_id>
+    <ldd_version_id>1.0.3.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
     <full_name>Jennifer Ward</full_name>
     <steward_id>geo</steward_id>
@@ -31,7 +32,7 @@
         The LRO dictionary contains classes that describe aspects of the 
         Lunar Reconnaissance Orbiter mission and related instruments.
     </comment>
-    <last_modification_date_time>2023-04-05T00:00Z</last_modification_date_time>
+    <last_modification_date_time>2023-06-30T00:00Z</last_modification_date_time>
 	
 	<!-- PGeissler changed mterm1 to mterm5 to ASCII_Real; added units to NAC temperatures, line_exposure_time, interframe_delay -->
     <!-- PGeissler 5-08-2020 ldd-lro-1d00.xml changed mission_phase_name to allow multiple mission phases -->
@@ -85,13 +86,15 @@
 	    dac_reset_level
 	    data_quality_desc
 	    data_quality_id
-	    dlre_date_min
 	    dlre_date_max
+	    dlre_date_min
 	    dlre_geom_version_id
 	    dlre_instrument_mode_id
 	    dlre_orientation
-	    dlre_utc_min
 	    dlre_utc_max
+	    dlre_utc_min
+	    dlre_wavelength_max
+	    dlre_wavelength_min
 	    dreb_flight_software_ver_id
 	    end_temperature_fpa
 	    end_temperature_fpa_raw
@@ -104,6 +107,7 @@
         grid_resolution_height
         grid_resolution_width
         ground_station
+        image_name
 	    instrument_mode_id
 	    interframe_delay
 	    interframe_gap_code
@@ -136,6 +140,7 @@
 	    parameter_name
 	    partial_lines
 	    preroll_time
+	    producer_full_name
 	    producer_institution_name
 	    product_type
 	    product_version_id
@@ -952,6 +957,34 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
+    <DD_Attribute> <!-- dlre_wavelength_max -->
+        <name>dlre_wavelength_max</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.dlre_wavelength_max</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Identifies the maximum wavelength at which an observation can be made or was made.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- dlre_wavelength_min -->
+        <name>dlre_wavelength_min</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.dlre_wavelength_min</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Identifies the minimum wavelength at which an observation can be made or was made.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
     <DD_Attribute> <!-- dreb_flight_software_ver_id -->
         <name>dreb_flight_software_ver_id</name>
         <version_id>1.0</version_id>
@@ -1149,6 +1182,19 @@
                 <value>DSS13</value>
                 <value_meaning>The X-band transmitter at DSS-13 ground station in Venus, California.</value_meaning>
             </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- image_name --> 
+        <name>image_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.image_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>Records the name of the parameter stored in the Diviner image.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Preserved</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -2039,6 +2085,21 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
+    <DD_Attribute> <!-- producer_full_name -->
+        <name>producer_full_name</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.producer_full_name</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>GEO</submitter_name>
+        <definition>The producer_full_name attribute provides the full_name of the 
+            individual mainly responsible for the production of a data set.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Preserved</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
     <DD_Attribute> <!-- producer_institution_name -->
         <name>producer_institution_name</name>
         <version_id>1.0</version_id>
@@ -2051,7 +2112,7 @@
         </definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <value_data_type>ASCII_Short_String_Preserved</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -3388,6 +3449,18 @@
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.dlre_wavelength_min</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.dlre_wavelength_max</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
         <DD_Association> 
             <identifier_reference>lro.dlre_orientation</identifier_reference>
             <reference_type>attribute_of</reference_type>
@@ -3417,7 +3490,13 @@
             <reference_type>component_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>*</maximum_occurrences>
-        </DD_Association>        
+        </DD_Association>  
+        <DD_Association>
+            <identifier_reference>lro.image_name</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
     </DD_Class>
     <!-- End of Diviner_Parameters Class definition -->
     
@@ -3702,6 +3781,12 @@
         </DD_Association>
         <DD_Association>
             <identifier_reference>lro.spacecraft_clock_stop_count</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>lro.producer_full_name</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
