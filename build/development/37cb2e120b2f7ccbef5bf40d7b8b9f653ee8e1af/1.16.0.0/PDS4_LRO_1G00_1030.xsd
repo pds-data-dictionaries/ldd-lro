@@ -1,0 +1,2194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 XML/Schema for Name Space Id:lro  Version:1.0.3.0 - Tue Aug 08 14:45:07 UTC 2023 -->
+  <!-- Generated from the PDS4 Information Model Version 1.16.0.0 - System Build 11.1 -->
+  <!-- *** This PDS4 product schema is an operational deliverable. *** -->
+  <!--                                                                           -->
+  <!--               Dictionary Stack                                            -->
+  <!-- 1.16.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.0.3.0 - lro: - LRO                                                      -->
+  <!--                                                                           -->
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://pds.nasa.gov/pds4/mission/lro/v1"
+    xmlns:lro="http://pds.nasa.gov/pds4/mission/lro/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.0.3.0">
+ 
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1G00.xsd"/>
+ 
+  <xs:annotation>
+    <xs:documentation>
+
+        The LRO dictionary contains classes that describe aspects of the 
+        Lunar Reconnaissance Orbiter mission and related instruments.
+    
+    </xs:documentation>
+  </xs:annotation>
+ 
+  <xs:element name="LRO_Parameters" type="lro:LRO_Parameters"> </xs:element>
+
+  <xs:complexType name="Channel_Range">
+    <xs:annotation>
+      <xs:documentation>The Channel_Range class contains spectral
+        parameters for specific Diviner channels.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="channel" type="lro:channel" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="radiance_min" nillable="true" type="lro:radiance_min" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="radiance_max" nillable="true" type="lro:radiance_max" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="tb_min" nillable="true" type="lro:tb_min" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="tb_max" nillable="true" type="lro:tb_max" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="lro:channel = ('CH1', 'CH2', 'CH3', 'CH4', 'CH5', 'CH6', 'CH7', 'CH8', 'CH9')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Diviner_Parameters">
+    <xs:annotation>
+      <xs:documentation>The Diviner_Parameters class is the container
+        for Diviner-specific observation parameters.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="missing_lines" type="lro:missing_lines" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="partial_lines" type="lro:partial_lines" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="complete_lines" type="lro:complete_lines" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="total_lines" type="lro:total_lines" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="file_state" type="lro:file_state" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="flight_software_version_id" type="lro:flight_software_version_id" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="dreb_flight_software_ver_id" type="lro:dreb_flight_software_ver_id" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="lola_dem_vers" type="lro:lola_dem_vers" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dlre_geom_version_id" type="lro:dlre_geom_version_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="calibration_software_ver_id" type="lro:calibration_software_ver_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="software_version_id" type="lro:software_version_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dlre_date_min" type="lro:dlre_date_min" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dlre_date_max" type="lro:dlre_date_max" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dlre_utc_min" type="lro:dlre_utc_min" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dlre_utc_max" type="lro:dlre_utc_max" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dlre_wavelength_min" type="lro:dlre_wavelength_min" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dlre_wavelength_max" type="lro:dlre_wavelength_max" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dlre_orientation" type="lro:dlre_orientation" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="observation_type" type="lro:observation_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="dlre_instrument_mode_id" type="lro:dlre_instrument_mode_id" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Parameter_Range" type="lro:Parameter_Range" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Channel_Range" type="lro:Channel_Range" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="image_name" type="lro:image_name" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="lro:file_state = ('CLEAN', 'DIRTY')"/> -->
+    <!-- <xs:assert test="lro:dlre_orientation = ('ELEVATION ACTUATOR HOMED', 'NEAR LIMB', 'OFF MOON', 'ON MOON')"/> -->
+    <!-- <xs:assert test="lro:observation_type = ('BLACKBODY CALIBRATION', 'ROTATED NADIR', 'SOLAR CALIBRATION', 'SPACE CALIBRATION', 'STANDARD NADIR', 'STOWED')"/> -->
+    <!-- <xs:assert test="lro:dlre_instrument_mode_id = ('DUMPING', 'FREEZING', 'FROZEN', 'LARGE ROLL', 'MOVING', 'NOMINAL', 'ROLLING', 'SAFED', 'SAFING', 'SMALL ROLL')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Geodetic_Model">
+    <xs:annotation>
+      <xs:documentation>The Geodetic_Model class provides parameters
+        describing the shape of the planet.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="latitude_type" type="lro:latitude_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="a_axis_radius" type="lro:a_axis_radius" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="b_axis_radius" type="lro:b_axis_radius" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="c_axis_radius" type="lro:c_axis_radius" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="longitude_direction" type="lro:longitude_direction" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="coordinate_system_type" type="lro:coordinate_system_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="coordinate_system_name" type="lro:coordinate_system_name" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="lro:latitude_type = ('Planetocentric', 'Planetographic')"/> -->
+    <!-- <xs:assert test="lro:longitude_direction = ('Positive East', 'Positive West')"/> -->
+    <!-- <xs:assert test="lro:coordinate_system_type = ('Body-fixed Non-rotating', 'Body-fixed Rotating', 'Inertial')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="LOLA_Parameters">
+    <xs:annotation>
+      <xs:documentation>The LOLA_Parameters class is the container for
+        LOLA-specific observation parameters.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="lola_instrument_mode_id" type="lro:lola_instrument_mode_id" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="stcf_file_name" type="lro:stcf_file_name" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="lro:lola_instrument_mode_id = ('DISABLED', 'ENABLED', 'FIRING', 'GAINS_DIS', 'GAINS_FSW', 'LASER_1', 'LASER_2', 'NOFIRE', 'RGATES_DIS', 'RGATES_FSW', 'SC_B', 'SWINPUTS_DIS', 'SWINPUTS_FSW', 'THRESHOLDS_DIS', 'THRESHOLDS_FSW')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="LROC_Parameters">
+    <xs:annotation>
+      <xs:documentation>The LROC_Parameters class is the container for
+        LROC-specific observation parameters.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="upload_id" type="lro:upload_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="rationale_desc" type="lro:rationale_desc" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="data_quality_id" type="lro:data_quality_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="data_quality_desc" type="lro:data_quality_desc" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="begin_temperature_scs" type="lro:begin_temperature_scs" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="middle_temperature_scs" type="lro:middle_temperature_scs" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="end_temperature_scs" type="lro:end_temperature_scs" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="begin_temperature_fpa" type="lro:begin_temperature_fpa" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="middle_temperature_fpa" type="lro:middle_temperature_fpa" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="end_temperature_fpa" type="lro:end_temperature_fpa" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="begin_temperature_scs_raw" type="lro:begin_temperature_scs_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="middle_temperature_scs_raw" type="lro:middle_temperature_scs_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="end_temperature_scs_raw" type="lro:end_temperature_scs_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="begin_temperature_fpa_raw" type="lro:begin_temperature_fpa_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="middle_temperature_fpa_raw" type="lro:middle_temperature_fpa_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="end_temperature_fpa_raw" type="lro:end_temperature_fpa_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="preroll_time" type="lro:preroll_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_preroll_count" type="lro:spacecraft_clock_preroll_count" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="frame_id" type="lro:frame_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="temperature_scs" type="lro:temperature_scs" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="temperature_fpa" type="lro:temperature_fpa" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="temperature_fpga" type="lro:temperature_fpga" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="temperature_telescope" type="lro:temperature_telescope" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="temperature_scs_raw" type="lro:temperature_scs_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="temperature_fpa_raw" type="lro:temperature_fpa_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="temperature_fpga_raw" type="lro:temperature_fpga_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="temperature_telescope_raw" type="lro:temperature_telescope_raw" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="exposure_code" type="lro:exposure_code" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="interframe_delay" type="lro:interframe_delay" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="instrument_mode_id" type="lro:instrument_mode_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="lookup_table_type" type="lro:lookup_table_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="line_exposure_duration" type="lro:line_exposure_duration" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="line_exposure_code" type="lro:line_exposure_code" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dac_reset_level" type="lro:dac_reset_level" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="channel_a_offset" type="lro:channel_a_offset" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="channel_b_offset" type="lro:channel_b_offset" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="compand_code" type="lro:compand_code" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="line_code" type="lro:line_code" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="bterm1" type="lro:bterm1" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="bterm2" type="lro:bterm2" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="bterm3" type="lro:bterm3" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="bterm4" type="lro:bterm4" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="bterm5" type="lro:bterm5" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mterm1" type="lro:mterm1" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mterm2" type="lro:mterm2" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mterm3" type="lro:mterm3" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mterm4" type="lro:mterm4" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mterm5" type="lro:mterm5" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="xterm1" type="lro:xterm1" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="xterm2" type="lro:xterm2" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="xterm3" type="lro:xterm3" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="xterm4" type="lro:xterm4" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="xterm5" type="lro:xterm5" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="compression_flag" type="lro:compression_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mode" type="lro:mode" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="nframes" type="lro:nframes" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="band_code" type="lro:band_code" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="interframe_gap_code" type="lro:interframe_gap_code" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="background_offset" type="lro:background_offset" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="lro:frame_id = ('LEFT', 'RIGHT')"/> -->
+    <!-- <xs:assert test="lro:instrument_mode_id = ('BW', 'COLOR', 'UV', 'VIS')"/> -->
+    <!-- <xs:assert test="lro:lookup_table_type = ('STORED')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="LRO_Parameters">
+    <xs:annotation>
+      <xs:documentation>The LRO_Parameters class is the container for
+        mission-specific metadata elements.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="product_type" type="lro:product_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="product_version_id" type="lro:product_version_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="orbit_number" type="lro:orbit_number" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="start_orbit_number" type="lro:start_orbit_number" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="stop_orbit_number" type="lro:stop_orbit_number" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="start_solar_longitude" type="lro:start_solar_longitude" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="stop_solar_longitude" type="lro:stop_solar_longitude" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="mission_phase_name" type="lro:mission_phase_name" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="spacecraft_clock_count_partition" type="lro:spacecraft_clock_count_partition" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_start_count" type="lro:spacecraft_clock_start_count" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_stop_count" type="lro:spacecraft_clock_stop_count" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="producer_full_name" type="lro:producer_full_name" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="producer_institution_name" type="lro:producer_institution_name" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="LROC_Parameters" type="lro:LROC_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Diviner_Parameters" type="lro:Diviner_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="MiniRF_Parameters" type="lro:MiniRF_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="LOLA_Parameters" type="lro:LOLA_Parameters" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Geodetic_Model" type="lro:Geodetic_Model" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="lro:product_type = ('CDR', 'DDR', 'EDR', 'GCP', 'GDR', 'LEND_EDR_HK', 'LEND_EDR_SCI', 'LEND_RDR_ALD', 'LEND_RDR_CHK', 'LEND_RDR_DLD', 'LEND_RDR_DLX', 'LEND_RDR_RSCI', 'LOLA_DAC', 'LOLA_DAM', 'LOLA_DEC', 'LOLA_DEM', 'LOLA_DRC', 'LOLA_DRM', 'LOLA_DSM', 'PCP', 'PRP', 'RADR', 'RCP', 'RDR', 'SHA')"/> -->
+    <!-- <xs:assert test="lro:mission_phase_name = ('COMMISSIONING', 'CRUISE', 'EXTENDED SCIENCE MISSION', 'FIFTH EXTENDED SCIENCE MISSION', 'FOURTH EXTENDED SCIENCE MISSION', 'LAUNCH', 'LUNAR ORBIT ACQUISITION', 'NOMINAL MISSION', 'SCIENCE MISSION', 'SECOND EXTENDED SCIENCE MISSION', 'THIRD EXTENDED SCIENCE MISSION')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="MiniRF_Band">
+    <xs:annotation>
+      <xs:documentation>The MiniRF_Band class contains the name and
+        description for a specific band in a MiniRF
+        Array_3D_Image</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="band_name" type="lro:band_name" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="band_description" type="lro:band_description" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="band_sequence_number" type="lro:band_sequence_number" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MiniRF_Parameters">
+    <xs:annotation>
+      <xs:documentation>The MiniRF_Parameters class is the container for
+        MiniRF-specific observation parameters.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="look_azimuth_angle" type="lro:look_azimuth_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="sar_incidence_angle" type="lro:sar_incidence_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="sar_emission_angle" type="lro:sar_emission_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="sar_phase_angle" type="lro:sar_phase_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="center_frequency" type="lro:center_frequency" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="sub_spacecraft_ground_azimuth" type="lro:sub_spacecraft_ground_azimuth" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="azimuth_resolution" type="lro:azimuth_resolution" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="range_resolution" type="lro:range_resolution" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="MiniRF_Band" type="lro:MiniRF_Band" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="sar_instrument_mode_id" type="lro:sar_instrument_mode_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="pulse_repitition_interval" type="lro:pulse_repitition_interval" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="ground_station" type="lro:ground_station" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="azimuth_beamwidth" type="lro:azimuth_beamwidth" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="range_beamwidth" type="lro:range_beamwidth" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="pulse_width" type="lro:pulse_width" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="chirp_rate" type="lro:chirp_rate" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="chirp_start_frequency" type="lro:chirp_start_frequency" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="chirp_sample_rate" type="lro:chirp_sample_rate" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="chirp_bandwidth" type="lro:chirp_bandwidth" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="grid_resolution_height" type="lro:grid_resolution_height" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="grid_resolution_width" type="lro:grid_resolution_width" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="lro:sar_instrument_mode_id = ('BASELINE_S', 'BASELINE_X', 'BISTATIC', 'ZOOM_S', 'ZOOM_X')"/> -->
+    <!-- <xs:assert test="lro:ground_station = ('ARECIBO', 'DSS13')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Parameter_Range">
+    <xs:annotation>
+      <xs:documentation>The Parameter_Range class contains the minimum
+        and maximum values of Diviner parameters.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="parameter_name" type="lro:parameter_name" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="parameter_min" nillable="true" type="lro:parameter_min" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="parameter_max" nillable="true" type="lro:parameter_max" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="lro:parameter_name = ('A1_CHANNEL', 'A2_CHANNEL', 'A3_CHANNEL', 'A4_CHANNEL', 'A5_CHANNEL', 'A6_CHANNEL', 'B1_CHANNEL', 'B2_CHANNEL', 'B3_CHANNEL', 'DLRE_AZ_CMD', 'DLRE_CEMIS', 'DLRE_CLAT', 'DLRE_CLOCTIME', 'DLRE_CLON', 'DLRE_CSUNAZI', 'DLRE_CSUNZEN', 'DLRE_EL_CMD', 'DLRE_JDATE', 'DLRE_ORBIT', 'DLRE_ORIENTLAT', 'DLRE_ORIENTLON', 'DLRE_QCA_SOLAR', 'DLRE_QCA_THERMAL', 'DLRE_QGE', 'DLRE_QMI', 'DLRE_SCALT', 'DLRE_SCLAT', 'DLRE_SCLK', 'DLRE_SCLON', 'DLRE_SCRAD', 'DLRE_SUNDIST', 'DLRE_SUNLAT', 'DLRE_SUNLON', 'DLRE_VLOOKX', 'DLRE_VLOOKY', 'DLRE_VLOOKZ', 'LAST_AZIMUTH_COMMAND', 'LAST_ELEVATION_COMMAND')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+    <xs:annotation>
+      <xs:documentation>This section contains the simpleTypes that provide more constraints
+        than those at the base data type level. The simpleTypes defined here build on the base data
+        types. This is another component of the common dictionary and therefore falls within the
+        common namespace.
+      </xs:documentation>
+    </xs:annotation>
+
+  <xs:simpleType name="a_axis_radius_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0.0"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="a_axis_radius">
+    <xs:annotation>
+      <xs:documentation>The a_axis_radius attribute provides the radius
+        of the equatorial axis of the ellipsoid. The IAU calls this
+        "Subplanetary equatorial radius" and mapping applications
+        generally call this "semi_major_axis". </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:a_axis_radius_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="azimuth_beamwidth_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="azimuth_beamwidth">
+    <xs:annotation>
+      <xs:documentation>The null to null main lobe beam pattern
+        beamwidth in azimuth direction.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:azimuth_beamwidth_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="azimuth_resolution_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="450"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="azimuth_resolution">
+    <xs:annotation>
+      <xs:documentation>The true resolution of the radar image in the
+        azimuth (along track) direction, evaluated at the center of the
+        image for the transmit, receive, and processing parameters used
+        for the sequence.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:azimuth_resolution_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="b_axis_radius_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0.0"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="b_axis_radius">
+    <xs:annotation>
+      <xs:documentation>The b_axis_radius attribute provides the value
+        of the intermediate axis of the ellipsoid that defines the
+        approximate shape of a target body. The b_axis_radius is usually
+        in the equatorial plane. The IAU calls this axis "along orbit
+        equatorial radius". Mapping applications, which generally only
+        define a sphere or an ellipse, do not support this radius
+        parameter.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:b_axis_radius_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="background_offset">
+    <xs:annotation>
+<xs:documentation>The background offset</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="band_code">
+    <xs:annotation>
+      <xs:documentation>The band_code records the commanded band code
+        for a WAC observation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="band_description">
+    <xs:annotation>
+      <xs:documentation>The band_description contains a description of a
+        specific band in a MiniRF multibanded 3D image</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="band_name">
+    <xs:annotation>
+      <xs:documentation>The band_name contains a string identifying the
+        common name for a specific band in a MiniRF multibanded 3D
+        image</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="band_sequence_number">
+    <xs:annotation>
+      <xs:documentation>The band_sequence_number records the index for a
+        specific band in a MiniRF multibanded 3D image. Index starts at
+        1</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="begin_temperature_fpa_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="begin_temperature_fpa">
+    <xs:annotation>
+      <xs:documentation>Set to the temperature of the LROC FPA in
+        degrees Celsius, as converted from the raw engineering counts,
+        at the beginning of a series of WAC frames.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:begin_temperature_fpa_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="begin_temperature_fpa_raw">
+    <xs:annotation>
+      <xs:documentation>Set to the raw engineering counts for the LROC
+        (F)ocal (P)lane (A)rray at the beginning of a series of WAC
+        frames.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="begin_temperature_scs_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="begin_temperature_scs">
+    <xs:annotation>
+      <xs:documentation>Set to the temperature of the LROC SCS in
+        degrees Celsius, as converted from the raw engineering counts,
+        at the beginning of a series of WAC frames.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:begin_temperature_scs_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="begin_temperature_scs_raw">
+    <xs:annotation>
+      <xs:documentation>Set to the raw engineering counts for the LROC
+        SCS at the beginning of a series of WAC
+        frames.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bterm1">
+    <xs:annotation>
+<xs:documentation>NAC companding bterm 1</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bterm2">
+    <xs:annotation>
+<xs:documentation>NAC companding bterm 2</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bterm3">
+    <xs:annotation>
+<xs:documentation>NAC companding bterm 3</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bterm4">
+    <xs:annotation>
+<xs:documentation>NAC companding bterm 4</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bterm5">
+    <xs:annotation>
+<xs:documentation>NAC companding bterm 5</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="c_axis_radius_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0.0"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="c_axis_radius">
+    <xs:annotation>
+      <xs:documentation>The c_axis_radius attribute provides the value
+        of the polar axis of the ellipsoid that defines the approximate
+        shape of a target body. The c_axis_radius is normal to the plane
+        defined by the a_axis_radius and b_axis_radius. The IAU calls
+        this "polar radius". Mapping applications generally call this
+        "semi_minor_axis" </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:c_axis_radius_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="calibration_software_ver_id">
+    <xs:annotation>
+      <xs:documentation>The version of calibration software used to
+        generate a data product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="10"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="center_frequency_WO_Units">
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="center_frequency">
+    <xs:annotation>
+<xs:documentation>The center frequency</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:center_frequency_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Frequency" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="channel">
+    <xs:annotation>
+      <xs:documentation> One of nine Diviner channels.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="channel_a_offset">
+    <xs:annotation>
+      <xs:documentation>Records the commanded NAC channel A offset for
+        either the NAC LEFT or NAC RIGHT.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="channel_b_offset">
+    <xs:annotation>
+      <xs:documentation>Records the commanded NAC channel B offset for
+        either the NAC LEFT or NAC RIGHT.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="chirp_bandwidth_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="chirp_bandwidth">
+    <xs:annotation>
+      <xs:documentation>bandwidth of the chirp signal (max frequency -
+        min frequency). chirp_rate is
+        chip_bandwidth/pulse_width.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:chirp_bandwidth_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Frequency" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="chirp_rate">
+    <xs:annotation>
+<xs:documentation>Chirp rate in Hz/sec.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="chirp_sample_rate_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="chirp_sample_rate">
+    <xs:annotation>
+      <xs:documentation>sampling frequency of the chirp
+        signal.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:chirp_sample_rate_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Frequency" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="chirp_start_frequency_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="chirp_start_frequency">
+    <xs:annotation>
+      <xs:documentation>Starting frequency of the chirp
+        signal.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:chirp_start_frequency_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Frequency" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="compand_code">
+    <xs:annotation>
+      <xs:documentation>Indicates which stored companding table was used
+        (0-7)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="7"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="complete_lines">
+    <xs:annotation>
+      <xs:documentation>The number of lines of data in a data product
+        that are complete; that is, with no missing
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="compression_flag">
+    <xs:annotation>
+      <xs:documentation>Indicates if lossless compression was commanded
+        (0=no, 1=yes)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="coordinate_system_name">
+    <xs:annotation>
+      <xs:documentation>The given name of the used coordinate system.
+        e.g. "MEAN EARTH/POLAR AXIS OF DE421"</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Text_Preserved">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="coordinate_system_type">
+    <xs:annotation>
+      <xs:documentation>There are three basic types of coordinate
+        systems: body-fixed rotating, body-fixed non-rotating, and
+        inertial. A body-fixed coordinate system is one associated with
+        the body (e.g., a planet or satellite). The body-fixed system is
+        centered on the body and rotates with the body (unless it is a
+        non-rotating type), whereas an inertial coordinate system is
+        fixed at some point in space. Currently, the PDS has
+        specifically defined two types of body-fixed rotating coordinate
+        systems: planetocentric and planetographic. However, the set of
+        related data elements are modeled such that definitions for
+        other body-fixed rotating coordinate systems, body-fixed
+        non-rotating and inertial coordinate systems can be added as the
+        need arises. Contact a PDS data engineer for assistance in
+        defining a specific coordinate system. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="8"/>
+     <xs:maxLength value="25"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dac_reset_level">
+    <xs:annotation>
+      <xs:documentation>Records the commanded DAC reset level for either
+        the NAC LEFT or NAC RIGHT.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="data_quality_desc">
+    <xs:annotation>
+      <xs:documentation>The data_quality_desc attribute describes the
+        data qualities associated with a data_quality_id attribute.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Text_Collapsed">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="data_quality_id">
+    <xs:annotation>
+      <xs:documentation>The data_quality_id attribute provides a numeric
+        key which identifies the quality of data available for a
+        particular time period. The data_quality_id scheme is unique to
+        a given instrument and is described by the associated
+        data_quality_desc attribute. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dlre_date_max">
+    <xs:annotation>
+      <xs:documentation>Gives the maximum recorded date value in a DLRE
+        RDR data product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="11"/>
+     <xs:maxLength value="11"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dlre_date_min">
+    <xs:annotation>
+      <xs:documentation>Gives the minimum recorded date value in a DLRE
+        RDR data product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="11"/>
+     <xs:maxLength value="11"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dlre_geom_version_id">
+    <xs:annotation>
+      <xs:documentation>The version of Diviner geometry and averaging
+        software used to generate a Diviner GDR product. Example value:
+        1.0. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="10"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dlre_instrument_mode_id">
+    <xs:annotation>
+      <xs:documentation>Diviner instrument operating
+        mode.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="20"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dlre_orientation">
+    <xs:annotation>
+      <xs:documentation>An unordered set of all orientations recorded
+        from activity flags in a DLRE RDR data product.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="30"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dlre_utc_max">
+    <xs:annotation>
+      <xs:documentation>Gives the maximum recorded UTC value in a DLRE
+        RDR data product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="12"/>
+     <xs:maxLength value="12"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dlre_utc_min">
+    <xs:annotation>
+      <xs:documentation>Gives the minimum recorded UTC value in a DLRE
+        RDR data product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="12"/>
+     <xs:maxLength value="12"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dlre_wavelength_max_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="dlre_wavelength_max">
+    <xs:annotation>
+      <xs:documentation>Identifies the maximum wavelength at which an
+        observation can be made or was made.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:dlre_wavelength_max_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="dlre_wavelength_min_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="dlre_wavelength_min">
+    <xs:annotation>
+      <xs:documentation>Identifies the minimum wavelength at which an
+        observation can be made or was made.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:dlre_wavelength_min_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="dreb_flight_software_ver_id">
+    <xs:annotation>
+      <xs:documentation>The version of Diviner Remote Electronics Box
+        flight software used to acquire the telemetry data for a data
+        product. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="10"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="end_temperature_fpa_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="end_temperature_fpa">
+    <xs:annotation>
+      <xs:documentation>Set to the temperature of the LROC FPA in
+        degrees Celsius, as converted from the raw engineering counts,
+        at the end of a series of WAC frames.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:end_temperature_fpa_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="end_temperature_fpa_raw">
+    <xs:annotation>
+      <xs:documentation>Set to the raw engineering counts for the LROC
+        (F)ocal (P)lane (A)rray at the end of a series of WAC
+        frames.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="end_temperature_scs_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="end_temperature_scs">
+    <xs:annotation>
+      <xs:documentation>Set to the temperature of the LROC SCS in
+        degrees Celsius, as converted from the raw engineering counts,
+        at the end of a series of WAC frames.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:end_temperature_scs_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="end_temperature_scs_raw">
+    <xs:annotation>
+      <xs:documentation>Set to the raw engineering counts for the LROC
+        SCS at the end of a series of WAC frames.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="exposure_code">
+    <xs:annotation>
+      <xs:documentation>Records the commanded exposure code for a WAC
+        observation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="file_state">
+    <xs:annotation>
+      <xs:documentation>Indicates whether a file possibly contains
+        potentially corrupted data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="5"/>
+     <xs:maxLength value="5"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="flight_software_version_id">
+    <xs:annotation>
+      <xs:documentation>Identifies the version of the instrument flight
+        software used to acquire the data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="10"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="frame_id">
+    <xs:annotation>
+      <xs:documentation>For NAC, records if the image was acquired from
+        the "LEFT" or "RIGHT" NAC.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="grid_resolution_height_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="grid_resolution_height">
+    <xs:annotation>
+      <xs:documentation>vertical resolution of the grid used to generate
+        the bistatic raw sar data.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:grid_resolution_height_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="grid_resolution_width_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="grid_resolution_width">
+    <xs:annotation>
+      <xs:documentation>horizontal resolution of the grid used to
+        generate the bistatic raw sar data.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:grid_resolution_width_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="ground_station">
+    <xs:annotation>
+      <xs:documentation>Identifies the ground station used as the
+        transmitter in Mini-RF bistatic operations.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="image_name">
+    <xs:annotation>
+      <xs:documentation>Records the name of the parameter stored in the
+        Diviner image.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Preserved">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="instrument_mode_id">
+    <xs:annotation>
+      <xs:documentation>Records the commanded WAC mode: BW, COLOR, VIS
+        or UV.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="interframe_delay_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="interframe_delay">
+    <xs:annotation>
+      <xs:documentation>Set to the value of the interframe delay between
+        WAC framelets. Keyword can have values between 25/64 and 280/64
+        seconds, in 1/64 seconds increments.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:interframe_delay_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="interframe_gap_code">
+    <xs:annotation>
+      <xs:documentation>Records the commanded interframe gap code for a
+        WAC observation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="latitude_type">
+    <xs:annotation>
+      <xs:documentation>The latitude_type attribute defines the type of
+        latitude (planetographic, planetocentric) used within a
+        cartographic product and as reflected in attribute values within
+        associated PDS labels. For planets and satellites, latitude is
+        measured north and south of the equator; north latitudes are
+        designated as positive. The planetocentric latitude is the angle
+        between the equatorial plane and a line from the center of the
+        body. The planetographic latitude is the angle between the
+        equatorial plane and a line that is normal to the body. In
+        summary, both latitudes are equivalent on a sphere (i.e.,
+        equatorial radius equal to polar radius); however, they differ
+        on an ellipsoid (e.g., Mars, Earth). For more on latitude_type,
+        please see the IAU publication available here:
+        http://astrogeology.usgs.gov/groups/IAU-WGCCRE</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="line_code">
+    <xs:annotation>
+      <xs:documentation>Records the commanded value for the number of
+        NAC lines to acquire, in 1024 increments. (LINES = LINES_CODE *
+        1024)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="line_exposure_code">
+    <xs:annotation>
+      <xs:documentation>Index range from 0 to 4095 each corresponding to
+        one LINE_EXPOSURE_DURATION increment.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="4095"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="line_exposure_duration_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="line_exposure_duration">
+    <xs:annotation>
+      <xs:documentation> For NAC products, LINE_EXPOSURE_DURATION can
+        have values between 337.6 and 35,281.6 microseconds, in 128/15
+        microsecond increments (LINE_EXPOSURE_DURATION =
+        [LINE_EXPOSURE_CODE * 128/15] + 337.6) </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:line_exposure_duration_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="lola_dem_vers">
+    <xs:annotation>
+      <xs:documentation>Gives the version of the LOLA digital elevation
+        model that was used to locate Diviner footprints for the
+        generation of a Diviner GDR product. Example value: 1.0.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="10"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="lola_instrument_mode_id">
+    <xs:annotation>
+      <xs:documentation>LOLA instrument operating
+        mode.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="20"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="longitude_direction">
+    <xs:annotation>
+      <xs:documentation>The longitude_direction attribute identifies the
+        direction of longitude (e.g. POSITIVE_EAST or POSITIVE_WEST) for
+        a planet. The IAU definition for direction of positive longitude
+        should be adopted:
+        http://astrogeology.usgs.gov/groups/IAU-WGCCRE. Typically, for
+        planets with prograde (direct) rotations, positive longitude
+        direction is to the west. For planets with retrograde rotations,
+        positive longitude direction is to the east. Generally the
+        Positive West longitude_direction is used for planetographic
+        systems and Positive East is used for planetocentric systems. If
+        the data is defined with Spatial_Domain in a manner not
+        recommended by the IAU, there is a optional
+        Secondary_Spatial_Domain section to define a second set of
+        bounding coordinates.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="13"/>
+     <xs:maxLength value="13"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="look_azimuth_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="359"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="look_azimuth_angle">
+    <xs:annotation>
+      <xs:documentation>The East-West look azimuth discrimination angle.
+        This is the angle between the projection of North into the
+        tangent plane of a sphere at the image center point and the
+        vector from subspacecraft point to the image center projected
+        into the plane. It assumes values from 0 to 360, where 0 means
+        North-looking, 90 East-looking, 180 South-looking, and 270
+        West-looking. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:look_azimuth_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="lookup_table_type">
+    <xs:annotation>
+<xs:documentation>Always set to STORED.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="middle_temperature_fpa_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="middle_temperature_fpa">
+    <xs:annotation>
+      <xs:documentation>Set to the temperature of the LROC FPA in
+        degrees Celsius, as converted from the raw engineering counts,
+        at the middle of a series of WAC frames.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:middle_temperature_fpa_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="middle_temperature_fpa_raw">
+    <xs:annotation>
+      <xs:documentation>Set to the raw engineering counts for the LROC
+        (F)ocal (P)lane (A)rray at the middle of a series of WAC
+        frames.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="middle_temperature_scs_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="middle_temperature_scs">
+    <xs:annotation>
+      <xs:documentation>Set to the temperature of the LROC SCS in
+        degrees Celsius, as converted from the raw engineering counts,
+        at the middle of a series of WAC frames.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:middle_temperature_scs_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="middle_temperature_scs_raw">
+    <xs:annotation>
+      <xs:documentation>Set to the raw engineering counts for the LROC
+        SCS at the middle of a series of WAC frames.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="missing_lines">
+    <xs:annotation>
+      <xs:documentation>The total number of lines of data missing from
+        an image or observation when it was received on
+        Earth.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mission_phase_name">
+    <xs:annotation>
+      <xs:documentation> The mission_phase_name attribute provides the
+        mission-defined name of a time period within the mission.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mode">
+    <xs:annotation>
+      <xs:documentation>Set to the mode value as commanded for both NAC
+        and WAC observations.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mterm1">
+    <xs:annotation>
+<xs:documentation>NAC companding mterm 1</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mterm2">
+    <xs:annotation>
+<xs:documentation>NAC companding mterm 2</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mterm3">
+    <xs:annotation>
+<xs:documentation>NAC companding mterm 3</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mterm4">
+    <xs:annotation>
+<xs:documentation>NAC companding mterm 4</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mterm5">
+    <xs:annotation>
+<xs:documentation>NAC companding mterm 5</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="nframes">
+    <xs:annotation>
+      <xs:documentation>Records the commanded number of frames for a WAC
+        observation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="observation_type">
+    <xs:annotation>
+      <xs:documentation>Identifies the general type of an
+        observation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="30"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="orbit_number">
+    <xs:annotation>
+      <xs:documentation>The orbit_number attribute identifies the number
+        of the orbital revolution around a target body.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="parameter_max">
+    <xs:annotation>
+      <xs:documentation>The maximum value for the Diviner parameter
+        specified by lro.parameter_name.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pds:ASCII_Real">
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="parameter_min">
+    <xs:annotation>
+      <xs:documentation>The minimum value for the Diviner parameter
+        specified by lro.parameter_name.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pds:ASCII_Real">
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="parameter_name">
+    <xs:annotation>
+<xs:documentation>Diviner parameter name.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="partial_lines">
+    <xs:annotation>
+      <xs:documentation>The number of lines of data in a data product
+        that contain partial but incomplete data. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="preroll_time">
+    <xs:annotation>
+      <xs:documentation>The UTC time and date at the start of the image
+        acquisition command, corresponding to the acquisition of 1024
+        lines at the given exposure prior to the actual image
+        acquisition. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Date_Time_YMD">
+  <!-- format="YYYY-MM-DDTHH:MM:SS.SSSSSS(Z)" -->
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="producer_full_name">
+    <xs:annotation>
+      <xs:documentation>The producer_full_name attribute provides the
+        full_name of the individual mainly responsible for the
+        production of a data set. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Preserved">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="producer_institution_name">
+    <xs:annotation>
+      <xs:documentation>The producer_institution_name attribute
+        identifies a university, research center, NASA center, or other
+        institution associated with the production of a data product.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Preserved">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="product_type">
+    <xs:annotation>
+      <xs:documentation>The product_type attribute indicates the
+        processing level of an individual data
+        product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="product_version_id">
+    <xs:annotation>
+      <xs:documentation>The product_version_id attribute identifies the
+        version of an individual data product. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="pulse_repitition_interval_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="pulse_repitition_interval">
+    <xs:annotation>
+      <xs:documentation>Pulse repitition interval of the signal from the
+        transmitter for Mini-RF bistatic operations.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:pulse_repitition_interval_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="pulse_width_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="pulse_width">
+    <xs:annotation>
+<xs:documentation>duration of the chirp pulse.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:pulse_width_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="radiance_max_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1000.0"/>
+     <xs:maxInclusive value="100000.0 "/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="radiance_max">
+    <xs:annotation>
+      <xs:documentation>The maximum recorded value of radiance for the
+        channel given by lro:channel in a DLRE RDR data
+        product.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:radiance_max_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Radiance" use="required" />
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="radiance_min_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1000.0"/>
+     <xs:maxInclusive value="100000.0 "/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="radiance_min">
+    <xs:annotation>
+      <xs:documentation>The minimum recorded value of radiance for the
+        channel given by lro:channel in a DLRE RDR data product.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:radiance_min_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Radiance" use="required" />
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="range_beamwidth_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="range_beamwidth">
+    <xs:annotation>
+      <xs:documentation>The null to null main lobe beam pattern
+        beamwidth along the range direction.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:range_beamwidth_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="range_resolution_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="450"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="range_resolution">
+    <xs:annotation>
+      <xs:documentation>The true resolution of the radar image in the
+        range (across track) direction, evaluated at the center of the
+        image for the transmit, receive, and processing parameters used
+        for the sequence. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:range_resolution_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="rationale_desc">
+    <xs:annotation>
+      <xs:documentation>The rationale_desc attribute describes the
+        rationale for performing a particular
+        observation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sar_emission_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="sar_emission_angle">
+    <xs:annotation>
+<xs:documentation>Emission angle for SAR</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:sar_emission_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="sar_incidence_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="sar_incidence_angle">
+    <xs:annotation>
+      <xs:documentation>The angle between the normal to the lunar
+        surface (body radius based on a digital elevation model or DEM)
+        and the vector to the Earth-based transmitter.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:sar_incidence_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="sar_instrument_mode_id">
+    <xs:annotation>
+      <xs:documentation>Mini-RF SAR instrument operating
+        mode.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="20"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sar_phase_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="sar_phase_angle">
+    <xs:annotation>
+      <xs:documentation>The angle between the SAR (Mini-RF) receiver and
+        the Earth-based transmitter. It is also known as the bistatic
+        angle.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:sar_phase_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="software_version_id">
+    <xs:annotation>
+      <xs:documentation>The software_version_id element indicates the
+        version (development level) of a program or a program
+        library.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="20"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_count_partition">
+    <xs:annotation>
+      <xs:documentation>The spacecraft_clock_count_partition attribute
+        indicates the clock partition active for the
+        spacecraft_clock_start_count and spacecraft_clock_stop_count
+        attributes. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_NonNegative_Integer">
+    	<xs:pattern value='[0-9]+'/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_preroll_count">
+    <xs:annotation>
+      <xs:documentation>Set to the sclk string for the start of an
+        observation preroll acquisition.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    	<xs:pattern value='([0-9]{1,2}/)?[0-9]{1,10}(:[0-9]{5})?'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_start_count">
+    <xs:annotation>
+      <xs:documentation>The spacecraft_clock_start_count attribute
+        provides the value of the spacecraft clock at the beginning of a
+        time period of interest. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    	<xs:pattern value='([0-9]{1,2}/)?[0-9]{1,10}([:|.][0-9]{1,9})?'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_stop_count">
+    <xs:annotation>
+      <xs:documentation>The spacecraft_clock_stop_count attribute
+        provides the value of the spacecraft clock at the beginning of a
+        time period of interest. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    	<xs:pattern value='([0-9]{1,2}/)?[0-9]{1,10}([:|.][0-9]{1,9})?'/>
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="start_orbit_number">
+    <xs:annotation>
+      <xs:documentation>Provides the the lowest revolution orbit number
+        that contributed data to a given data product.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="start_solar_longitude_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-180"/>
+     <xs:maxInclusive value="360"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="start_solar_longitude">
+    <xs:annotation>
+      <xs:documentation>Marks the beginning of a time range measured in
+        solar longitude. Solar longitude is the value of the angle
+        between the body_Sun line at the time of interest and the
+        body_Sun line at the vernal equinox, thus providing a measure of
+        the season on the target body. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:start_solar_longitude_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="stcf_file_name">
+    <xs:annotation>
+      <xs:documentation>Provides the name of the LRO Spacecraft Time
+        Correlation file, which is a housekeeping file containing the
+        offset between the spacecraft raw clock and terrestrial time.
+        The time correlation file is used to compute the start and stop
+        spacecraft clock times for LOLA data products.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="40"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="stop_orbit_number">
+    <xs:annotation>
+      <xs:documentation>Provides the the highest revolution orbit number
+        that contributed data to a given data product.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="stop_solar_longitude_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-180"/>
+     <xs:maxInclusive value="360"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="stop_solar_longitude">
+    <xs:annotation>
+      <xs:documentation>Marks the end of a time range measured in solar
+        longitude. Solar longitude is the value of the angle between the
+        body_Sun line at the time of interest and the body_Sun line at
+        the vernal equinox, thus providing a measure of the season on
+        the target body. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:stop_solar_longitude_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="sub_spacecraft_ground_azimuth_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="360"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="sub_spacecraft_ground_azimuth">
+    <xs:annotation>
+      <xs:documentation>Provides the value of the angle, measured on the
+        target body surface, between the direction from a ground point
+        to the north pole and the direction from the ground point to the
+        sub-spacecraft point. If the location of the ground point at
+        which the azimuth is measured is not otherwise specified, it is
+        assumed to correspond to the center of the image. The values of
+        this angle increase in a clockwise direction. When a pair of
+        values is given, e.g. (350.0, 10.0), they represent the ordered
+        end-members of a range of ground azimuth values that extends
+        clockwise from the first to the second, modulo 360 degrees.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:sub_spacecraft_ground_azimuth_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="tb_max_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-450.0"/>
+     <xs:maxInclusive value="10000.0"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="tb_max">
+    <xs:annotation>
+      <xs:documentation>The maximum recorded value of brightness
+        temperature for the channel given by lro:channel in a DLRE RDR
+        data product. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:tb_max_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="tb_min_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-450.0"/>
+     <xs:maxInclusive value="10000.0"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="tb_min">
+    <xs:annotation>
+      <xs:documentation>The minimum recorded value of brightness
+        temperature for the channel given by lro:channel in a DLRE RDR
+        data product. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:tb_min_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="temperature_fpa_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="temperature_fpa">
+    <xs:annotation>
+      <xs:documentation>Set to the temperature of the LROC FPA in
+        degrees Celsius, as converted from the raw engineering
+        counts.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:temperature_fpa_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="temperature_fpa_raw">
+    <xs:annotation>
+      <xs:documentation>Set to the raw engineering counts for the LROC
+        (F)ocal (P)lane (A)rray.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="temperature_fpga_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="temperature_fpga">
+    <xs:annotation>
+      <xs:documentation>Set to the temperature of the LROC FPGA in
+        degrees Celsius, as converted from the raw engineering
+        counts.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:temperature_fpga_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="temperature_fpga_raw">
+    <xs:annotation>
+      <xs:documentation>Set to the raw engineering counts for the LROC
+        (F)ield (P)rogrammable (G)ate (A)rray.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="temperature_scs_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="temperature_scs">
+    <xs:annotation>
+      <xs:documentation>Set to the temperature of the LROC SCS in
+        degrees Celsius, as converted from the raw engineering
+        counts.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:temperature_scs_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="temperature_scs_raw">
+    <xs:annotation>
+      <xs:documentation>Set to the raw engineering counts for the LROC
+        SCS.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="temperature_telescope_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="temperature_telescope">
+    <xs:annotation>
+      <xs:documentation>Set to the temperature of the LROC telescope
+        corresponding to NAC-L or NAC-R, as converted from the raw
+        engineering counts.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lro:temperature_telescope_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="temperature_telescope_raw">
+    <xs:annotation>
+      <xs:documentation>Set to the raw engineering counts for the LROC
+        Telescope corresponding to NAC-L or NAC-R.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="total_lines">
+    <xs:annotation>
+      <xs:documentation>The total number of lines of data in a data
+        product, including both complete lines and partial
+        lines.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="upload_id">
+    <xs:annotation>
+      <xs:documentation>The upload_id attribute describes a spacecraft
+        command set that is associated with the given data
+        product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="xterm1">
+    <xs:annotation>
+<xs:documentation>NAC companding xterm 1</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="xterm2">
+    <xs:annotation>
+<xs:documentation>NAC companding xterm 2</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="xterm3">
+    <xs:annotation>
+<xs:documentation>NAC companding xterm 3</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="xterm4">
+    <xs:annotation>
+<xs:documentation>NAC companding xterm 4</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="xterm5">
+    <xs:annotation>
+<xs:documentation>NAC companding xterm 5</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
