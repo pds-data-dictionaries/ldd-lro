@@ -73,11 +73,11 @@
 	    bursts
 	    c_axis_radius
 	    calibration_software_ver_id
-        center_frequency
 	    channel
 	    channel_a_offset
 	    channel_b_offset
         chirp_bandwidth
+        chirp_center_frequency
         chirp_pulse_width
         chirp_rate
         chirp_start_frequency
@@ -146,7 +146,6 @@
 	    product_type
 	    product_version_id
         pulse_repetition_interval
-        pulse_width
         pulses_per_burst
 	    radiance_min
 	    radiance_max
@@ -155,6 +154,7 @@
 	    range_gate_start
 	    rationale_desc	    
 	    receive_pulse_width
+	    receiver_frequency
 	    samples_per_pulse
 	    sampling_frequency
 	    sar_channel
@@ -569,21 +569,6 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
-    <DD_Attribute> <!-- center_frequency -->
-        <name>center_frequency</name>
-        <version_id>1.0</version_id>
-        <local_identifier>lro.center_frequency</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>APL</submitter_name>
-        <definition>The center frequency</definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Integer</value_data_type>
-            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
-            <specified_unit_id>MHz</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
     <DD_Attribute> <!-- channel -->
         <name>channel</name>
         <version_id>1.0</version_id>
@@ -673,6 +658,21 @@
             <value_data_type>ASCII_Real</value_data_type>
             <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
             <specified_unit_id>MHz</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- chirp_center_frequency -->
+        <name>chirp_center_frequency</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.chirp_center_frequency</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Center frequency of the chirp signal.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
+            <specified_unit_id>Hz</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -2300,21 +2300,6 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
-    <DD_Attribute> <!-- pulse_width --> 
-        <name>pulse_width</name>
-        <version_id>1.0</version_id>
-        <local_identifier>lro.pulse_width</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>APL</submitter_name>
-        <definition>duration of the chirp pulse.</definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
-            <specified_unit_id>microseconds</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
     <DD_Attribute> <!-- pulses_per_burst --> 
         <name>pulses_per_burst</name>
         <version_id>1.0</version_id>
@@ -2448,6 +2433,21 @@
             <maximum_value>2500</maximum_value>            
 			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
             <specified_unit_id>microseconds</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- receiver_frequency --> 
+        <name>receiver_frequency</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.receiver_frequency</local_identifier>
+        <nillable_flag>true</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Frequency of the receiver</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
+            <specified_unit_id>MHz</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -3747,6 +3747,24 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association> 
+            <identifier_reference>lro.chirp_bandwidth</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.chirp_center_frequency</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.receiver_frequency</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
             <identifier_reference>lro.samples_per_pulse</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
@@ -3873,12 +3891,6 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association> 
-            <identifier_reference>lro.center_frequency</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
             <identifier_reference>lro.sub_spacecraft_ground_azimuth</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
@@ -3910,18 +3922,6 @@
         </DD_Association>
         <DD_Association> 
             <identifier_reference>lro.range_beamwidth</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
-            <identifier_reference>lro.pulse_width</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
-            <identifier_reference>lro.chirp_bandwidth</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
