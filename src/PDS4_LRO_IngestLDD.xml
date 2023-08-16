@@ -3704,7 +3704,8 @@
     <!-- End of Diviner_Parameters Class definition -->
     
     <!-- Beginning of MiniRF_Parameters Class definition with attributes in the order as they appear in the label -->
-    <DD_Class> <!-- MiniRF_Parameters -->
+    <!-- MiniRF_Parameters -->
+    <DD_Class> 
         <name>MiniRF_Parameters</name>
         <version_id>1.0</version_id>
         <local_identifier>lro.MiniRF_Parameters</local_identifier>
