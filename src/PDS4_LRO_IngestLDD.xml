@@ -15,6 +15,7 @@
      01/19/2023 APL/RCE (v1020) Additional Mini-RF elements
      04/05/2023 GEO/JGW (v1021) Bug fix - adding missing permissible values to dlre_instrument_mode_id 
      06/30/2023 GEO/JGW (v1030) Added 4 attributes to Diviner_Parameters and LRO_Parameters classes
+     10/09/2024 APL/RCE Additional Mini-RF elements part 2
     -->
 
 <Ingest_LDD 
@@ -23,7 +24,7 @@
     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1
                         http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd">
     <name>LRO</name>
-    <ldd_version_id>1.0.3.0</ldd_version_id>
+    <ldd_version_id>1.0.4.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
     <full_name>Jennifer Ward</full_name>
     <steward_id>geo</steward_id>
@@ -32,7 +33,7 @@
         The LRO dictionary contains classes that describe aspects of the 
         Lunar Reconnaissance Orbiter mission and related instruments.
     </comment>
-    <last_modification_date_time>2023-06-30T00:00Z</last_modification_date_time>
+    <last_modification_date_time>2024-10-09T00:00Z</last_modification_date_time>
 	
 	<!-- PGeissler changed mterm1 to mterm5 to ASCII_Real; added units to NAC temperatures, line_exposure_time, interframe_delay -->
     <!-- PGeissler 5-08-2020 ldd-lro-1d00.xml changed mission_phase_name to allow multiple mission phases -->
@@ -51,14 +52,17 @@
 	    In alphabetical order, the attributes are:
 	    
 	    a_axis_radius
+	    attenuator
         azimuth_beamwidth
 	    azimuth_resolution
 	    b_axis_radius
 	    background_offset
 	    band_code
 	    band_description
+	    band_frequency
 	    band_name
 	    band_sequence_number
+	    baq_sample_size
 	    begin_temperature_fpa
 	    begin_temperature_fpa_raw
 	    begin_temperature_scs
@@ -68,16 +72,19 @@
 	    bterm3
 	    bterm4
 	    bterm5
+	    bursts
 	    c_axis_radius
 	    calibration_software_ver_id
-        center_frequency
+        center_frequency - replaced with receiver_frequency
 	    channel
 	    channel_a_offset
 	    channel_b_offset
         chirp_bandwidth
+        chirp_center_frequency
+        chirp_pulse_width
         chirp_rate
-        chirp_sample_rate
         chip_start_frequency
+        chirp_up
 	    coordinate_system_name
 	    coordinate_system_type
 	    compand_code
@@ -100,15 +107,17 @@
 	    end_temperature_fpa_raw
 	    end_temperature_scs
 	    end_temperature_scs_raw
+	    experiment_id
 	    exposure_code
 	    file_state
 	    flight_software_version_id
 	    frame_id
         grid_resolution_height
         grid_resolution_width
-        ground_station
+        ground_station - renamed to transmitter
         image_name
 	    instrument_mode_id
+	    interburst_delay
 	    interframe_delay
 	    interframe_gap_code
 	    latitude_type
@@ -144,17 +153,25 @@
 	    producer_institution_name
 	    product_type
 	    product_version_id
-        pulse_repitition_interval
-        pulse_width
+        pulse_repetition_interval
+        pulses_per_burst
+        pulse_width - removed, redundant with chirp_pulse_width
 	    radiance_min
 	    radiance_max
         range_beamwidth
 	    range_resolution
-	    rationale_desc	    
+	    range_gate_start
+	    rationale_desc
+	    receiver_frequency - replaces center_frequency
+	    receiver_pulse_width
+	    samples_per_pulse
+	    sampling_frequency
+	    sar_channel
         sar_emission_angle
         sar_incidence_angle
-        sar_phase_angle
         sar_instrument_mode_id
+        sar_phase_angle
+        sclk0
 	    software_version_id
 	    spacecraft_clock_count_partition
 	    spacecraft_clock_preroll_count
@@ -177,6 +194,11 @@
 	    temperature_telescope
 	    temperature_telescope_raw
 	    total_lines
+	    total_pulse_count
+	    transmit_polarization
+	    transmitter (replaces ground_station)
+	    transmitter_eirp
+	    transmitter_range
 	    upload_id
 	    xterm1
 	    xterm2
@@ -202,6 +224,21 @@
             <minimum_value>0.0</minimum_value>
             <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
             <specified_unit_id>m</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- attenuator -->
+        <name>attenuator</name> 
+        <version_id>1.0</version_id>
+        <local_identifier>lro.attenuator</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Receiver attenuator setting in decibels.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>62</maximum_value>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -303,6 +340,28 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute> <!-- band_frequency -->
+        <name>band_frequency</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.band_frequency</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Indicates the frequency band used for the collect. Either 'S' band
+        or 'X' band.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>S</value>
+                <value_meaning>S-band frequency</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>X</value>
+                <value_meaning>X-band frequency</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute> <!-- band_name -->
         <name>band_name</name>
         <version_id>1.0</version_id>
@@ -328,6 +387,21 @@
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
+    <DD_Attribute> <!-- baq_sample_size -->
+        <name>baq_sample_size</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.baq_sample_size</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The number of bits used in the BAQ encoding algorithm.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>2</minimum_value>
+            <maximum_value>12</maximum_value>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -453,6 +527,21 @@
             <value_data_type>ASCII_Integer</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
+
+    <DD_Attribute> <!-- bursts -->
+        <name>bursts</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.bursts</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Number of bursts per Mini-RF collect</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>10000</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
     
     <DD_Attribute> <!-- c_axis_radius -->
         <name>c_axis_radius</name>
@@ -490,21 +579,6 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
-    <DD_Attribute> <!-- center_frequency -->
-        <name>center_frequency</name>
-        <version_id>1.0</version_id>
-        <local_identifier>lro.center_frequency</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>APL</submitter_name>
-        <definition>The center frequency</definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Integer</value_data_type>
-            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
-            <specified_unit_id>MHz</specified_unit_id>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
     <DD_Attribute> <!-- channel -->
         <name>channel</name>
         <version_id>1.0</version_id>
@@ -597,31 +671,47 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute> <!-- chirp_center_frequency -->
+        <name>chirp_center_frequency</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.chirp_center_frequency</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Center frequency of the transmitted chirp signal.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
+            <specified_unit_id>Hz</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- chirp_pulse_width -->
+        <name>chirp_pulse_width</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.chirp_pulse_width</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The period of time over which the linear frequency modulated chirp is transmitted.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <specified_unit_id>microseconds</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+
     <DD_Attribute> <!-- chirp_rate -->
         <name>chirp_rate</name>
         <version_id>1.0</version_id>
         <local_identifier>lro.chirp_rate</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>Chirp rate in Hz/sec.</definition>
+        <definition>The linear rate used in the transmitted chirp in Hz/sec.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
-        </DD_Value_Domain>
-    </DD_Attribute>
-
-    <DD_Attribute> <!-- chirp_sample_rate -->
-        <name>chirp_sample_rate</name>
-        <version_id>1.0</version_id>
-        <local_identifier>lro.chirp_sample_rate</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>APL</submitter_name>
-        <definition>sampling frequency of the chirp signal.</definition>
-        <DD_Value_Domain>
-            <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
-            <specified_unit_id>Hz</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -637,6 +727,20 @@
             <value_data_type>ASCII_Real</value_data_type>
             <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
             <specified_unit_id>MHz</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- chirp_up -->
+        <name>chirp_up</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.chirp_up</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Indicates whether frequency increases or decreases over time in the
+        transmitted chirp. true= frequency increase. false = frequency decrease.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Boolean</value_data_type>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -1059,6 +1163,22 @@
         </DD_Value_Domain>
     </DD_Attribute>
     
+    <DD_Attribute> <!-- experiment_id --> 
+        <name>experiment_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.experiment_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Identifier used to distinguish between monostatic data collects. 
+        Unused in bistatic observations.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>65536</maximum_value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
     <DD_Attribute> <!-- exposure_code --> 
         <name>exposure_code</name>
         <version_id>1.0</version_id>
@@ -1162,29 +1282,7 @@
             <specified_unit_id>m</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
-    <DD_Attribute> <!-- ground_station --> 
-        <name>ground_station</name>
-        <version_id>1.0</version_id>
-        <local_identifier>lro.ground_station</local_identifier>
-        <nillable_flag>false</nillable_flag>
-        <submitter_name>IMG</submitter_name>
-        <definition>Identifies the ground station used as the transmitter in Mini-RF bistatic
-            operations.</definition>
-        <DD_Value_Domain>
-            <enumeration_flag>true</enumeration_flag>
-            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-            <DD_Permissible_Value>
-                <value>ARECIBO</value>
-                <value_meaning>The S-band transmitter at Arecibo Observatory in Puerto Rico.</value_meaning>
-            </DD_Permissible_Value>
-            <DD_Permissible_Value>
-                <value>DSS13</value>
-                <value_meaning>The X-band transmitter at DSS-13 ground station in Venus, California.</value_meaning>
-            </DD_Permissible_Value>
-        </DD_Value_Domain>
-    </DD_Attribute>
-    
+       
     <DD_Attribute> <!-- image_name --> 
         <name>image_name</name>
         <version_id>1.0</version_id>
@@ -1224,6 +1322,22 @@
                 <value>UV</value>
                 <value_meaning>The commanded WAC instrument mode was UV.</value_meaning>
             </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- interburst_delay --> 
+        <name>interburst_delay</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.inter_burst_delay</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The period of delay between bursts, measured from the start of the last pulse in 
+        the previous burst to the start of the first pulse in the next burst.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <specified_unit_id>microseconds</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -2245,13 +2359,13 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
-    <DD_Attribute> <!-- pulse_repitition_interval --> 
-        <name>pulse_repitition_interval</name>
+    <DD_Attribute> <!-- pulse_repetition_interval --> 
+        <name>pulse_repetition_interval</name>
         <version_id>1.0</version_id>
-        <local_identifier>lro.pulse_repitition_interval</local_identifier>
+        <local_identifier>lro.pulse_repetition_interval</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>Pulse repitition interval of the signal from the transmitter for 
+        <definition>Pulse repetition interval of the signal from the transmitter for 
             Mini-RF bistatic operations.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
@@ -2261,18 +2375,18 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
-    <DD_Attribute> <!-- pulse_width --> 
-        <name>pulse_width</name>
+    <DD_Attribute> <!-- pulses_per_burst --> 
+        <name>pulses_per_burst</name>
         <version_id>1.0</version_id>
-        <local_identifier>lro.pulse_width</local_identifier>
+        <local_identifier>lro.pulses_per_burst</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>duration of the chirp pulse.</definition>
+        <definition>Number of pulses per burst.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
-            <value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
-            <specified_unit_id>microseconds</specified_unit_id>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>1</minimum_value>
+            <maximum_value>30000</maximum_value>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -2329,6 +2443,24 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute> <!-- range_gate_start -->
+        <name>range_gate_start</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.range_gate_start</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The delay between the start of a pulse and when the receiver opens.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0.0</minimum_value>
+            <maximum_value>2500.0</maximum_value>
+            <unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <specified_unit_id>microseconds</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+    
     <DD_Attribute> <!-- range_resolution -->
         <name>range_resolution</name>
         <version_id>1.0</version_id>
@@ -2348,7 +2480,7 @@
             <specified_unit_id>kilometer</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
-    
+
     <DD_Attribute> <!-- rationale_desc -->
         <name>rationale_desc</name>
         <version_id>1.0</version_id>
@@ -2362,13 +2494,100 @@
         </DD_Value_Domain>
     </DD_Attribute>
 
+    <DD_Attribute> <!-- receiver_frequency --> 
+        <name>receiver_frequency</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.receiver_frequency</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The center of the receiver frequency band, transferred to base band/DC (0Hz) in the instrument data.  
+        This combined with a the sampling frequency gives a complete picture of the receiver's frequency configuration.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
+            <specified_unit_id>MHz</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- receiver_pulse_width --> 
+        <name>receiver_pulse_width</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.receiver_pulse_width</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The period of time over which the receiver is open and recording samples</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>5</minimum_value>
+            <maximum_value>2500</maximum_value>            
+			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+            <specified_unit_id>microseconds</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- samples_per_pulse --> 
+        <name>samples_per_pulse</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.samples_per_pulse</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Number of samples received within a pulse. When operating in the bistatic, receive only mode, the instrument is
+          not pulsing in the traditional sense, but the number of values reported here define a block sent into the BAQ encoding process.
+          Corresponds to the number of rows in the Bistatic raw data table.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>8192</maximum_value>            
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- sampling_frequency --> 
+        <name>sampling_frequency</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.sampling_frequency</local_identifier>
+        <nillable_flag>true</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Sampling frequency used to capture samples in the receiver</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Frequency</unit_of_measure_type>
+            <specified_unit_id>Hz</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- sar_channel --> 
+        <name>sar_channel</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.sar_channel</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The channel associated with the data product</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>H</value>
+                <value_meaning>Horizontal channel</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>V</value>
+                <value_meaning>Vertical channel</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
     <DD_Attribute> <!-- sar_emission_angle --> 
         <name>sar_emission_angle</name>
         <version_id>1.0</version_id>
         <local_identifier>lro.sar_emission_angle</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>Emission angle for SAR</definition>
+        <definition>The angle between the normal to the lunar surface (body radius based on a digital elevation model or DEM) and the vector to the receiver.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -2438,6 +2657,20 @@
             <value_data_type>ASCII_Real</value_data_type>
             <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
             <specified_unit_id>Degree</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- sclk0 --> 
+        <name>sclk0</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.sclk0</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The SCLK latched at Mini-RF bootup. Used as the zero reference for the Mini-RF fine-time fields.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <pattern>([0-9]{1,2}/)?[0-9]{1,10}([:|.][0-9]{1,9})?</pattern>
         </DD_Value_Domain>
     </DD_Attribute>
 
@@ -2798,6 +3031,94 @@
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>   
+
+    <DD_Attribute> <!-- total_pulse_count -->
+        <name>total_pulse_count</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.total_pulse_count</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>The total number of pulses contained in the Mini-RF raw data product.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Integer</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- transmit_polarization --> 
+        <name>transmit_polarization</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.transmit_polarization</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>IMG</submitter_name>
+        <definition>Specifies the polarization of the transmitted signal.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>LHCP</value>
+                <value_meaning>Left-hand circular polarization.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>RHCP</value>
+                <value_meaning>Right-hand circular polarization.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- transmitter --> 
+        <name>transmitter</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.transmitter</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Specifies the transmitting radar platform, including the Mini-RF transmitter
+          when it was operational.</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>AO</value>
+                <value_meaning>The S-band transmitter at Arecibo Observatory in Puerto Rico.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>DSS-13</value>
+                <value_meaning>The X-band transmitter at DSS-13 ground station in Venus, California.</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>MINI-RF</value>
+                <value_meaning>The transmitter on the Mini-RF instrument.</value_meaning>
+            </DD_Permissible_Value>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- transmitter_eirp -->
+        <name>transmitter_eirp</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.transmitter_eirp</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Effective isotropic radiated power from transmitter</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute> <!-- transmitter_range -->
+        <name>transmitter_range</name>
+        <version_id>1.0</version_id>
+        <local_identifier>lro.transmitter_range</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>APL</submitter_name>
+        <definition>Mean range from the transmitter location to the lunar surface at the Mini-RF boresight intercept</definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+            <specified_unit_id>km</specified_unit_id>
         </DD_Value_Domain>
     </DD_Attribute>
     
@@ -3508,11 +3829,167 @@
         <submitter_name>GEO</submitter_name>
         <definition>The MiniRF_Parameters class is the container for MiniRF-specific observation parameters.</definition>
         <DD_Association> 
+            <identifier_reference>lro.experiment_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.pulse_repetition_interval</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.chirp_pulse_width</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.chirp_rate</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.chirp_start_frequency</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.chirp_up</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.chirp_bandwidth</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.chirp_center_frequency</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.receiver_frequency</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.samples_per_pulse</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.range_gate_start</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.receive_pulse_width</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.interburst_delay</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>    
+        <DD_Association> 
+            <identifier_reference>lro.bursts</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>    
+        <DD_Association> 
+            <identifier_reference>lro.pulses_per_burst</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.attenuator</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.band_frequency</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.sar_channel</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.sampling_frequency</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.baq_sample_size</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.sclk0</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.transmitter</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>1</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.sar_instrument_mode_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.transmitter_eirp</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.transmitter_range</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
             <identifier_reference>lro.look_azimuth_angle</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>    
+        <DD_Association>
+            <identifier_reference>lro.MiniRF_Band</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>*</maximum_occurrences>
+        </DD_Association>
         <DD_Association> 
             <identifier_reference>lro.sar_incidence_angle</identifier_reference>
             <reference_type>attribute_of</reference_type>
@@ -3532,7 +4009,13 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association> 
-            <identifier_reference>lro.center_frequency</identifier_reference>
+            <identifier_reference>lro.azimuth_beamwidth</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.range_beamwidth</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -3551,72 +4034,6 @@
         </DD_Association>
         <DD_Association> 
             <identifier_reference>lro.range_resolution</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association>
-            <identifier_reference>lro.MiniRF_Band</identifier_reference>
-            <reference_type>component_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>*</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
-            <identifier_reference>lro.sar_instrument_mode_id</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
-            <identifier_reference>lro.pulse_repitition_interval</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
-            <identifier_reference>lro.ground_station</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
-            <identifier_reference>lro.azimuth_beamwidth</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
-            <identifier_reference>lro.range_beamwidth</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
-            <identifier_reference>lro.pulse_width</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
-            <identifier_reference>lro.chirp_rate</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
-            <identifier_reference>lro.chirp_start_frequency</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
-            <identifier_reference>lro.chirp_sample_rate</identifier_reference>
-            <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>0</minimum_occurrences>
-            <maximum_occurrences>1</maximum_occurrences>
-        </DD_Association>
-        <DD_Association> 
-            <identifier_reference>lro.chirp_bandwidth</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
