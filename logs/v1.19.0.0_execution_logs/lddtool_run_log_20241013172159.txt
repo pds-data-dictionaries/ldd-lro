@@ -1,25 +1,34 @@
 
->>  INFO LDDTOOL Version: 14.2.4
->>  INFO IM Version Id: 1.16.0.0
+>>  INFO LDDTOOL Version: 15.1.0
+>>  INFO IM Version Id: 1.19.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.22
->>  INFO Date: Tue Aug 08 14:45:07 UTC 2023
->>  INFO PARENT_DIR: /tmp/lddtool-14.2.4
->>  INFO SCRIPT_DIR: /tmp/lddtool-14.2.4/bin
->>  INFO LIB_DIR: /tmp/lddtool-14.2.4/lib
+>>  INFO IM Label Version Id: 1.25
+>>  INFO Date: Sun Oct 13 17:21:59 UTC 2024
+>>  INFO PARENT_DIR: /tmp/lddtool-15.1.0/Data/
 
+>>> ERROR Class:0001_NASA_PDS_1.lro.MiniRF_Parameters  Association:lro.receive_pulse_width  Attribute: lro.receive_pulse_width - Missing Attribute
+>>> ERROR Association: lro.receive_pulse_width - Could not find referenced attribute - Reference Type: attribute_of
+>>> ERROR Class:0001_NASA_PDS_1.lro.MiniRF_Parameters  Association:lro.interburst_delay  Attribute: lro.interburst_delay - Missing Attribute
+>>> ERROR Association: lro.interburst_delay - Could not find referenced attribute - Reference Type: attribute_of
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
 >>> INFO Init:  - LDD Dictionary_Type is Mission
 >>> INFO Attribute: <parameter_max> - A 'nillable' attribute was found that is not a required attribute in at least one class.
 >>> INFO Attribute: <parameter_min> - A 'nillable' attribute was found that is not a required attribute in at least one class.
 >>> INFO Attribute: <radiance_max> - A 'nillable' attribute was found that is not a required attribute in at least one class.
 >>> INFO Attribute: <radiance_min> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <sampling_frequency> - A 'nillable' attribute was found that is not a required attribute in at least one class.
 >>> INFO Attribute: <tb_max> - A 'nillable' attribute was found that is not a required attribute in at least one class.
 >>> INFO Attribute: <tb_min> - A 'nillable' attribute was found that is not a required attribute in at least one class.
 >>> INFO Attribute: <a_axis_radius> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <attenuator> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <attenuator> - The default maximum value provided by the attribute's data type is being overridden with 62
 >>> INFO Attribute: <azimuth_resolution> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <azimuth_resolution> - The default maximum value provided by the attribute's data type is being overridden with 450
 >>> INFO Attribute: <b_axis_radius> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <baq_sample_size> - The default minimum value provided by the attribute's data type is being overridden with 2
+>>> INFO Attribute: <baq_sample_size> - The default maximum value provided by the attribute's data type is being overridden with 12
+>>> INFO Attribute: <bursts> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <bursts> - The default maximum value provided by the attribute's data type is being overridden with 10000
 >>> INFO Attribute: <c_axis_radius> - The default minimum value provided by the attribute's data type is being overridden with 0.0
 >>> INFO Attribute: <calibration_software_ver_id> - The default maximum characters provided by the attribute's data type is being overridden with 10
 >>> INFO Attribute: <compand_code> - The default minimum value provided by the attribute's data type is being overridden with 0
@@ -41,6 +50,8 @@
 >>> INFO Attribute: <dlre_utc_min> - The default minimum characters provided by the attribute's data type is being overridden with 12
 >>> INFO Attribute: <dlre_utc_min> - The default maximum characters provided by the attribute's data type is being overridden with 12
 >>> INFO Attribute: <dreb_flight_software_ver_id> - The default maximum characters provided by the attribute's data type is being overridden with 10
+>>> INFO Attribute: <experiment_id> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <experiment_id> - The default maximum value provided by the attribute's data type is being overridden with 65536
 >>> INFO Attribute: <file_state> - The default minimum characters provided by the attribute's data type is being overridden with 5
 >>> INFO Attribute: <file_state> - The default maximum characters provided by the attribute's data type is being overridden with 5
 >>> INFO Attribute: <flight_software_version_id> - The default maximum characters provided by the attribute's data type is being overridden with 10
@@ -55,11 +66,19 @@
 >>> INFO Attribute: <missing_lines> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <observation_type> - The default maximum characters provided by the attribute's data type is being overridden with 30
 >>> INFO Attribute: <producer_full_name> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <pulses_per_burst> - The default minimum value provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <pulses_per_burst> - The default maximum value provided by the attribute's data type is being overridden with 30000
 >>> INFO Attribute: <radiance_max> - The default minimum value provided by the attribute's data type is being overridden with -1000.0
 >>> INFO Attribute: <radiance_max> - The default maximum value provided by the attribute's data type is being overridden with 100000.0 
 >>> INFO Attribute: <radiance_min> - The default minimum value provided by the attribute's data type is being overridden with -1000.0
 >>> INFO Attribute: <radiance_min> - The default maximum value provided by the attribute's data type is being overridden with 100000.0 
+>>> INFO Attribute: <range_gate_start> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <range_gate_start> - The default maximum value provided by the attribute's data type is being overridden with 2500.0
 >>> INFO Attribute: <range_resolution> - The default maximum value provided by the attribute's data type is being overridden with 450
+>>> INFO Attribute: <receiver_pulse_width> - The default minimum value provided by the attribute's data type is being overridden with 5
+>>> INFO Attribute: <receiver_pulse_width> - The default maximum value provided by the attribute's data type is being overridden with 2500
+>>> INFO Attribute: <samples_per_pulse> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <samples_per_pulse> - The default maximum value provided by the attribute's data type is being overridden with 8192
 >>> INFO Attribute: <sar_instrument_mode_id> - The default maximum characters provided by the attribute's data type is being overridden with 20
 >>> INFO Attribute: <software_version_id> - The default maximum characters provided by the attribute's data type is being overridden with 20
 >>> INFO Attribute: <software_version_id> - This local attribute has a duplicate in the PDS4 data dictionary.
@@ -75,15 +94,19 @@
 >>> INFO Attribute: <tb_min> - The default minimum value provided by the attribute's data type is being overridden with -450.0
 >>> INFO Attribute: <tb_min> - The default maximum value provided by the attribute's data type is being overridden with 10000.0
 >>> WARNING Init:  - Config.Properties Namespace Id Not Found:lro
+>>> WARNING Attribute: <interburst_delay> - This local attribute was not used in an Association.
+>>> WARNING Attribute: <receiver_pulse_width> - This local attribute was not used in an Association.
+>>> WARNING Attribute: <total_pulse_count> - This local attribute was not used in an Association.
+>>> WARNING Attribute: <transmit_polarization> - This local attribute was not used in an Association.
 
  -- LDDTool Execution Summary --
-     1 warning(s)
-     0 error(s)
+     5 warning(s)
+     4 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1G00
+     - IM Version: 1J00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -93,9 +116,9 @@ Input:
 
 Output:
 
-     - ./PDS4_LRO_1G00_1030.xsd
-     - ./PDS4_LRO_1G00_1030.sch
-     - ./PDS4_LRO_1G00_1030.xml
-     - ./PDS4_LRO_1G00_1030.JSON
+     - ./PDS4_LRO_1J00_1040.xsd
+     - ./PDS4_LRO_1J00_1040.sch
+     - ./PDS4_LRO_1J00_1040.xml
+     - ./export/JSON/PDS4_PDS_1J00.JSON
 
->>  INFO Exit(0)
+>>  INFO Exit(1)
