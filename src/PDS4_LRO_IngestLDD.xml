@@ -1328,7 +1328,7 @@
     <DD_Attribute> <!-- interburst_delay --> 
         <name>interburst_delay</name>
         <version_id>1.0</version_id>
-        <local_identifier>lro.inter_burst_delay</local_identifier>
+        <local_identifier>lro.interburst_delay</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
         <definition>The period of delay between bursts, measured from the start of the last pulse in 
@@ -3100,7 +3100,7 @@
         <local_identifier>lro.transmitter_eirp</local_identifier>
         <nillable_flag>false</nillable_flag>
         <submitter_name>APL</submitter_name>
-        <definition>Effective isotropic radiated power from transmitter</definition>
+        <definition>Effective isotropic radiated power from transmitter; units are decibels-milliwatt-isotropic.</definition>
         <DD_Value_Domain>
             <enumeration_flag>false</enumeration_flag>
             <value_data_type>ASCII_Real</value_data_type>
@@ -3895,7 +3895,7 @@
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association> 
-            <identifier_reference>lro.receive_pulse_width</identifier_reference>
+            <identifier_reference>lro.receiver_pulse_width</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -3914,6 +3914,12 @@
         </DD_Association>    
         <DD_Association> 
             <identifier_reference>lro.pulses_per_burst</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.total_pulse_count</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
@@ -3957,7 +3963,7 @@
         <DD_Association> 
             <identifier_reference>lro.transmitter</identifier_reference>
             <reference_type>attribute_of</reference_type>
-            <minimum_occurrences>1</minimum_occurrences>
+            <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
         </DD_Association>
         <DD_Association> 
@@ -4046,6 +4052,12 @@
         </DD_Association>
         <DD_Association> 
             <identifier_reference>lro.grid_resolution_width</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association> 
+            <identifier_reference>lro.transmit_polarization</identifier_reference>
             <reference_type>attribute_of</reference_type>
             <minimum_occurrences>0</minimum_occurrences>
             <maximum_occurrences>1</maximum_occurrences>
