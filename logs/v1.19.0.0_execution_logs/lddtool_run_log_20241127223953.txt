@@ -1,10 +1,10 @@
 
->>  INFO LDDTOOL Version: 15.1.0
+>>  INFO LDDTOOL Version: 15.2.3
 >>  INFO IM Version Id: 1.19.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.25
->>  INFO Date: Tue Oct 22 00:29:07 UTC 2024
->>  INFO PARENT_DIR: /tmp/lddtool-15.1.0/Data/
+>>  INFO Date: Wed Nov 27 22:39:53 UTC 2024
+>>  INFO PARENT_DIR: /tmp/lddtool-15.2.3/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
 >>> INFO Init:  - LDD Dictionary_Type is Mission
@@ -111,6 +111,6 @@ Output:
      - ./PDS4_LRO_1J00_1040.xsd
      - ./PDS4_LRO_1J00_1040.sch
      - ./PDS4_LRO_1J00_1040.xml
-     - ./export/JSON/PDS4_PDS_1J00.JSON
+     - ./export/PDS4_PDS_1J00.JSON
 
 >>  INFO Exit(0)
