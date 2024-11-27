@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/mission/lro/v1/PDS4_LRO_1J00_1020.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1J00_1510.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1J00_1870.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Product_Observational
+  xmlns="http://pds.nasa.gov/pds4/pds/v1"
+  xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+  xmlns:disp="http://pds.nasa.gov/pds4/disp/v1"
+  xmlns:lro="http://pds.nasa.gov/pds4/mission/lro/v1"
+  xmlns:img="http://pds.nasa.gov/pds4/img/v1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd
+  http://pds.nasa.gov/pds4/mission/lro/v1 https://pds.nasa.gov/pds4/mission/lro/v1/PDS4_LRO_1J00_1020.xsd
+  http://pds.nasa.gov/pds4/disp/v1 https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1J00_1510.xsd
+  http://pds.nasa.gov/pds4/img/v1 https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1J00_1870.xsd">
+
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:lro-l-lroc-2-edr:lrolrc_0001_data:nac.m102600893le</logical_identifier>
+    <version_id>2.0</version_id>
+    <title>Lunar Reconnaissance Orbiter Camera NAC EDR Product</title>
+    <information_model_version>1.19.0.0</information_model_version>
+    <product_class>Product_Observational</product_class>
+    <Alias_List>
+      <Alias>
+        <alternate_id>M102600893LE.IMG</alternate_id>
+        <comment>Original filename at PDS3 archive, on-line at LROC Node</comment>
+      </Alias>
+      <Alias>
+        <alternate_id>nacl000016fe</alternate_id>
+        <comment>PDS3 SOURCE_PRODUCT_ID</comment>
+      </Alias>
+    </Alias_List>
+    <Modification_History>
+      <Modification_Detail>
+        <modification_date>2023-09-06</modification_date>
+        <version_id>2.0</version_id>
+        <description>
+          Updated PDS4 label
+        </description>
+      </Modification_Detail>
+      <Modification_Detail>
+        <modification_date>2022-10-31</modification_date>
+        <version_id>1.0</version_id>
+        <description>
+          This PDS4 labeled (detached label) product (orig PDS3 image) is a result
+          of develpment activity for eventual LUNAR RECONNAISSANCE ORBITER CAMERA NAC EDR migration to PDS4.
+        </description>
+      </Modification_Detail>
+    </Modification_History>
+  </Identification_Area>
+  <Observation_Area>
+    <Time_Coordinates>
+      <start_date_time>2009-07-19T00:00:26.423000Z</start_date_time>
+      <stop_date_time>2009-07-19T00:01:17.707000Z</stop_date_time>
+    </Time_Coordinates>
+    <Primary_Result_Summary>
+      <purpose>Science</purpose>
+      <processing_level>Partially Processed</processing_level>
+      <description>The Lunar Reconnaissance Orbiter Camera (LROC) Wide Angle Camera (WAC) and Narrow Angle Cameras (NACs)
+        are on the NASA Lunar Reconnaissance Orbiter (LRO). The WAC is a 7-color push-frame camera (100 and 400 m/pixel
+        visible and UV, respectively), while the two NACs are monochrome narrow-angle linescan imagers (0.5 m/pixel).
+        The primary mission of LRO is to obtain measurements of the Moon that will enable future lunar human exploration.
+        The overarching goals of the LROC investigation include landing site identification and certification, mapping
+        of permanently polar shadowed and sunlit regions, meter-scale mapping of polar regions, global multispectral
+        imaging, a global morphology base map, characterization of regolith properties, and determination of current
+        impact hazards.
+      </description>
+    </Primary_Result_Summary>
+    <Investigation_Area>
+      <name>LUNAR RECONNAISSANCE ORBITER</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:investigation:mission.lunar_reconnaissance_orbiter</lid_reference>
+        <reference_type>data_to_investigation</reference_type>
+        <comment>This is the PDS4 logical identifier for LRO</comment>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>LUNAR RECONNAISSANCE ORBITER</name>
+        <type>Host</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.lro</lid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+        <name>LUNAR RECONNAISSANCE ORBITER CAMERA</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument:lro.lroc</lid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>MOON</name>
+      <type>Satellite</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:target:satellite.earth.moon</lid_reference>
+        <reference_type>data_to_target</reference_type>
+      </Internal_Reference>
+    </Target_Identification>
+    <Mission_Area>
+      <lro:LRO_Parameters>
+        <!-- parameters for all LRO products -->
+        <lro:product_type>EDR</lro:product_type>
+        <lro:product_version_id>v1.8</lro:product_version_id>
+        <lro:orbit_number>294</lro:orbit_number>
+        <lro:mission_phase_name>COMMISSIONING</lro:mission_phase_name>
+        <lro:spacecraft_clock_start_count>1/269654426:25923</lro:spacecraft_clock_start_count>
+        <lro:spacecraft_clock_stop_count>1/269654477:44530</lro:spacecraft_clock_stop_count>
+        <lro:producer_institution_name>Arizona State University</lro:producer_institution_name>
+        <lro:LROC_Parameters>
+          <!-- Parameters specific to LROC -->
+          <lro:upload_id>SC_2009200_0000_B_V01.txt</lro:upload_id>
+          <lro:rationale_desc>TARGET OF OPPORTUNITY</lro:rationale_desc>
+          <lro:data_quality_id>0</lro:data_quality_id>
+          <lro:data_quality_desc>
+            The DATA_QUALITY_ID is set to an 8-bit value that encodes the following data quality information
+            for the observation. For each bit  a value of 0 means FALSE and a value of 1 means TRUE. More
+            information about the data quality ID can be found in the LROC EDR/CDR SIS, section 3.3 'Label
+            and Header Descriptions'. Bit 1: Temperature of focal plane array is out of bounds. Bit 2:
+            Threshold for saturated pixels is reached. Bit 3: Threshold for under-saturated pixels is
+            reached. Bit 4: Observation is missing telemetry packets. Bit 5: SPICE information is bad or
+            missing. Bit 6: Observation or housekeeping information is bad or missing. Bit 7: Spare.
+            Bit 8: Spare.
+          </lro:data_quality_desc>
+          <!-- NAC specific attributes -->
+          <lro:preroll_time>2009-07-19T00:00:25.417000Z</lro:preroll_time>
+          <lro:spacecraft_clock_preroll_count>1/269654425:25559</lro:spacecraft_clock_preroll_count>
+          <lro:frame_id>LEFT</lro:frame_id>
+          <!-- NAC environment attributes -->
+          <lro:temperature_scs unit="degC">2.8498010635375977</lro:temperature_scs>
+          <lro:temperature_fpa unit="degC">17.86085319519043</lro:temperature_fpa>
+          <lro:temperature_fpga unit="degC">-10.170159339904785</lro:temperature_fpga>
+          <lro:temperature_telescope unit="degC">6.049563884735107</lro:temperature_telescope>
+          <lro:temperature_scs_raw>2817</lro:temperature_scs_raw>
+          <lro:temperature_fpa_raw>2109</lro:temperature_fpa_raw>
+          <lro:temperature_fpga_raw>3346</lro:temperature_fpga_raw>
+          <lro:temperature_telescope_raw>2670</lro:temperature_telescope_raw>
+          <!-- NAC imaging attributes -->
+          <lro:line_exposure_duration unit="ms">0.9776000000000001</lro:line_exposure_duration>
+          <lro:line_exposure_code>75</lro:line_exposure_code>
+          <lro:dac_reset_level>198</lro:dac_reset_level>
+          <lro:channel_a_offset>43</lro:channel_a_offset>
+          <lro:channel_b_offset>108</lro:channel_b_offset>
+          <lro:compand_code>0</lro:compand_code>
+          <lro:line_code>51</lro:line_code>
+          <lro:bterm1>0</lro:bterm1>
+          <lro:bterm2>8</lro:bterm2>
+          <lro:bterm3>25</lro:bterm3>
+          <lro:bterm4>59</lro:bterm4>
+          <lro:bterm5>128</lro:bterm5>
+          <lro:mterm1>0.5</lro:mterm1>
+          <lro:mterm2>0.25</lro:mterm2>
+          <lro:mterm3>0.125</lro:mterm3>
+          <lro:mterm4>0.0625</lro:mterm4>
+          <lro:mterm5>0.03125</lro:mterm5>
+          <lro:xterm1>0</lro:xterm1>
+          <lro:xterm2>32</lro:xterm2>
+          <lro:xterm3>136</lro:xterm3>
+          <lro:xterm4>543</lro:xterm4>
+          <lro:xterm5>2207</lro:xterm5>
+          <lro:compression_flag>1</lro:compression_flag>
+          <lro:mode>7</lro:mode>
+        </lro:LROC_Parameters>
+      </lro:LRO_Parameters>
+    </Mission_Area>
+    <Discipline_Area>
+      <img:Imaging>
+        <Local_Internal_Reference>
+          <local_identifier_reference>DATA_FILE</local_identifier_reference>
+          <local_reference_type>imaging_parameters_to_image_object</local_reference_type>
+        </Local_Internal_Reference>
+        <img:Optical_Filter>
+          <img:bandwidth unit="nm">300</img:bandwidth>
+          <img:center_filter_wavelength unit="nm">600</img:center_filter_wavelength>
+        </img:Optical_Filter>
+        <img:Sampling>
+          <img:crosstrack_summing>1</img:crosstrack_summing>
+        </img:Sampling>
+      </img:Imaging>
+      <disp:Display_Settings>
+        <Local_Internal_Reference>
+          <local_identifier_reference>Array_2D_Image</local_identifier_reference>
+          <local_reference_type>display_settings_to_array</local_reference_type>
+        </Local_Internal_Reference>
+        <disp:Display_Direction>
+          <disp:horizontal_display_axis>Sample</disp:horizontal_display_axis>
+          <disp:horizontal_display_direction>Left to Right</disp:horizontal_display_direction>
+          <disp:vertical_display_axis>Line</disp:vertical_display_axis>
+          <disp:vertical_display_direction>Top to Bottom</disp:vertical_display_direction>
+        </disp:Display_Direction>
+      </disp:Display_Settings>
+    </Discipline_Area>
+  </Observation_Area>
+  <Reference_List>
+    <External_Reference>
+      <doi>10.1007/s11214-010-9634-2</doi>
+      <reference_text>Robinson, M. S.; Brylow, S. M.; Tschimmel, M.; Humm, D.; Lawrence, S. J.; Thomas, P. C.;
+        Denevi, B. W.; Bowman-Cisneros, E.; Zerr, J.; Ravine, M. A.; Caplinger, M. A.; Ghaemi, F. T.; Schaffner, J. A.;
+        Malin, M. C.; Mahanti, P.; Bartels, A.; Anderson, J.; Tran, T. N.; Eliason, E. M.; McEwen, A. S. Turtle, E.;
+        Jolliff, B. L.; Hiesinger, H., 2010, "Lunar Reconnaissance Orbiter Camera (LROC) Instrument Overview", Space
+        Science Reviews, Volume 150, Issue 1-4, pp. 81-124
+      </reference_text>
+      <description>instrument overview</description>
+    </External_Reference>
+  </Reference_List>
+  <File_Area_Observational>
+    <File>
+      <file_name>M102600893LE.IMG</file_name>
+      <local_identifier>DATA_FILE</local_identifier>
+      <creation_date_time>2013-09-10T16:46:24.000000Z</creation_date_time>
+      <file_size unit="byte">264467400</file_size>
+      <md5_checksum>7cf30c67d8f064a38222aea813613547</md5_checksum>
+      <comment>Lunar Reconnaissance Orbiter Camera NAC EDR Product</comment>
+    </File>
+    <Header>
+      <offset unit="byte">0</offset>
+      <object_length unit="byte">5064</object_length>
+      <parsing_standard_id>PDS3</parsing_standard_id>
+      <description>PDS3 attached header</description>
+    </Header>
+    <Array_2D_Image>
+      <local_identifier>Array_2D_Image</local_identifier>
+      <offset unit="byte">5064</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>UnsignedByte</data_type>
+        <unit>RAW_INSTRUMENT_COUNT</unit>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>52224</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>5064</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+  </File_Area_Observational>
+</Product_Observational>
