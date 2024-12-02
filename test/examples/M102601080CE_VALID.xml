@@ -159,40 +159,15 @@
       <description>instrument overview</description>
     </External_Reference>
   </Reference_List>
-  <File_Area_Observational>
-    <File>
-      <file_name>M102601080CE.IMG</file_name>
-      <local_identifier>DATA_FILE</local_identifier>
-      <creation_date_time>2013-09-28T04:23:28.000000Z</creation_date_time>
-      <file_size unit="byte">13735040</file_size>
-      <md5_checksum>b08ace48144f680849c6824f7611bb70</md5_checksum>
-      <comment>Lunar Reconnaissance Orbiter Camera WAC EDR Product</comment>
-    </File>
-    <Header>
-      <offset unit="byte">0</offset>
-      <object_length unit="byte">7040</object_length>
-      <parsing_standard_id>PDS3</parsing_standard_id>
-      <description>PDS3 attached header</description>
-    </Header>
-    <Array_2D_Image>
-      <local_identifier>Array_2D_Image</local_identifier>
-      <offset unit="byte">7040</offset>
-      <axes>2</axes>
-      <axis_index_order>Last Index Fastest</axis_index_order>
-      <Element_Array>
-        <data_type>UnsignedByte</data_type>
-        <unit>RAW_INSTRUMENT_COUNT</unit>
-      </Element_Array>
-      <Axis_Array>
-        <axis_name>Line</axis_name>
-        <elements>19500</elements>
-        <sequence_number>1</sequence_number>
-      </Axis_Array>
-      <Axis_Array>
-        <axis_name>Sample</axis_name>
-        <elements>704</elements>
-        <sequence_number>2</sequence_number>
-      </Axis_Array>
-    </Array_2D_Image>
-  </File_Area_Observational>
+    <!-- simple data example for testing only -->
+    <File_Area_Observational>
+        <File>
+            <file_name>No.Data</file_name>
+        </File>
+        <Header>
+            <offset unit="byte">0</offset>
+            <object_length unit="byte">2880</object_length>
+            <parsing_standard_id>7-Bit ASCII Text</parsing_standard_id>
+        </Header>
+    </File_Area_Observational>
 </Product_Observational>

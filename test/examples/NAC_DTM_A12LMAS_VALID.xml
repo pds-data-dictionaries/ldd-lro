@@ -110,51 +110,15 @@
       <description>instrument overview</description>
     </External_Reference>
   </Reference_List>
-  <File_Area_Observational>
-    <File>
-      <file_name>NAC_DTM_A12LMAS.TIF</file_name>
-      <local_identifier>NAC_DTM_A12LMAS</local_identifier>
-      <creation_date_time>2020-10-10T05:58:30</creation_date_time>
-      <file_size unit="byte">119308415</file_size>
-      <md5_checksum>da334adc8b685f8255e97828463622b7</md5_checksum>
-      <comment>
-        Apollo 12 Ascent Stage Impact Site high-resolution NAC digital terrain
-        model in GeoTIFF format. DEM is IEEE floating point GeoTIFF, 32
-        bits/sample, 1 samples/pixel in single image plane configuration. The
-        NoDATA value is -3.40282266e+038. For more info, see
-        [HENRIKSENETAL2017].
-      </comment>
-    </File>
-    <Array_2D_Image>
-      <local_identifier>Image_Array_Identifier</local_identifier>
-      <offset unit="byte">11160</offset>
-      <axes>2</axes>
-      <axis_index_order>Last Index Fastest</axis_index_order>
-      <Element_Array>
-        <data_type>IEEE754LSBSingle</data_type>
-        <unit>Elevation</unit>
-      </Element_Array>
-      <Axis_Array>
-        <axis_name>Line</axis_name>
-        <elements>10683</elements>
-        <sequence_number>1</sequence_number>
-      </Axis_Array>
-      <Axis_Array>
-        <axis_name>Sample</axis_name>
-        <elements>2790</elements>
-        <sequence_number>2</sequence_number>
-      </Axis_Array>
-    </Array_2D_Image>
-  </File_Area_Observational>
-  <File_Area_Observational_Supplemental>
-    <File>
-      <file_name>NAC_DTM_A12LMAS.LBL</file_name>
-      <comment>PDS3 Label archived along with this data product</comment>
-    </File>
-    <Stream_Text>
-      <offset unit="byte">0</offset>
-      <parsing_standard_id>PDS3</parsing_standard_id>
-      <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
-    </Stream_Text>
-  </File_Area_Observational_Supplemental>
+    <!-- simple data example for testing only -->
+    <File_Area_Observational>
+        <File>
+            <file_name>No.Data</file_name>
+        </File>
+        <Header>
+            <offset unit="byte">0</offset>
+            <object_length unit="byte">2880</object_length>
+            <parsing_standard_id>7-Bit ASCII Text</parsing_standard_id>
+        </Header>
+    </File_Area_Observational>
 </Product_Observational>

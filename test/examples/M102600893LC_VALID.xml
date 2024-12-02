@@ -173,49 +173,15 @@
       <description>instrument overview</description>
     </External_Reference>
   </Reference_List>
-  <File_Area_Observational>
-    <File>
-      <file_name>M102600893LC.IMG</file_name>
-      <local_identifier>DATA_FILE</local_identifier>
-      <creation_date_time>2013-09-10T16:51:58.000000Z</creation_date_time>
-      <file_size unit="byte">528929736</file_size>
-      <md5_checksum>59adf8cc875cfc86d5198b97096352e8</md5_checksum>
-      <comment>Lunar Reconnaissance Orbiter Camera NAC CDR Product</comment>
-    </File>
-    <Header>
-      <offset unit="byte">0</offset>
-      <object_length unit="byte">5064</object_length>
-      <parsing_standard_id>PDS3</parsing_standard_id>
-      <description>PDS3 attached header</description>
-    </Header>
-    <Array_2D_Image>
-      <local_identifier>Array_2D_Image</local_identifier>
-      <offset unit="byte">5064</offset>
-      <axes>2</axes>
-      <axis_index_order>Last Index Fastest</axis_index_order>
-      <Element_Array>
-        <data_type>SignedLSB2</data_type>
-        <unit>Scaled I/F</unit>
-        <scaling_factor>3.05185094759972e-05</scaling_factor>
-      </Element_Array>
-      <Axis_Array>
-        <axis_name>Line</axis_name>
-        <elements>52224</elements>
-        <sequence_number>1</sequence_number>
-      </Axis_Array>
-      <Axis_Array>
-        <axis_name>Sample</axis_name>
-        <elements>5064</elements>
-        <sequence_number>2</sequence_number>
-      </Axis_Array>
-      <Special_Constants>
-        <missing_constant>-32768</missing_constant>
-        <high_instrument_saturation>-32765</high_instrument_saturation>
-        <high_representation_saturation>-32764</high_representation_saturation>
-        <valid_minimum>-32752</valid_minimum>
-        <low_instrument_saturation>-32766</low_instrument_saturation>
-        <low_representation_saturation>-32767</low_representation_saturation>
-      </Special_Constants>
-    </Array_2D_Image>
-  </File_Area_Observational>
+    <!-- simple data example for testing only -->
+    <File_Area_Observational>
+        <File>
+            <file_name>No.Data</file_name>
+        </File>
+        <Header>
+            <offset unit="byte">0</offset>
+            <object_length unit="byte">2880</object_length>
+            <parsing_standard_id>7-Bit ASCII Text</parsing_standard_id>
+        </Header>
+    </File_Area_Observational>
 </Product_Observational>
