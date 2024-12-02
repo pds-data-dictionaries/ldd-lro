@@ -2,6 +2,7 @@
 
 <Product_Observational
   xmlns="http://pds.nasa.gov/pds4/pds/v1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:lro="http://pds.nasa.gov/pds4/mission/lro/v1">
 
   <!-- Regression Test Label for LROC (Instrument) classes in LRO (mission) dictionary -->
