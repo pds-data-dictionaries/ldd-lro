@@ -1,30 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="https://pds.nasa.gov/pds4/mission/lro/v1/PDS4_LRO_1J00_1020.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1J00_1510.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="https://pds.nasa.gov/pds4/cart/v1/PDS4_CART_1J00_1970.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1J00_1870.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <Product_Observational
   xmlns="http://pds.nasa.gov/pds4/pds/v1"
-  xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
-  xmlns:disp="http://pds.nasa.gov/pds4/disp/v1"
-  xmlns:cart="http://pds.nasa.gov/pds4/cart/v1"
-  xmlns:lro="http://pds.nasa.gov/pds4/mission/lro/v1"
-  xmlns:img="http://pds.nasa.gov/pds4/img/v1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:lro="http://pds.nasa.gov/pds4/mission/lro/v1">
 
-  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd
-  http://pds.nasa.gov/pds4/mission/lro/v1 https://pds.nasa.gov/pds4/mission/lro/v1/PDS4_LRO_1J00_1020.xsd
-  http://pds.nasa.gov/pds4/disp/v1 https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1J00_1510.xsd
-  http://pds.nasa.gov/pds4/cart/v1 https://pds.nasa.gov/pds4/cart/v1/PDS4_CART_1J00_1970.xsd
-  http://pds.nasa.gov/pds4/img/v1 https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1J00_1870.xsd">
+  <!-- Regression Test Label for LROC (Instrument) classes in LRO (mission) dictionary -->
 
   <Identification_Area>
-    <logical_identifier>urn:nasa:pds:lro-l-lroc-5-rdr:lrolrc_2001_data:sdp.nac_dtm.a12lmas.nac_dtm_a12lmas</logical_identifier>
+    <logical_identifier>urn:nasa:pds:lro-l-lroc-5-rdr:examples:sdp.nac_dtm.a12lmas.nac_dtm_a12lmas</logical_identifier>
     <version_id>1.0</version_id>
     <title>Digital Terrain Model (32-bit GeoTIFF)</title>
-    <information_model_version>1.19.0.0</information_model_version>
+    <information_model_version>[IM VERSION]</information_model_version>
     <product_class>Product_Observational</product_class>
     <Alias_List>
       <Alias>
@@ -94,74 +80,7 @@
         <lro:producer_institution_name>Arizona State University</lro:producer_institution_name>
       </lro:LRO_Parameters>
     </Mission_Area>
-    <Discipline_Area>
-      <img:Imaging>
-        <Local_Internal_Reference>
-          <local_identifier_reference>NAC_DTM_A12LMAS</local_identifier_reference>
-          <local_reference_type>imaging_parameters_to_image_object</local_reference_type>
-        </Local_Internal_Reference>
-      </img:Imaging>
-      <cart:Cartography>
-        <Local_Internal_Reference>
-          <local_identifier_reference>NAC_DTM_A12LMAS</local_identifier_reference>
-          <local_reference_type>cartography_parameters_to_image_object</local_reference_type>
-        </Local_Internal_Reference>
-        <cart:Spatial_Domain>
-          <cart:Bounding_Coordinates>
-            <cart:west_bounding_coordinate unit="deg">338.5098099</cart:west_bounding_coordinate>
-            <cart:east_bounding_coordinate unit="deg">338.9709748</cart:east_bounding_coordinate>
-            <cart:north_bounding_coordinate unit="deg">-3.0501247</cart:north_bounding_coordinate>
-            <cart:south_bounding_coordinate unit="deg">-4.8116385</cart:south_bounding_coordinate>
-          </cart:Bounding_Coordinates>
-        </cart:Spatial_Domain>
-        <cart:Spatial_Reference_Information>
-          <cart:Horizontal_Coordinate_System_Definition>
-            <cart:Planar>
-              <cart:Map_Projection>
-                <cart:map_projection_name>Equirectangular</cart:map_projection_name>
-                <cart:Equirectangular>
-                  <cart:standard_parallel_1 unit="deg">-4.0</cart:standard_parallel_1>
-                  <cart:longitude_of_central_meridian unit="deg">180.0</cart:longitude_of_central_meridian>
-                </cart:Equirectangular>
-                <!-- A specific description of this projection may be found in DSMAP.CAT in the CATALOG directory -->
-              </cart:Map_Projection>
-              <cart:Planar_Coordinate_Information>
-                <cart:planar_coordinate_encoding_method>Coordinate Pair</cart:planar_coordinate_encoding_method>
-                <cart:Coordinate_Representation>
-                  <cart:pixel_resolution_x unit="deg/pixel">0.00016488943108403748</cart:pixel_resolution_x>
-                  <cart:pixel_resolution_y unit="deg/pixel">0.00016488943108403748</cart:pixel_resolution_y>
-                  <cart:pixel_scale_x unit="m/pixel">4.9999999999999</cart:pixel_scale_x>
-                  <cart:pixel_scale_y unit="m/pixel">4.9999999999999</cart:pixel_scale_y>
-                </cart:Coordinate_Representation>
-              </cart:Planar_Coordinate_Information>
-              <cart:Geo_Transformation>
-                <cart:upperleft_corner_x unit="m">-4794842.499999904</cart:upperleft_corner_x>
-                <cart:upperleft_corner_y unit="m">-92492.49999999814</cart:upperleft_corner_y>
-              </cart:Geo_Transformation>
-            </cart:Planar>
-            <cart:Geodetic_Model>
-              <cart:latitude_type>Planetocentric</cart:latitude_type>
-              <cart:a_axis_radius unit="km">1737.4</cart:a_axis_radius>
-              <cart:b_axis_radius unit="km">1737.4</cart:b_axis_radius>
-              <cart:c_axis_radius unit="km">1737.4</cart:c_axis_radius>
-              <cart:longitude_direction>Positive East</cart:longitude_direction>
-            </cart:Geodetic_Model>
-          </cart:Horizontal_Coordinate_System_Definition>
-        </cart:Spatial_Reference_Information>
-      </cart:Cartography>
-      <disp:Display_Settings>
-        <Local_Internal_Reference>
-          <local_identifier_reference>Image_Array_Identifier</local_identifier_reference>
-          <local_reference_type>display_settings_to_array</local_reference_type>
-        </Local_Internal_Reference>
-        <disp:Display_Direction>
-          <disp:horizontal_display_axis>Sample</disp:horizontal_display_axis>
-          <disp:horizontal_display_direction>Left to Right</disp:horizontal_display_direction>
-          <disp:vertical_display_axis>Line</disp:vertical_display_axis>
-          <disp:vertical_display_direction>Top to Bottom</disp:vertical_display_direction>
-        </disp:Display_Direction>
-      </disp:Display_Settings>
-    </Discipline_Area>
+    <!-- Discipline_Area removed for testing -->
   </Observation_Area>
   <Reference_List>
     <Internal_Reference>
