@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Product_Observational
+  xmlns="http://pds.nasa.gov/pds4/pds/v1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:lro="http://pds.nasa.gov/pds4/mission/lro/v1">
+
+  <!-- Regression Test Label for LROC (Instrument) classes in LRO (mission) dictionary -->
+
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:lro-l-lroc-5-rdr:examples:sdp.nac_dtm.a12lmas.nac_dtm_a12lmas</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>Digital Terrain Model (32-bit GeoTIFF)</title>
+    <information_model_version>[IM VERSION]</information_model_version>
+    <product_class>Product_Observational</product_class>
+    <Alias_List>
+      <Alias>
+        <alternate_id>NAC_DTM_A12LMAS.TIF</alternate_id>
+        <comment>Original filename at PDS3 archive, on-line at LROC Node</comment>
+      </Alias>
+    </Alias_List>
+    <Modification_History>
+      <Modification_Detail>
+        <modification_date>2023-06-01</modification_date>
+        <version_id>1.0</version_id>
+        <description>
+          This PDS4 labeled (detached label) product (orig PDS3 image) is a result
+          migrating Lunar Reconnaissance Orbiter Camera RDR data to PDS4.
+        </description>
+      </Modification_Detail>
+    </Modification_History>
+  </Identification_Area>
+  <Observation_Area>
+    <Time_Coordinates>
+      <start_date_time>2017-03-10T13:57:36Z</start_date_time>
+      <stop_date_time>2017-03-10T17:52:38Z</stop_date_time>
+    </Time_Coordinates>
+    <Primary_Result_Summary>
+      <purpose>Science</purpose>
+      <processing_level>Derived</processing_level>
+      <description>
+        Apollo 12 Ascent Stage Impact Site high-resolution NAC digital terrain
+        model in GeoTIFF format. DEM is IEEE floating point GeoTIFF, 32
+        bits/sample, 1 samples/pixel in single image plane configuration. The
+        NoDATA value is -3.40282266e+038. For more info, see
+        [HENRIKSENETAL2017].
+      </description>
+    </Primary_Result_Summary>
+    <Investigation_Area>
+      <name>Product_Observational</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:investigation:mission.lunar_reconnaissance_orbiter</lid_reference>
+        <reference_type>data_to_investigation</reference_type>
+        <comment>This is the PDS4 logical identifier for LRO</comment>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>LUNAR RECONNAISSANCE ORBITER CAMERA</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument:lro.lroc</lid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>Moon</name>
+      <type>Satellite</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:target:satellite.earth.moon</lid_reference>
+        <reference_type>data_to_target</reference_type>
+      </Internal_Reference>
+    </Target_Identification>
+    <Mission_Area>
+      <lro:LRO_Parameters>
+        <lro:product_type>RDR</lro:product_type>
+        <lro:product_version_id>1.9</lro:product_version_id>
+        <lro:mission_phase_name>THIRD EXTENDED SCIENCE MISSION</lro:mission_phase_name>
+        <lro:producer_institution_name>Arizona State University</lro:producer_institution_name>
+      </lro:LRO_Parameters>
+    </Mission_Area>
+    <!-- Discipline_Area removed for testing -->
+  </Observation_Area>
+  <Reference_List>
+    <Internal_Reference>
+      <lid_reference>urn:nasa:pds:lro-l-lroc-5-rdr:lrolrc_2001_data:sdp.nac_dtm.a12lmas.nac_dtm_a12lmas_readme</lid_reference>
+      <reference_type>data_to_document</reference_type>
+      <comment>documentation and citation(s) for this data product</comment>
+    </Internal_Reference>
+    <External_Reference>
+      <doi>10.1016/j.icarus.2016.05.012</doi>
+      <reference_text>
+        Henriksen, M.R., Manheim, M.R., Burns, K.N., Seymour, P., Speyerer,
+        E.J., Deran, A., Boyd, A.K., Howington-Kraus, E., Rosiek, M.R.,
+        Archinal, B.A. and Robinson, M.S. (2017), Extracting accurate and
+        precise topography from LROC narrow angle camera stereo observations.
+        Icarus, 283, pp.122-137.
+      </reference_text>
+    </External_Reference>
+    <External_Reference>
+      <doi>10.1007/s11214-010-9634-2</doi>
+      <reference_text>
+        Robinson, M. S.; Brylow, S. M.; Tschimmel, M.; Humm, D.; Lawrence, S. J.; Thomas, P. C.;
+        Denevi, B. W.; Bowman-Cisneros, E.; Zerr, J.; Ravine, M. A.; Caplinger, M. A.; Ghaemi, F. T.; Schaffner, J. A.;
+        Malin, M. C.; Mahanti, P.; Bartels, A.; Anderson, J.; Tran, T. N.; Eliason, E. M.; McEwen, A. S. Turtle, E.;
+        Jolliff, B. L.; Hiesinger, H., 2010, "Lunar Reconnaissance Orbiter Camera (LROC) Instrument Overview", Space
+        Science Reviews, Volume 150, Issue 1-4, pp. 81-124
+      </reference_text>
+      <description>instrument overview</description>
+    </External_Reference>
+  </Reference_List>
+    <!-- simple data example for testing only -->
+    <File_Area_Observational>
+        <File>
+            <file_name>No.Data</file_name>
+        </File>
+        <Header>
+            <offset unit="byte">0</offset>
+            <object_length unit="byte">2880</object_length>
+            <parsing_standard_id>7-Bit ASCII Text</parsing_standard_id>
+        </Header>
+    </File_Area_Observational>
+</Product_Observational>

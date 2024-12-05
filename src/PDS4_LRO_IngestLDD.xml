@@ -3,20 +3,9 @@
     href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
-<!-- 11/06/2019 GEO/SHS Initial version
-     01/09/2020 GEO/SHS Added elements identified by Paul Geissler
-     04/27/2021 GEO/JGW Added Diviner, LOLA, and Mini-RF elements
-     07/26/2021 GEO/JGW Added LOLA_INSTRUMENT_MODE_ID
-     07/29/2021 GEO/JGW Rebuilt with 1G00 IM
-     10/11/2021 GEO/JGW Added permissible values for product_type
-     10/22/2021 GEO/JGW Added Geodetic_Model class
-     01/27/2022 GEO/SHS Rebuilt with 1H00 IM
-     01/16/2023 IMG/TMH (v1010) Added 5th extended mission for under mission_phase_name and built for 1I00/1J00
-     01/19/2023 APL/RCE (v1020) Additional Mini-RF elements
-     04/05/2023 GEO/JGW (v1021) Bug fix - adding missing permissible values to dlre_instrument_mode_id 
-     06/30/2023 GEO/JGW (v1030) Added 4 attributes to Diviner_Parameters and LRO_Parameters classes
-     10/09/2024 APL/RCE Additional Mini-RF elements part 2
-    -->
+<!-- 
+change log, ChangeLog.md, is now in a separate file on GitHub
+-->
 
 <Ingest_LDD 
     xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -33,7 +22,7 @@
         The LRO dictionary contains classes that describe aspects of the 
         Lunar Reconnaissance Orbiter mission and related instruments.
     </comment>
-    <last_modification_date_time>2024-10-09T00:00Z</last_modification_date_time>
+    <last_modification_date_time>2024-12-05T10:45Z</last_modification_date_time>
 	
 	<!-- PGeissler changed mterm1 to mterm5 to ASCII_Real; added units to NAC temperatures, line_exposure_time, interframe_delay -->
     <!-- PGeissler 5-08-2020 ldd-lro-1d00.xml changed mission_phase_name to allow multiple mission phases -->
