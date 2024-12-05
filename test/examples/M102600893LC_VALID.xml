@@ -8,14 +8,14 @@
   <!-- Regression Test Label for LROC (Instrument) classes in LRO (mission) dictionary -->
 
   <Identification_Area>
-    <logical_identifier>urn:nasa:pds:lro-l-lroc-2-edr:examples:nac.m102600893le</logical_identifier>
+    <logical_identifier>urn:nasa:pds:lro-l-lroc-3-cdr:examples:nac.m102600893lc</logical_identifier>
     <version_id>2.0</version_id>
-    <title>Lunar Reconnaissance Orbiter Camera NAC EDR Product</title>
+    <title>Lunar Reconnaissance Orbiter Camera NAC CDR Product</title>
     <information_model_version>[IM VERSION]</information_model_version>
     <product_class>Product_Observational</product_class>
     <Alias_List>
       <Alias>
-        <alternate_id>M102600893LE.IMG</alternate_id>
+        <alternate_id>M102600893LC.IMG</alternate_id>
         <comment>Original filename at PDS3 archive, on-line at LROC Node</comment>
       </Alias>
       <Alias>
@@ -36,7 +36,7 @@
         <version_id>1.0</version_id>
         <description>
           This PDS4 labeled (detached label) product (orig PDS3 image) is a result
-          of develpment activity for eventual LUNAR RECONNAISSANCE ORBITER CAMERA NAC EDR migration to PDS4.
+          of development activity for eventual LUNAR RECONNAISSANCE ORBITER CAMERA NAC CDR migration to PDS4.
         </description>
       </Modification_Detail>
     </Modification_History>
@@ -48,7 +48,7 @@
     </Time_Coordinates>
     <Primary_Result_Summary>
       <purpose>Science</purpose>
-      <processing_level>Partially Processed</processing_level>
+      <processing_level>Calibrated</processing_level>
       <description>The Lunar Reconnaissance Orbiter Camera (LROC) Wide Angle Camera (WAC) and Narrow Angle Cameras (NACs)
         are on the NASA Lunar Reconnaissance Orbiter (LRO). The WAC is a 7-color push-frame camera (100 and 400 m/pixel
         visible and UV, respectively), while the two NACs are monochrome narrow-angle linescan imagers (0.5 m/pixel).
@@ -97,8 +97,8 @@
     <Mission_Area>
       <lro:LRO_Parameters>
         <!-- parameters for all LRO products -->
-        <lro:product_type>EDR</lro:product_type>
-        <lro:product_version_id>v1.8</lro:product_version_id>
+        <lro:product_type>CDR</lro:product_type>
+        <lro:product_version_id>v1.9</lro:product_version_id>
         <lro:orbit_number>294</lro:orbit_number>
         <lro:mission_phase_name>COMMISSIONING</lro:mission_phase_name>
         <lro:spacecraft_clock_start_count>1/269654426:25923</lro:spacecraft_clock_start_count>

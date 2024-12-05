@@ -8,18 +8,18 @@
   <!-- Regression Test Label for LROC (Instrument) classes in LRO (mission) dictionary -->
 
   <Identification_Area>
-    <logical_identifier>urn:nasa:pds:lro-l-lroc-3-cdr:examples:nac.m102600893lc</logical_identifier>
+    <logical_identifier>urn:nasa:pds:lro-l-lroc-3-cdr:examples:wac.m102601080cc</logical_identifier>
     <version_id>2.0</version_id>
-    <title>Lunar Reconnaissance Orbiter Camera NAC CDR Product</title>
+    <title>Lunar Reconnaissance Orbiter Camera WAC CDR Product</title>
     <information_model_version>[IM VERSION]</information_model_version>
     <product_class>Product_Observational</product_class>
     <Alias_List>
       <Alias>
-        <alternate_id>M102600893LC.IMG</alternate_id>
+        <alternate_id>M102601080CC.IMG</alternate_id>
         <comment>Original filename at PDS3 archive, on-line at LROC Node</comment>
       </Alias>
       <Alias>
-        <alternate_id>nacl000016fe</alternate_id>
+        <alternate_id>wac00001645</alternate_id>
         <comment>PDS3 SOURCE_PRODUCT_ID</comment>
       </Alias>
     </Alias_List>
@@ -36,19 +36,19 @@
         <version_id>1.0</version_id>
         <description>
           This PDS4 labeled (detached label) product (orig PDS3 image) is a result
-          of develpment activity for eventual LUNAR RECONNAISSANCE ORBITER CAMERA NAC CDR migration to PDS4.
+          of development activity for eventual LUNAR RECONNAISSANCE ORBITER CAMERA WAC CDR migration to PDS4.
         </description>
       </Modification_Detail>
     </Modification_History>
   </Identification_Area>
   <Observation_Area>
     <Time_Coordinates>
-      <start_date_time>2009-07-19T00:00:26.423000Z</start_date_time>
-      <stop_date_time>2009-07-19T00:01:17.707000Z</stop_date_time>
+      <start_date_time>2009-07-19T00:03:32.538000Z</start_date_time>
+      <stop_date_time>2009-07-19T00:10:22.694000Z</stop_date_time>
     </Time_Coordinates>
     <Primary_Result_Summary>
       <purpose>Science</purpose>
-      <processing_level>Calibrated</processing_level>
+      <processing_level>Partially Processed</processing_level>
       <description>The Lunar Reconnaissance Orbiter Camera (LROC) Wide Angle Camera (WAC) and Narrow Angle Cameras (NACs)
         are on the NASA Lunar Reconnaissance Orbiter (LRO). The WAC is a 7-color push-frame camera (100 and 400 m/pixel
         visible and UV, respectively), while the two NACs are monochrome narrow-angle linescan imagers (0.5 m/pixel).
@@ -63,6 +63,7 @@
       <name>LUNAR RECONNAISSANCE ORBITER</name>
       <type>Mission</type>
       <Internal_Reference>
+        <!-- need official lid ref from PDS -->
         <lid_reference>urn:nasa:pds:context:investigation:mission.lunar_reconnaissance_orbiter</lid_reference>
         <reference_type>data_to_investigation</reference_type>
         <comment>This is the PDS4 logical identifier for LRO</comment>
@@ -101,14 +102,14 @@
         <lro:product_version_id>v1.9</lro:product_version_id>
         <lro:orbit_number>294</lro:orbit_number>
         <lro:mission_phase_name>COMMISSIONING</lro:mission_phase_name>
-        <lro:spacecraft_clock_start_count>1/269654426:25923</lro:spacecraft_clock_start_count>
-        <lro:spacecraft_clock_stop_count>1/269654477:44530</lro:spacecraft_clock_stop_count>
+        <lro:spacecraft_clock_start_count>1/269654612:33462</lro:spacecraft_clock_start_count>
+        <lro:spacecraft_clock_stop_count>1/269655022:43702</lro:spacecraft_clock_stop_count>
         <lro:producer_institution_name>Arizona State University</lro:producer_institution_name>
         <lro:LROC_Parameters>
           <!-- Parameters specific to LROC -->
           <lro:upload_id>SC_2009200_0000_B_V01.txt</lro:upload_id>
-          <lro:rationale_desc>TARGET OF OPPORTUNITY</lro:rationale_desc>
-          <lro:data_quality_id>0</lro:data_quality_id>
+          <lro:rationale_desc>GLOBAL COVERAGE</lro:rationale_desc>
+          <lro:data_quality_id>32</lro:data_quality_id>
           <lro:data_quality_desc>
             The DATA_QUALITY_ID is set to an 8-bit value that encodes the following data quality information
             for the observation. For each bit  a value of 0 means FALSE and a value of 1 means TRUE. More
@@ -119,44 +120,30 @@
             missing. Bit 6: Observation or housekeeping information is bad or missing. Bit 7: Spare.
             Bit 8: Spare.
           </lro:data_quality_desc>
-          <!-- NAC specific attributes -->
-          <lro:preroll_time>2009-07-19T00:00:25.417000Z</lro:preroll_time>
-          <lro:spacecraft_clock_preroll_count>1/269654425:25559</lro:spacecraft_clock_preroll_count>
-          <lro:frame_id>LEFT</lro:frame_id>
-          <!-- NAC environment attributes -->
-          <lro:temperature_scs unit="degC">2.8498010635375977</lro:temperature_scs>
-          <lro:temperature_fpa unit="degC">17.86085319519043</lro:temperature_fpa>
-          <lro:temperature_fpga unit="degC">-10.170159339904785</lro:temperature_fpga>
-          <lro:temperature_telescope unit="degC">6.049563884735107</lro:temperature_telescope>
-          <lro:temperature_scs_raw>2817</lro:temperature_scs_raw>
-          <lro:temperature_fpa_raw>2109</lro:temperature_fpa_raw>
-          <lro:temperature_fpga_raw>3346</lro:temperature_fpga_raw>
-          <lro:temperature_telescope_raw>2670</lro:temperature_telescope_raw>
-          <!-- NAC imaging attributes -->
-          <lro:line_exposure_duration unit="ms">0.9776000000000001</lro:line_exposure_duration>
-          <lro:line_exposure_code>75</lro:line_exposure_code>
-          <lro:dac_reset_level>198</lro:dac_reset_level>
-          <lro:channel_a_offset>43</lro:channel_a_offset>
-          <lro:channel_b_offset>108</lro:channel_b_offset>
+          <lro:begin_temperature_scs unit="degC">2.7833869457244873</lro:begin_temperature_scs>
+          <lro:middle_temperature_scs unit="degC">2.8276689052581787</lro:middle_temperature_scs>
+          <lro:end_temperature_scs unit="degC">2.8940489292144775</lro:end_temperature_scs>
+          <lro:begin_temperature_fpa unit="degC">-25.874217987060547</lro:begin_temperature_fpa>
+          <lro:middle_temperature_fpa unit="degC">-25.433279037475586</lro:middle_temperature_fpa>
+          <lro:end_temperature_fpa unit="degC">-24.857929229736328</lro:end_temperature_fpa>
+          <lro:begin_temperature_scs_raw>2820</lro:begin_temperature_scs_raw>
+          <lro:middle_temperature_scs_raw>2818</lro:middle_temperature_scs_raw>
+          <lro:end_temperature_scs_raw>2815</lro:end_temperature_scs_raw>
+          <lro:begin_temperature_fpa_raw>3779</lro:begin_temperature_fpa_raw>
+          <lro:middle_temperature_fpa_raw>3770</lro:middle_temperature_fpa_raw>
+          <lro:end_temperature_fpa_raw>3758</lro:end_temperature_fpa_raw>
+          <!-- LROC WAC imaging attributes -->
+          <lro:exposure_code>500</lro:exposure_code>
+          <lro:interframe_delay unit="ms">0.1640625e4</lro:interframe_delay>
+          <lro:instrument_mode_id>COLOR</lro:instrument_mode_id>
+          <lro:lookup_table_type>STORED</lro:lookup_table_type>
           <lro:compand_code>0</lro:compand_code>
-          <lro:line_code>51</lro:line_code>
-          <lro:bterm1>0</lro:bterm1>
-          <lro:bterm2>8</lro:bterm2>
-          <lro:bterm3>25</lro:bterm3>
-          <lro:bterm4>59</lro:bterm4>
-          <lro:bterm5>128</lro:bterm5>
-          <lro:mterm1>0.5</lro:mterm1>
-          <lro:mterm2>0.25</lro:mterm2>
-          <lro:mterm3>0.125</lro:mterm3>
-          <lro:mterm4>0.0625</lro:mterm4>
-          <lro:mterm5>0.03125</lro:mterm5>
-          <lro:xterm1>0</lro:xterm1>
-          <lro:xterm2>32</lro:xterm2>
-          <lro:xterm3>136</lro:xterm3>
-          <lro:xterm4>543</lro:xterm4>
-          <lro:xterm5>2207</lro:xterm5>
-          <lro:compression_flag>1</lro:compression_flag>
-          <lro:mode>7</lro:mode>
+          <lro:compression_flag>0</lro:compression_flag>
+          <lro:mode>0</lro:mode>
+          <lro:nframes>250</lro:nframes>
+          <lro:band_code>127</lro:band_code>
+          <lro:interframe_gap_code>80</lro:interframe_gap_code>
+          <lro:background_offset>56</lro:background_offset>
         </lro:LROC_Parameters>
       </lro:LRO_Parameters>
     </Mission_Area>
