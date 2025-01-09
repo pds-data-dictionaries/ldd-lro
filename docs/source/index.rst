@@ -13,15 +13,15 @@ Lunar Reconnaissance Orbiter Namespace Documentation
     :maxdepth: 3
     :caption: User Guide
 
-    user/user-guide
+    user/user-guide.rst
     
 .. toctree::
     :maxdepth: 3
     :caption: Detailed Documentation
 
-    detailed/outline
-    detailed/classList
-    detailed/attributeList
+    detailed/outline.rst
+    detailed/classList.rst
+    detailed/attributeList.rst
     
 .. toctree::
     :maxdepth: 3
