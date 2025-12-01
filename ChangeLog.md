@@ -1,4 +1,8 @@
-# New Horizons Mission Dictionary Change Log
+# LRO Mission Dictionary Change Log
+
+## Version 1.0.5.0
+
+* 12/1/2025 GEO/JGW Added SIXTH EXTENDED SCIENCE MISSION to mission_phase_name
 
 ## Version 1.0.4.0
 
