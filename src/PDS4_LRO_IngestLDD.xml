@@ -13,7 +13,7 @@ change log, ChangeLog.md, is now in a separate file on GitHub
     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1
                         http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1J00.xsd">
     <name>LRO</name>
-    <ldd_version_id>1.0.4.0</ldd_version_id>
+    <ldd_version_id>1.0.5.0</ldd_version_id>
     <dictionary_type>Mission</dictionary_type>
     <full_name>Jennifer Ward</full_name>
     <steward_id>geo</steward_id>
@@ -22,7 +22,7 @@ change log, ChangeLog.md, is now in a separate file on GitHub
         The LRO dictionary contains classes that describe aspects of the 
         Lunar Reconnaissance Orbiter mission and related instruments.
     </comment>
-    <last_modification_date_time>2025-01-09T09:28Z</last_modification_date_time>
+    <last_modification_date_time>2025-02-01T03:42Z</last_modification_date_time>
 	
 	<!-- PGeissler changed mterm1 to mterm5 to ASCII_Real; added units to NAC temperatures, line_exposure_time, interframe_delay -->
     <!-- PGeissler 5-08-2020 ldd-lro-1d00.xml changed mission_phase_name to allow multiple mission phases -->
@@ -1707,27 +1707,31 @@ change log, ChangeLog.md, is now in a separate file on GitHub
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>SCIENCE MISSION</value>
-                <value_meaning>2010-09-16 to 2012-09-14</value_meaning>
+                <value_meaning>2010-09-16 to 2012-09-15</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>EXTENDED SCIENCE MISSION</value>
-                <value_meaning>2012-09-15 to 2014-09-14</value_meaning>
+                <value_meaning>2012-09-15 to 2014-09-15</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>SECOND EXTENDED SCIENCE MISSION</value>
-                <value_meaning>2014-09-15 to 2016-09-14</value_meaning>
+                <value_meaning>2014-09-15 to 2016-09-15</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>THIRD EXTENDED SCIENCE MISSION</value>
-                <value_meaning>2016-09-15 to 2019-09-14</value_meaning>
+                <value_meaning>2016-09-15 to 2019-09-15</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>FOURTH EXTENDED SCIENCE MISSION</value>
-                <value_meaning>2019-09-15 to 2022-09-15</value_meaning>
+                <value_meaning>2019-09-15 to 2022-10-01</value_meaning>
             </DD_Permissible_Value>
             <DD_Permissible_Value>
                 <value>FIFTH EXTENDED SCIENCE MISSION</value>
-                <value_meaning>2022-10-01 to 2025-09-30</value_meaning>
+                <value_meaning>2022-10-01 to 2025-10-01</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>SIXTH EXTENDED SCIENCE MISSION</value>
+                <value_meaning>2025-10-01 to 2028-09-30</value_meaning>
             </DD_Permissible_Value>
         </DD_Value_Domain>
     </DD_Attribute>
